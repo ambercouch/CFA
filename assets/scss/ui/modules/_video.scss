@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 28-Sep-2014, 16:05:20
+    Author     : Richard
+*/
+
+.video{
+  padding-bottom: $base-spacing-unit;
+  margin-bottom: $base-spacing-unit ;
+  border-bottom: solid 1px  $brand-col-2;
+  object{
+    max-width: 100%
+  }
+  .swf__video{
+    width: 400px;
+    margin: 0 auto;
+  }
+}
+.video__title{
+  font-weight: normal;
+  border-bottom: solid 1px  $brand-col-2;
+  text-align: left;
+  color: $brand-col-2;
+}

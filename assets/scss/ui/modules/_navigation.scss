@@ -1,0 +1,33 @@
+.navigation{
+  display: block;
+}
+.navigation--main{
+  @extend .navigation;
+  @extend .container;
+  position: relative;
+}
+.navigation--services{
+  @extend .navigation;
+  @extend .container;
+
+}
+.navigation--main__menu{
+  @extend .one-whole;
+  .multi-dropdown{
+    @extend %multi-dropdown;
+  }
+}
+
+[id=nav-responsive]{
+  display: block;
+  @include media-query(lap-and-up){
+    display:none;
+  }
+}
+
+[id=nav-main][data-responsive-clone]{
+  display: none;
+  @include media-query(lap-and-up){
+    display:block;
+  }
+}

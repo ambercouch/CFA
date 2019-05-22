@@ -1,0 +1,90 @@
+/*
+ * Typography
+ * set font size ems on text nodes P, H* LI, TD etc
+ * Set font size rems on containers / modules etc
+ */
+
+/*
+ * Set relative bottom margin
+ */
+@include headings(){
+  margin-bottom: 0.75em;
+}
+
+a, a:link, a:active{
+  text-decoration: none;
+}
+
+%link-style-1{
+  transition: background 0.3s ease;
+  color: #fff;
+  padding: 0 3px;
+  background: transparent;
+  border: none;
+  border-bottom:solid 1px rgba(#ffffff, 0.2);
+  display: inline;
+  &:hover{
+    background: rgba(#fff, 0.2);
+    text-shadow: 0 1px 0 rgba(#000000, 0.3);
+    border-bottom:solid 1px rgba(#ffffff, 1);
+
+  }
+}
+%link-style-1--col-2{
+  transition: background 0.3s ease;
+  color: $brand-col-2;
+  padding: 0 3px;
+  background: transparent;
+  border: none;
+  border-bottom:solid 1px rgba($brand-col-2, 0.3);
+  display: inline;
+  &:hover{
+    background: rgba($brand-col-2--tint, 0.2);
+    text-shadow: 0 1px 0 rgba(#fff, 0.5);
+    border-bottom:solid 1px rgba($brand-col-2, 1);
+
+  }
+}
+%link-style-2{
+  color: $brand-col-1;
+  text-decoration: underline;
+  border-bottom:none;
+
+  &:hover{
+    color: $brand-col-2--tint;
+    border-bottom:none;
+    text-shadow: none;;
+  }
+}
+.text-columns--2{
+  @include media-query(lap-and-up){
+    list-style-position: inside;
+    columns: 2;
+    li{
+      white-space: nowrap;
+    }
+  }
+}
+.text-columns--3{
+  @include media-query(desk){
+    list-style-position: inside;
+    columns: 3;
+    li{
+      white-space: nowrap;
+    }
+  }
+  @include media-query(lap){
+    list-style-position: inside;
+    columns: 2;
+    li{
+      white-space: nowrap;
+    }
+  }
+
+}
+.dagger{
+  font-size:0.5em;
+  vertical-align:top;
+  line-height:2em
+
+}

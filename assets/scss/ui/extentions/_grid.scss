@@ -1,0 +1,75 @@
+/**
+ *
+ * .grid styles
+ *
+ */
+
+.grid{
+  direction: ltr;
+  /* set the font size to 0 to fix the inline block white space issue (doesn't work on old android')*/
+  font-size: 0;
+
+  > * {
+
+    /* Don't need to use the grid item class any more */
+    @extend .grid__item;
+
+    /* reset to the base font size */
+    font-size: $base-font-size;
+
+    /* use rem if supported */
+    font-size: 1rem;
+    > *{
+
+      /* if rems not supported resize the text now */
+      font-size: 90%;
+      @include media-query(lap-and-up){
+        font-size: 100%
+      }
+
+      /* if rems is supported reset */
+      font-size: 1rem;
+    }
+  }
+}
+
+/**
+ * Reversed grids
+ */
+.grid--rev{
+  @extend .grid;
+  direction:rtl;
+  text-align:right;
+
+  > .grid__item{
+    direction:ltr;
+    text-align:left;
+  }
+}
+
+
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ */
+.grid--full{
+  @extend .grid;
+  margin-left:0;
+
+  > .grid__item{
+    padding-left:0;
+  }
+}
+
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes.
+ */
+.grid--center{
+  @extend .grid;
+  text-align:center;
+
+  > .grid__item{
+    text-align:left;
+  }
+}

@@ -1,0 +1,39 @@
+/**
+  *
+  * Wordpress post images & captions
+  *
+**/
+
+%post__img{
+
+  img, .wp-caption{
+    display: block;
+    max-width:100%;
+    height: auto;
+    overflow: hidden;
+    &.alignleft{
+      float: left;
+      margin-right: $half-spacing-unit
+    }
+    &.alignright{
+      float: right;
+      margin-left: $half-spacing-unit
+    }
+    &.aligncenter{
+      margin: 0 auto;
+      text-align: center;
+    }
+    .wp-caption-text{
+      text-align: center;
+      margin-bottom:0;
+      font-size:0.8em;
+      padding-bottom: 0.4em;
+    }
+    img{
+      margin:5px auto;
+    }
+  }
+
+
+
+}

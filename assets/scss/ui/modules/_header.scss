@@ -1,0 +1,238 @@
+/*
+ * .header module
+ */
+
+/* Just a base class to extend all modifiers*/
+.header{
+  display: block;
+}
+
+/*
+ * .header--master modifier. It's at the top of the site!
+ */
+
+/* Just a container */
+.header--master{
+  @extend .header;
+  @extend .container;
+  padding:0;
+  height: 170px;
+  overflow: hidden;
+  position:relative;
+  //border-bottom:solid 3px $brand-col-3;
+  display:none;
+  .home &{
+    height: 335px;
+    display:block;
+    @include media-query(desk){
+      height: 325px;
+    }
+  }
+}
+.header--master__widget-area--banner{
+  .widget{
+    border-bottom: none;
+  }
+}
+.header--master__banner-image{
+  max-width: 665px !important;
+  right:-50px;
+  top:-180px;
+  position: absolute;
+
+  .home &{
+    right:-235px;
+    top:-0px;
+  }
+
+  @include media-query(lap-and-up){
+    max-width: 1024px !important;
+    right:0px;
+    top:-330px;
+    .home &{
+      top:-15px;
+      right:0px;
+    }
+  }
+  @include media-query(lap){
+    max-width: 800px !important;
+    top:-255px;
+    .home &{
+      top:-75px;
+      right: -150px !important;
+      //display:none !important;
+    }
+  }
+}
+
+.header--master__lang-switch{
+  position: absolute;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 0.5em;
+  padding: 0.4em 0.75em;
+  color: #fff;
+  @extend .zeta;
+  font-weight: 100;
+  @include media-query(desk){
+    top: 1em;
+  }
+}
+.header--master__lang-a{
+   color: white;
+  padding-bottom: 2px;
+ }
+.header--master__lang{
+
+  padding: 0 0.5em;
+}
+.lang-active{
+  border-bottom: solid 1px white ;
+}
+
+.header--master__tel{
+  @extend .delta;
+  font-weight: 100;
+  display:none;
+  position: absolute;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 2.5em;
+  color: #fff;
+  padding: 0.4em 0.75em;
+  border:none;;
+  @include media-query(desk){
+    display:block;
+  }
+  .home &{
+    @extend .delta;
+
+  }
+  a{
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+
+    .icon{
+      margin-right: 0.3em;
+    }
+  }
+
+
+
+  .header--master__tel__call{
+    display: inline;
+    height: 23px;
+    position: relative;
+    top: 3px;
+    width: 19px;
+
+  }
+
+
+}
+
+
+.header--master__strap{
+  @extend .gamma;
+  line-height: 1.5em;
+  font-weight: 100;
+  position: absolute;
+  z-index: 9999;
+  color: $brand-col-2;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.26);
+  top: 70px;
+  left: 1em;
+  .home & {
+    top: 230px;
+    left: 20px;
+  }
+  @include media-query(lap){
+    font-size: 1.5em;
+    line-height: 1.2em;
+    top: 50px !important;
+    right: 65% !important;
+    left: auto !important;
+    .home &{
+      font-size: 1.5em;
+      right: 65% !important;
+      top:  auto !important;
+      left: auto;
+      bottom: 2em !important;;
+    }
+
+  }
+  @include media-query(desk){
+    font-size: 2.2em ;
+    line-height: 1.2em;
+    font-weight: 100;
+    top: 0.5em;
+    bottom: auto;
+    right: auto;
+    left: 0.5em;
+    .home &{
+      top: 100px;
+      right: 66% ;
+      left: auto;
+      bottom: auto;
+    }
+    br{
+      display: none;
+      .home &{
+        display: block;
+      }
+    }
+
+  }
+
+  b{
+    font-style: italic;
+    font-weight: 400;
+  }
+}
+@media (min-width: 610px) and(max-width: 1023px) {
+  .header--master__strap{
+    top: 0.5em;
+    bottom: auto;
+    right: auto;
+    left: 0.5em;
+    .home &{
+      font-size: 2em;
+      right: 60% !important;
+      top:  auto;
+      left: auto;
+      bottom: 0.5em;;
+    }
+  }
+
+}
+/* ? */
+.header--master__branding{
+  @extend .grid;
+  overflow: hidden;
+
+}
+
+/*
+ * .header--article modifier. The title containers above articles.
+ * also see _title.scss
+ */
+.header--article{
+  @extend .header;
+  margin-bottom: 0;
+  .header--article__title{
+    color: $brand-col-2;
+    border-bottom: 1px solid $brand-col-2;
+    margin-bottom: 0.25em;
+    padding-bottom: 0.25em;
+  }
+}
+
+.header__title{
+  @include x-rem(margin-bottom, 1);
+  .rtl &{
+    direction: rtl;
+  }
+}

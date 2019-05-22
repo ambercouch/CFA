@@ -1,0 +1,7 @@
+.lang--en,.lang--cy{
+  display:none;
+}
+
+.en .lang--en,.cy .lang--cy{
+  display:inherit;
+}

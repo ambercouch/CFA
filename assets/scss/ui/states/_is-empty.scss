@@ -1,0 +1,7 @@
+/*
+removes max-widths from p that have no text node
+*/
+
+.is-empty{
+  max-width: none !important;
+}

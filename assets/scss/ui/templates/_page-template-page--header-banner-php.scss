@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 03-Nov-2014, 10:31:03
+    Author     : Richard
+*/
+
+.page-template-page--header-banner-php{
+  .header--master{
+    display: block !important;
+    height: 170px !important;
+    @include media-query(lap-and-up){
+      height: 325px !important;
+    }
+  }
+
+  .header--master__banner-image{
+    top: -210px;;
+  }
+  .header--master__strap{
+    color: #fff;
+    bottom: auto;
+    left: auto;
+    right: 60%;
+    top: 50px;
+    @include media-query('lap-and-up'){
+      right: 66%;
+      top: 100px !important;
+    }
+  }
+  .header--master__strap br {
+    display: block;
+  }
+}

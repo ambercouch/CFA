@@ -1,0 +1,266 @@
+
+.textwidget--single-image{
+  text-align:center;
+  .widget{
+    border-color: $brand-col-3--light;
+    border-width: 0px;
+    height: 130px;
+    margin-bottom: 1em;
+  }
+  .title--widget{
+    text-transform: none;
+    background: $brand-col-4 !important;
+    color: #fff !important;
+    //text-align:left;
+    //font-weight: 600;
+    //text-align: center;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.3em;
+    padding-top: 0.4em;
+
+    line-height: 1;
+  }
+  .textwidget{
+    padding: 0 0 1.5em;
+
+  }
+  img{
+    display: inline;
+  }
+  .icon{
+    width: 100%;
+    height: 60px;
+    fill:$brand-col-1--tint;
+    &.allianz{
+      height: 40px;
+    }
+  }
+}
+.textwidget--official{
+  @extend .textwidget--single-image;
+  @include media-query(lap){
+    width:33.33% !important;
+  }
+}
+.textwidget--service-award{
+  @extend .textwidget--single-image;
+  @include media-query(lap){
+    width:33.33% !important;
+  }
+}
+.textwidget--flagship{
+  @extend .textwidget--single-image;
+  @include media-query(lap){
+    width:33.33% !important;
+  }
+
+}
+
+/*.textwidget--service-award{
+  @include media-query(desk){
+    display:none !important;
+  }
+  padding-top: 1em;
+  text-align:center;
+  .textwidget{
+    padding-bottom: 1.5em;
+  }
+  .icon{
+    width: 100%;
+    height: 134px;
+    fill:$brand-col-1
+  }
+
+}*/
+
+.textwidget--company-address{
+  @include media-query(desk){
+    width: 16.666% !important;
+  }
+  @include media-query(lap){
+    width: 33.33% !important;
+  }
+  color: #fff;
+  a{
+    @extend %link-style-1;
+  }
+  .textwidget{
+    @include x-rem(font-size, 0.8);
+    padding: 0 0 0 $half-spacing-unit;
+    @media (min-width: 1100px) {
+      padding: 0;
+    }
+  }
+}
+.textwidget--social-media{
+  width: 16.666% !important;
+  color: #fff;
+  a{
+    text-decoration: none;
+  }
+  .textwidget{
+    @include x-rem(font-size, 0.8);
+    @media (min-width: 1100px) {
+      padding: 0;
+    }
+  }
+  .icon{
+    height: 4em;
+    width: 4em;
+  }
+}
+.textwidget--company-contact{
+  @include media-query(palm){
+    width: 66.66% !important;
+  }
+  color: #fff;
+  a{
+    @extend %link-style-1;
+  }
+  .textwidget{
+    @include x-rem(font-size, 0.8);
+    padding: 0 0 0 $half-spacing-unit;
+    @media (min-width: 1100px) {
+      padding: 0;
+    }
+  }
+  .icon{
+    fill: #fff;
+    height: 1em;
+    vertical-align: middle;
+    width: 1em;
+  }
+}
+.textwidget--service-award--mobile{
+  display: none !important;
+  @include media-query(desk){
+    display:inline-block !important;
+  }
+
+  text-align:center;
+  .textwidget{
+    padding: 0 0 1.5em 0;
+
+  }
+  .icon{
+    width: 65%;
+    height: 87px;
+    fill:$brand-col-1
+  }
+
+}
+.textwidget--opening-times{
+  .textwidget{
+    padding: 0 0 1.5em 0;
+  }
+  .title--widget{
+    background: $brand-col-4;
+    color: #fff;
+  }
+
+  .timetable{
+    margin-bottom: 0;
+    //@extend .table--data;
+    @extend .epsilon;
+    line-height: 1.28;
+    tr:nth-of-type(odd){
+      background-color:rgba($brand-col-4, 0.2); /* Override this color in your theme stylesheet */
+      /*      td{
+              border-color: rgba($brand-col-4, 0.3)!important;
+            }*/
+
+    }
+    th{
+      padding: 0.75em
+    }
+    td{
+      padding: 0.75em
+    }
+  }
+  &.open{
+    .open-highlight{
+      border: solid 1px $brand-col-4;
+      font-weight: 700;
+    }
+  }
+}
+.textwidget--spacer{
+  .widget{
+    margin-bottom: 0 !important;
+    border-bottom: none;
+  }
+  .textwidget{
+    padding: 0 ;
+    @include x-rem(padding-top,  1.2);
+  }
+}
+%textwidget--boxy{
+  background-color: $brand-col-4;
+  color: #fff;
+  margin-bottom: $base-spacing-unit;
+  @include media-query(desk){
+    margin-bottom: 0;
+    border-radius: 4px;
+  }
+
+  .widget{
+    padding-top: 1em;
+    border-bottom: none;
+  }
+  .title--widget{
+    background-color:transparent;
+    color: #fff;
+  }
+  svg{
+    max-width: 100%;
+  }
+}
+
+.textwidget--book-online{
+  @extend %textwidget--boxy;
+  a.btn{
+    color:#fff !important;
+    background-color: $brand-col-2;
+    border: none !important;
+    line-height: 2.3em;
+  }
+  a.btn:hover {
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
+    background-color: $brand-col-2--tint;
+    box-shadow: 0 4px 0  lighten($brand-col-2--shade, 5%), 0 5px 5px 1px rgba(0, 0, 0, 0.4) !important;
+
+  }
+
+  a.btn:active {
+    position: relative;
+    top: 4px;
+    box-shadow: none;
+  }
+}
+.textwidget--finance{
+  @extend %textwidget--boxy;
+  background-color:rgba($brand-col-4, 0.25);
+}
+.textwidget--book-online--underline{
+  .widget{
+    border-bottom: solid 3px $brand-col-2;
+    padding-bottom: $base-spacing-unit / 4;
+  }
+  a.btn{
+    color:#fff !important;
+    background-color: $brand-col-2;
+    border: none !important;
+    line-height: 2.3em;
+  }
+  a.btn:hover {
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
+    background-color: $brand-col-2--tint;
+    box-shadow: 0 4px 0  lighten($brand-col-2--shade, 5%), 0 5px 5px 1px rgba(0, 0, 0, 0.4) !important;
+
+  }
+  a.btn:active {
+    position: relative;
+    top: 4px;
+    box-shadow: none;
+  }
+}

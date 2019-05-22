@@ -1,0 +1,12 @@
+%multi-dropdown {
+  ul{
+    background: $brand-col-4;
+    z-index: 999;
+    li{
+      a{
+        display:block;
+        padding: $half-spacing-unit;
+      }
+    }
+  }
+}

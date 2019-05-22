@@ -1,0 +1,129 @@
+/*
+ * video-preview
+ */
+
+.video-preview{
+  display:block;
+  width: 100%;
+  //background: rgba(0, 0, 0, 0.05);
+  left: 0px;
+  position: relative;
+  padding: 12px 10px;
+  font-size: 0;
+  text-align: center;
+  margin: 20px 0;
+  border: solid 1px #fff;
+}
+
+.video-preview__video-thumb{
+  padding: 5px;
+  display:block;
+  width: 100%;
+  margin: 0 auto $half-spacing-unit;
+  max-width: 200px;
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  vertical-align: top;
+  line-height: 14px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  @include media-query(lap-and-up){
+    display: inline-block;
+    width: 32.333%;
+    margin: 0 0 0 0.7%
+  }
+}
+.video-preview__video-thumb:first-of-type{
+  @include media-query(lap-and-up){
+    margin-left: 0;
+  }
+}
+.video-preview__video-thumb:last-of-type{
+  @include media-query(lap-and-up){
+    margin-right: 0;
+  }
+}
+
+.video-thumb{
+  background: $brand-col-2;
+  height: 104px;
+  position: relative;
+}
+.video-link{
+  display: block;
+  width:100%;
+  height: 100%;
+  border: none !important;
+}
+.video-link__icon--play{
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
+
+  height: 80px;
+  width: 80px;
+  margin-top: 12px;
+  opacity: 0.3;
+
+}
+.video-link:hover .video-link__icon--play{
+  margin-top: 9px;
+  opacity: 0.4;
+  height: 86px;
+  width: 86px;
+}
+.video-link__logo{
+  color: #3F002E;
+  line-height: 2;
+  display: block;
+  font-size: 1em;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+.video-link__play-text {
+
+  color: #fff;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  left: 50%;
+  margin-left: -18px;
+  padding: 10px 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 36px;
+  width: 35px;
+}
+
+.video-thumb img{
+  width:100%;
+  height: auto;
+  border: none !important
+}
+.video-thumb .wp-post-image{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+.video-preview__video-title{
+  color: #3F002E;
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin: 0;
+}
+.video-thumb .video-link__icon{
+  width:45px;
+  height:45px;
+  margin-top: 10px;
+  opacity: 0.5;
+  position: relative;
+}
+
+

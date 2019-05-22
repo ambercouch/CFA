@@ -1,0 +1,15 @@
+.footer{
+  display:block;
+}
+.footer--master{
+  @extend .footer;
+  @extend .container;
+  @extend .delta;
+  a{
+    @extend %link-style-1;
+  }
+}
+.footer--master__site-info{
+  color: #fff;
+}
+

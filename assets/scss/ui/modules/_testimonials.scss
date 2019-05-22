@@ -1,0 +1,67 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 13-Nov-2014, 18:20:48
+    Author     : Richard
+*/
+.testimonials{
+  margin-bottom: $base-spacing-unit;
+}
+.testimonials__year{
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 1em;
+  &.open{
+    max-height: 300em;
+  }
+}
+.testimonials__this-year{
+  max-height: none;
+}
+.testimonials__testimonial{
+  list-style: none;
+}
+.testimonials__cite{
+  @extend .gamma;
+  font-weight: 600;
+  font-style: normal;
+  color: $brand-col-2;
+
+}
+.testimonials__meta{
+  @extend .smallprint;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+  border-bottom: solid 1px $brand-col-3--tint;
+}
+.testimonials__year-toggle{
+  transition: background 0.3s ease,
+    text-shadow 0.3s ease;
+  text-shadow: 0 1px 0 rgba(#000, 0.3);
+  background: $brand-col-4;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  margin: 0 0 1em 1em;
+  display: block;
+  color: #fff;
+  &.closed{
+    .hide{
+      display: none;
+    }
+  }
+  &.open{
+    .show{
+      display: none;
+    }
+  }
+  &:hover{
+    background: $brand-col-2;
+    text-shadow: 0 1px 0 rgba(#000, 0.7);
+  }
+
+}

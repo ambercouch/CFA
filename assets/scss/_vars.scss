@@ -1,0 +1,115 @@
+/*------------------------------------*\
+    VARS.SCSS
+\*------------------------------------*/
+/**
+ * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
+ * keep, simply redefine here. This means that if inuit.css, for example, sets
+ * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
+ * that variable in this file. inuit.css ignores its own variables in favour of
+ * using your own, so you can completely modify how inuit.css works without ever
+ * having to alter the framework itself.
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * All of inuit.css’ objects and abstractions are initially turned off by
+ * default. This means that you start any project with as little as possible,
+ * and introducing objects and abstractions is as simple as switching the
+ * following variables to `true`.
+ */
+$use-grids:         true;
+$use-flexbox:       false;
+$use-columns:       false;
+$use-nav:           true;
+$use-options:       false;
+$use-pagination:    false;
+$use-breadcrumb:    false;
+$use-media:         true;
+$use-marginalia:    false;
+$use-island:        true;
+$use-block-list:    false;
+$use-matrix:        true;
+$use-split:         false;
+$use-this-or-this:  false;
+$use-link-complex:  false;
+$use-flyout:        false;
+$use-arrows:        false;
+$use-sprite:        false;
+$use-icon-text:     false;
+$use-beautons:      false;
+$use-lozenges:      false;
+$use-rules:         true;
+$use-stats:         false;
+$use-greybox:       false;
+
+
+
+
+
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+/**
+ * Place any variables that should override inuit.css’ defaults here.
+ */
+
+$base-font-size:    17px;
+$base-line-height:  25px;
+
+/**
+ * Base font-family.
+ */
+$base-font-family:  proxima-nova, sans-serif;
+$font-stack--trebrebuchet: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+$lap-start:         481px!default;
+$desk-start:        800px!default;
+$desk-wide-start:   1200px!default;
+
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of inuit.css here.
+ */
+
+// Add percentage of white to a color
+@function tint($color, $percent) {
+  @return mix(white, $color, $percent);
+}
+
+// Add percentage of black to a color
+@function shade($color, $percent) {
+  @return mix(black, $color, $percent);
+}
+
+$brand-col-1: #4d4b4a;
+$brand-col-1--shade: shade($brand-col-1, 50%);
+$brand-col-1--tint: tint($brand-col-1, 25%);
+$brand-col-1--light: lighten($brand-col-1, 50%);
+$brand-col-2: #650360;
+$brand-col-2--shade: shade($brand-col-2, 25%);
+$brand-col-2--tint: tint($brand-col-2,25%);
+$brand-col-3: #92836d;
+$brand-col-3--tint: tint($brand-col-3, 25%);
+$brand-col-3--light: lighten($brand-col-3, 25%);
+$brand-col-3--shade: shade($brand-col-3, 50%);
+$brand-col-4: #b281af;
+$brand-col-4--tint: tint($brand-col-4, 25%);
+$brand-col-4--light: lighten($brand-col-4, 25%);
+$brand-col-4--shade: shade($brand-col-4, 25%);
+$brand-col-5: #ddd;
+$brand-col-6: #eaece9;
+$brand-col-7: #AF859B;
+
+
+$brand-round: 2px;

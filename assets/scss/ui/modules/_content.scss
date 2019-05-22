@@ -1,0 +1,140 @@
+.content{
+  @extend .container;
+  max-width:924px;
+}
+
+.content__post-list,
+.content__post-archive,
+.content__single-post,
+.content__single-page,
+.content__search-list{
+  @extend .one-whole;
+  @extend .lap-one-whole;
+  @extend .desk-two-thirds;
+}
+.content__search-list{
+  @extend .one-whole;
+  @extend .lap-two-thirds;
+  @extend .desk-four-fifths;
+}
+.content__widget-area{
+  @extend .one-whole;
+  @extend .lap-one-whole;
+  @extend .desk-one-third;
+  &.is-small{
+    @extend .desk-one-quarter;
+  }
+
+}
+
+.content__widget-area--main{
+  @extend .content__widget-area;
+  a{
+    transition: background 0.3s ease,
+      border-bottom 0.3s ease,
+      box-shadow 0.3s ease,
+      text-shadow 0.3s ease;
+    color: $brand-col-2;
+    text-decoration: none;
+    border: solid 1px #fff;
+    background-color:rgba($brand-col-4, 0.25);
+    &:hover{
+      color: $brand-col-2--shade;
+      //background: rgba($brand-col-3--tint, 0.1);
+      /* border-bottom: solid 1px $brand-col-3;*/
+      text-shadow: 0 1px 0 rgba(#fff, 0.8);
+      box-shadow: inset 0px 0px 10px rgba($brand-col-4, 1);
+      background-color:rgba($brand-col-4, 0.5);
+
+    }
+  }
+  .current-menu-item a{
+    position: relative;
+    //background: $brand-col-4;
+    //color: #fff;
+    padding-left: 2em !important;
+    &:hover{
+      //color: #fff;
+      text-shadow: none;
+      box-shadow: none;
+      background-color:rgba($brand-col-4, 0.25);
+      color: $brand-col-2
+    }
+    &:before{
+      content: '';
+      height: 100%;
+      width: 1em;
+      background: $brand-col-2;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+.content__widget-area--below{
+  @include media-query(desk){
+    border-top: solid 1px $brand-col-3--tint;
+    border-bottom: solid 1px $brand-col-3--tint;
+    padding-top: 1em;
+  }
+  @extend .container;
+  margin-bottom: 2em;
+  @include media-query(palm){
+    max-width: 30em;
+    margin: 0 auto;
+  }
+  @include media-query(lap){
+    max-width: 30em;
+    margin: 0 auto;
+  }
+  .widget-area{
+    @extend .grid--full;
+
+  }
+  .widget{
+    @include media-query(desk){
+      height: auto;
+    }
+
+  }
+
+  .widget-area__widget{
+    @extend .content__widget-area;
+  }
+  .menu--dental-brands{
+    width: 100%;
+  }
+  .menu--finance{
+    @extend .desk-one-quarter;
+  }
+}
+.content__widget-area--footer{
+  @extend .container;
+
+  @include media-query(palm){
+    max-width: 30em;
+    margin: 0 auto;
+  }
+  @include media-query(lap){
+    max-width: 30em;
+    margin: 0 auto;
+  }
+
+  .widget-area{
+    @extend .grid;
+  }
+
+  .widget{
+    @include media-query(desk){
+
+    }
+    border: none;
+  }
+
+  .widget-area__widget{
+    @extend .content__widget-area;
+  }
+
+
+}

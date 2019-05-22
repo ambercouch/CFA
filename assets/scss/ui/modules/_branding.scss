@@ -1,0 +1,32 @@
+.branding{
+  direction: ltr;
+  height:70px;
+  @include media-query(desk){
+    height: 67px;
+  }
+
+
+
+  .branding__site-title{
+    @extend .kilo;
+    margin-top: 0.6em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    line-height: 1.333em;
+    color: $brand-col-2;
+    a{
+      color: $brand-col-2;
+      text-decoration: none;
+    }
+  }
+  .branding__description{
+    @extend .epsilon;
+    display:none;
+    color: $brand-col-2;
+    margin-bottom: 0;
+    font-weight: normal;
+
+  }
+
+}
+

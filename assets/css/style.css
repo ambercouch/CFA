@@ -1,0 +1,4914 @@
+@charset "UTF-8";
+/*------------------------------------*\
+  STYLE.CSS
+\*------------------------------------*/
+/**
+  *
+  * sass --watch style.scss:style.min.css --style compressed
+  *
+  * Here we pull in some variables, include the inuit.css framework, then add our
+  * project-specific components afterwards.
+*/
+/**
+  * Setup
+  */
+/*------------------------------------*\
+    VARS.SCSS
+\*------------------------------------*/
+/**
+ * Any variables you find set in inuit.css’ `_vars.scss` that you do not wish to
+ * keep, simply redefine here. This means that if inuit.css, for example, sets
+ * your `$base-font-size` at 16px and you wish it to be 14px, simply redeclare
+ * that variable in this file. inuit.css ignores its own variables in favour of
+ * using your own, so you can completely modify how inuit.css works without ever
+ * having to alter the framework itself.
+ */
+/*------------------------------------*\
+    $OBJECTS-AND-ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * All of inuit.css’ objects and abstractions are initially turned off by
+ * default. This means that you start any project with as little as possible,
+ * and introducing objects and abstractions is as simple as switching the
+ * following variables to `true`.
+ */
+/*------------------------------------*\
+    $OVERRIDES
+\*------------------------------------*/
+/**
+ * Place any variables that should override inuit.css’ defaults here.
+ */
+/**
+ * Base font-family.
+ */
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+/*------------------------------------*\
+    $CUSTOM
+\*------------------------------------*/
+/**
+ * Place any of your own variables that sit on top of inuit.css here.
+ */
+/*------------------------------------*\
+    INUIT.CSS
+\*------------------------------------*/
+/*!*
+ *
+ * inuitcss.com -- @inuitcss -- @csswizardry
+ *
+ */
+/**
+ * inuit.css acts as a base stylesheet which you should extend with your own
+ * theme stylesheet.
+ *
+ * inuit.css aims to do the heavy lifting; sorting objects and abstractions,
+ * design patterns and fiddly bits of CSS, whilst leaving as much design as
+ * possible to you. inuit.css is the scaffolding to your decorator.
+ *
+ * This stylesheet is heavily documented and contains lots of comments, please
+ * take care to read and refer to them as you build. For further support please
+ * tweet at @inuitcss.
+ *
+ * Owing to the amount of comments please only ever use minified CSS in
+ * production. This file is purely a dev document.
+ *
+ * The table of contents below maps to section titles of the same name, to jump
+ * to any section simply run a find for $[SECTION-TITLE].
+ *
+ * Most objects and abstractions come with a chunk of markup that you should be
+ * able to paste into any view to quickly see how the CSS works in conjunction
+ * with the correct HTML.
+ *
+ * inuit.css is written to this standard: github.com/csswizardry/CSS-Guidelines
+ *
+ * LICENSE
+ *
+ * Copyright 2013 Harry Roberts
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * Thank you for choosing inuit.css. May your web fonts render perfectly.
+ */
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * WARNING.............Here be dragons!
+ * IMPORTS.............Begin importing the sections below
+ *
+ * MIXINS..............Super-simple Sass stuff
+ * NORMALIZE...........normalize.css
+ * RESET...............Set some defaults
+ * CLEARFIX............
+ * SHARED..............Shared declarations
+ *
+ * MAIN................High-level elements like `html`, `body`, etc.
+ * HEADINGS............Double-stranded heading hierarchy
+ * PARAGRAPHS..........
+ * SMALLPRINT..........Smaller text elements like `small`
+ * QUOTES..............
+ * CODE................
+ * LISTS...............
+ * IMAGES..............
+ * TABLES..............
+ * FORMS...............
+ *
+ * GRIDS...............Fluid, proportional and nestable grids
+ * FLEXBOX.............Crudely emulate flexbox
+ * COLUMNS.............CSS3 columns
+ * NAV.................A simple abstraction to put a list in horizontal nav mode
+ * OPTIONS.............Grouped nav items
+ * PAGINATION..........Very stripped back, basic paginator
+ * BREADCRUMB..........Simple breadcrumb trail object
+ * MEDIA...............Media object
+ * MARGINALIA..........Simple marginalia content
+ * ISLAND..............Boxed off content
+ * BLOCK-LIST..........Blocky lists of content
+ * MATRIX..............Gridded lists
+ * SPLIT...............A simple split-in-two object
+ * THIS-OR-THIS........Options object
+ * LINK-COMPLEX........
+ * FLYOUT..............Flyout-on-hover object
+ * ARROWS..............CSS arrows
+ * SPRITE..............Generic spriting element
+ * ICON-TEXT...........Icon and text couplings
+ * BEAUTONS............Use the beautons micro library
+ * LOZENGES............Basic lozenge styles
+ * RULES...............Horizontal rules
+ * STATS...............Simple stats object
+ * GREYBOX.............Wireframing styles
+ *
+ * WIDTHS..............Width classes for use alongside the grid system etc.
+ * PUSH................Push classes for manipulating grids
+ * PULL................Pull classes for manipulating grids
+ * BRAND...............Helper class to apply brand treatment to elements
+ * HELPER..............A series of helper classes to use arbitrarily
+ * DEBUG...............Enable to add visual flags for debugging purposes
+ */
+/*------------------------------------*\
+    $WARNING
+\*------------------------------------*/
+/*
+ * inuit.css, being an OO framework, works in keeping with the open/closed
+ * principle. The variables you set previously are now being used throughout
+ * inuit.css to style everything we need for a base. Any custom styles SHOULD
+ * NOT be added or modified in inuit.css directly, but added via your theme
+ * stylesheet as per the open/closed principle:
+ *
+ * csswizardry.com/2012/06/the-open-closed-principle-applied-to-css
+ *
+ * Try not to edit any CSS beyond this point; if you find you need to do so
+ * it is a failing of the framework so please tweet at @inuitcss.
+ */
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+/**
+ * Generic utility styles etc.
+ */
+/*------------------------------------*\
+    $DEFAULTS
+\*------------------------------------*/
+/**
+ * inuit.css’ default variables. Redefine these in your `_vars.scss` file (found
+ * in the inuit.css-web-template) to override them.
+ */
+/*------------------------------------*\
+    $DEBUG
+\*------------------------------------*/
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+/*------------------------------------*\
+    $BORDER-BOX
+\*------------------------------------*/
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base stuff
+ */
+/**
+ * Base font-family.
+ */
+/**
+ * Default colour for objects’ borders etc.
+ */
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+/**
+ * Responsiveness?
+ */
+/**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: `$responsive` variable above must be set to true before enabling this.
+ */
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+/**
+ * Note: `$push` variable above must be set to true before enabling these.
+ */
+/**
+ * Note: `$pull` variable above must be set to true before enabling these.
+ */
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+/*------------------------------------*\
+    $FONT-SIZES
+\*------------------------------------*/
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * English quote marks?
+ */
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+/**
+ * How big would you like round corners to be by default?
+ */
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * inuit.css will work these next ones out for use within the framework.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+/**
+ * Style any number of headings in one fell swoop, e.g.:
+ *
+   .foo{
+       @include headings(1, 3){
+           color:#BADA55;
+       }
+    }
+ *
+ * With thanks to @lar_zzz, @paranoida, @rowanmanning and ultimately
+ * @thierrylemoulec for refining and improving my initial mixin.
+ */
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+/**
+ * Create CSS keyframe animations for all vendors in one go, e.g.:
+ *
+   .foo{
+       @include vendor(animation, shrink 3s);
+   }
+
+   @include keyframe(shrink){
+       from{
+           font-size:5em;
+       }
+   }
+ *
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+/**
+ * Force overly long spans of text to truncate, e.g.:
+ *
+   `@include truncate(100%);`
+ *
+ * Where `$truncation-boundary` is a united measurement.
+ */
+/**
+ * CSS arrows!!! But... before you read on, you might want to grab a coffee...
+ *
+ * This mixin creates a CSS arrow on a given element. We can have the arrow
+ * appear in one of 12 locations, thus:
+ *
+ *       01    02    03
+ *    +------------------+
+ * 12 |                  | 04
+ *    |                  |
+ * 11 |                  | 05
+ *    |                  |
+ * 10 |                  | 06
+ *    +------------------+
+ *       09    08    07
+ *
+ * You pass this position in along with a desired arrow color and optional
+ * border color, for example:
+ *
+ * `@include arrow(top, left, red)`
+ *
+ * for just a single, red arrow, or:
+ *
+ * `@include arrow(bottom, center, red, black)`
+ *
+ * which will create a red triangle with a black border which sits at the bottom
+ * center of the element. Call the mixin thus:
+ *
+   .foo{
+       background-color:#BADA55;
+       border:1px solid #ACE;
+       @include arrow(top, left, #BADA55, #ACE);
+   }
+ *
+ */
+/**
+ * Media query mixin.
+ *
+ * It’s not great practice to define solid breakpoints up-front, preferring to
+ * modify your design when it needs it, rather than assuming you’ll want a
+ * change at ‘mobile’. However, as inuit.css is required to take a hands off
+ * approach to design decisions, this is the closest we can get to baked-in
+ * responsiveness. It’s flexible enough to allow you to set your own breakpoints
+ * but solid enough to be frameworkified.
+ *
+ * We define some broad breakpoints in our vars file that are picked up here
+ * for use in a simple media query mixin. Our options are:
+ *
+ * palm
+ * lap
+ * lap-and-up
+ * portable
+ * desk
+ * desk-wide
+ *
+ * Not using a media query will, naturally, serve styles to all devices.
+ *
+ * `@include media-query(palm){ [styles here] }`
+ *
+ * We work out your end points for you:
+ */
+/*! normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Correct `block` display not defined in IE 8/9.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/*
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio, canvas, video {
+  display: inline-block; }
+
+/*
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/*
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/*
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/*
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/*
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/*
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/*
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/*
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/*
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button, input, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/*
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button, input {
+  line-height: normal; }
+
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button, select {
+  text-transform: none; }
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/**
+ * A more considered reset; more of a restart...
+ * As per: csswizardry.com/2011/10/reset-restarted
+ */
+/**
+    * Let’s make the box model all nice, shall we...?
+    */
+*, *:before, *:after {
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * The usual...
+ */
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, table, th, td, caption, hr {
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+abbr[title], dfn[title] {
+  cursor: help; }
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+u, ins {
+  text-decoration: none; }
+
+/**
+ * Apply faux underline via `border-bottom`.
+ */
+ins {
+  border-bottom: 1px solid; }
+
+/**
+ * So that `alt` text is visually offset if images don’t load.
+ */
+img {
+  font-style: italic; }
+
+/**
+ * Give form elements some cursor interactions...
+ */
+label, input, textarea, button, select, option {
+  cursor: pointer; }
+
+.text-input:active, .text-input:focus, textarea:active, textarea:focus {
+  cursor: text;
+  outline: none; }
+
+/*------------------------------------*\
+    $CLEARFIX
+\*------------------------------------*/
+/**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
+ * and over in your markup.
+ */
+.cf:after, .nav:after, .menu:after, .menu--site:after, .menu--site__menu-list:after, .media:after, .island:after, .islet:after, .page-id-25 .contact-boxes__label:after, .page-id-25 .contact-boxes__deets:after, .page-id-85 .benifit:after, .matrix:after, .menu--services__menu-list:after, .multi-list:after, .post .post__content:after, .page__content:after, .page__content .sig:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/*------------------------------------*\
+    $SHARED
+\*------------------------------------*/
+/**
+ * Where `margin-bottom` is concerned, this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ * As per: csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+/**
+ * Base elements
+ */
+h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dl, blockquote, p, address, table, fieldset, figure, pre, .form-fields > li, .media, .island, .islet, .page-id-25 .contact-boxes__label, .page-id-25 .contact-boxes__deets, .page-id-85 .benifit {
+  margin-bottom: 25px;
+  margin-bottom: 1.4705882353rem; }
+  .islet h1, .page-id-25 .contact-boxes__label h1, .page-id-25 .contact-boxes__deets h1, .page-id-85 .benifit h1, .islet h2, .page-id-25 .contact-boxes__label h2, .page-id-25 .contact-boxes__deets h2, .page-id-85 .benifit h2, .islet h3, .page-id-25 .contact-boxes__label h3, .page-id-25 .contact-boxes__deets h3, .page-id-85 .benifit h3, .islet h4, .page-id-25 .contact-boxes__label h4, .page-id-25 .contact-boxes__deets h4, .page-id-85 .benifit h4, .islet h5, .page-id-25 .contact-boxes__label h5, .page-id-25 .contact-boxes__deets h5, .page-id-85 .benifit h5, .islet h6, .page-id-25 .contact-boxes__label h6, .page-id-25 .contact-boxes__deets h6, .page-id-85 .benifit h6, .islet hgroup, .page-id-25 .contact-boxes__label hgroup, .page-id-25 .contact-boxes__deets hgroup, .page-id-85 .benifit hgroup, .islet ul, .page-id-25 .contact-boxes__label ul, .page-id-25 .contact-boxes__deets ul, .page-id-85 .benifit ul, .islet ol, .page-id-25 .contact-boxes__label ol, .page-id-25 .contact-boxes__deets ol, .page-id-85 .benifit ol, .islet dl, .page-id-25 .contact-boxes__label dl, .page-id-25 .contact-boxes__deets dl, .page-id-85 .benifit dl, .islet blockquote, .page-id-25 .contact-boxes__label blockquote, .page-id-25 .contact-boxes__deets blockquote, .page-id-85 .benifit blockquote, .islet p, .page-id-25 .contact-boxes__label p, .page-id-25 .contact-boxes__deets p, .page-id-85 .benifit p, .islet address, .page-id-25 .contact-boxes__label address, .page-id-25 .contact-boxes__deets address, .page-id-85 .benifit address, .islet table, .page-id-25 .contact-boxes__label table, .page-id-25 .contact-boxes__deets table, .page-id-85 .benifit table, .islet fieldset, .page-id-25 .contact-boxes__label fieldset, .page-id-25 .contact-boxes__deets fieldset, .page-id-85 .benifit fieldset, .islet figure, .page-id-25 .contact-boxes__label figure, .page-id-25 .contact-boxes__deets figure, .page-id-85 .benifit figure, .islet pre, .page-id-25 .contact-boxes__label pre, .page-id-25 .contact-boxes__deets pre, .page-id-85 .benifit pre, .islet .form-fields > li, .page-id-25 .contact-boxes__label .form-fields > li, .page-id-25 .contact-boxes__deets .form-fields > li, .page-id-85 .benifit .form-fields > li, .islet .media, .page-id-25 .contact-boxes__label .media, .page-id-25 .contact-boxes__deets .media, .page-id-85 .benifit .media, .islet .island, .page-id-25 .contact-boxes__label .island, .page-id-25 .contact-boxes__deets .island, .page-id-85 .benifit .island, .islet .islet, .page-id-25 .contact-boxes__label .islet, .page-id-25 .contact-boxes__deets .islet, .page-id-85 .benifit .islet, .islet .page-id-25 .contact-boxes__label, .page-id-25 .islet .contact-boxes__label, .page-id-25 .contact-boxes__label .contact-boxes__label, .page-id-25 .contact-boxes__deets .contact-boxes__label, .page-id-85 .benifit .page-id-25 .contact-boxes__label, .page-id-25 .page-id-85 .benifit .contact-boxes__label, .islet .page-id-25 .contact-boxes__deets, .page-id-25 .islet .contact-boxes__deets, .page-id-25 .contact-boxes__label .contact-boxes__deets, .page-id-25 .contact-boxes__deets .contact-boxes__deets, .page-id-85 .benifit .page-id-25 .contact-boxes__deets, .page-id-25 .page-id-85 .benifit .contact-boxes__deets, .islet .page-id-85 .benifit, .page-id-85 .islet .benifit, .page-id-25 .contact-boxes__label .page-id-85 .benifit, .page-id-85 .page-id-25 .contact-boxes__label .benifit, .page-id-25 .contact-boxes__deets .page-id-85 .benifit, .page-id-85 .page-id-25 .contact-boxes__deets .benifit, .page-id-85 .benifit .benifit {
+    margin-bottom: 12.5px;
+    margin-bottom: 0.7352941176rem; }
+
+/**
+ * Doubled up `margin-bottom` helper class.
+ */
+.landmark {
+  margin-bottom: 50px;
+  margin-bottom: 2.9411764706rem; }
+
+/**
+ * `hr` elements only take up a few pixels, so we need to give them special
+ * treatment regarding vertical rhythm.
+ */
+hr {
+  margin-bottom: 23px;
+  margin-bottom: 1.3529411765rem; }
+
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once, here.
+ */
+ul, ol, dd {
+  margin-left: 50px;
+  margin-left: 2.9411764706rem; }
+
+/**
+ * Base styles; unclassed HTML elements etc.
+ */
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+html {
+  font: 1.0625em/1.4705882353 proxima-nova, sans-serif;
+  overflow-y: scroll;
+  min-height: 100%; }
+
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+h1, .alpha {
+  font-size: 36px;
+  font-size: 2.1176470588rem;
+  line-height: 1.3888888889; }
+
+h2, .beta {
+  font-size: 30px;
+  font-size: 1.7647058824rem;
+  line-height: 1.6666666667; }
+
+h3, .gamma, .header--master__strap, .testimonials__cite {
+  font-size: 24px;
+  font-size: 1.4117647059rem;
+  line-height: 1.0416666667; }
+
+h4, .delta, .header--master__tel, .home .header--master__tel, .footer--master {
+  font-size: 20px;
+  font-size: 1.1764705882rem;
+  line-height: 1.25; }
+
+h5, .epsilon, .branding .branding__description, .title--widget, .textwidget--opening-times .timetable {
+  font-size: 16px;
+  font-size: 0.9411764706rem;
+  line-height: 1.5625; }
+
+h6, .zeta, .form-contact label, .form-contact--mobile label, .form-contact--primary label {
+  font-size: 14px;
+  font-size: 0.8235294118rem;
+  line-height: 1.7857142857; }
+
+/**
+ * Heading groups and generic any-heading class.
+ * To target any heading of any level simply apply a class of `.hN`, e.g.:
+ *
+   <hgroup>
+       <h1 class=hN>inuit.css</h1>
+       <h2 class=hN>Best. Framework. Ever!</h2>
+   </hgroup>
+ *
+ */
+hgroup .hN {
+  margin-bottom: 0; }
+
+/**
+ * A series of classes for setting massive type; for use in heroes, mastheads,
+ * promos, etc.
+ */
+.giga {
+  font-size: 96px;
+  font-size: 5.6470588235rem;
+  line-height: 1.0416666667; }
+
+.mega {
+  font-size: 72px;
+  font-size: 4.2352941176rem;
+  line-height: 1.0416666667; }
+
+.kilo, .branding .branding__site-title {
+  font-size: 48px;
+  font-size: 2.8235294118rem;
+  line-height: 1.0416666667; }
+
+/*------------------------------------*\
+    $PARAGRAPHS
+\*------------------------------------*/
+/**
+ * The `.lede` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger.
+ */
+.lede, .lead {
+  font-size: 19.125px;
+  font-size: 1.125rem;
+  line-height: 1.3071895425; }
+
+/*------------------------------------*\
+    $SMALLPRINT
+\*------------------------------------*/
+/**
+ * A series of classes for setting tiny type; for use in smallprint etc.
+ */
+.smallprint, .meta, .meta--footer, .meta--header, .testimonials__meta, .milli, .widget_calendar {
+  font-size: 12px;
+  font-size: 0.7058823529rem;
+  line-height: 2.0833333333; }
+
+.micro {
+  font-size: 10px;
+  font-size: 0.5882352941rem;
+  line-height: 2.5; }
+
+/*------------------------------------*\
+    $QUOTES
+\*------------------------------------*/
+/**
+ * If English quotes are set in `_vars.scss`, define them here.
+ */
+/**
+ * Big up @boblet: html5doctor.com/blockquote-q-cite
+ */
+/**
+ * Inline quotes.
+ */
+q {
+  quotes: "\2018" "\2019" "\201C" "\201D"; }
+  q:before {
+    content: "\2018";
+    content: open-quote; }
+  q:after {
+    content: "\2019";
+    content: close-quote; }
+  q q:before {
+    content: "\201C";
+    content: open-quote; }
+  q q:after {
+    content: "\201D";
+    content: close-quote; }
+
+blockquote {
+  quotes: "\201C" "\201D"; }
+  blockquote p:before {
+    content: "\201C";
+    content: open-quote; }
+  blockquote p:after {
+    content: "";
+    content: no-close-quote; }
+  blockquote p:last-of-type:after {
+    content: "\201D";
+    content: close-quote; }
+  blockquote q:before {
+    content: "\2018";
+    content: open-quote; }
+  blockquote q:after {
+    content: "\2019";
+    content: close-quote; }
+
+/**
+ *
+   <blockquote>
+       <p>Insanity: doing the same thing over and over again and expecting
+       different results.</p>
+       <b class=source>Albert Einstein</b>
+   </blockquote>
+ *
+ */
+blockquote {
+  /**
+     * .4em is roughly equal to the width of the opening “ that we wish to hang.
+     */
+  text-indent: -0.41em; }
+  blockquote p:last-of-type {
+    margin-bottom: 0; }
+
+.source {
+  display: block;
+  text-indent: 0; }
+  .source:before {
+    content: "\2014"; }
+
+/*------------------------------------*\
+    $CODE
+\*------------------------------------*/
+/**
+ * Use an explicit font stack to ensure browsers render correct `line-height`.
+ */
+pre {
+  overflow: auto; }
+
+pre mark {
+  background: none;
+  border-bottom: 1px solid;
+  color: inherit; }
+
+/**
+ * Add comments to your code examples, e.g.:
+ *
+   <code>&lt;/div&gt;<span class=code-comment>&lt;!-- /wrapper --&gt;</span></code>
+ *
+ */
+.code-comment {
+  /**
+     * Override this setting in your theme stylesheet
+     */
+  opacity: 0.75;
+  filter: alpha(opacity=75); }
+
+/**
+ * You can add line numbers to your code examples but be warned, it requires
+ * some pretty funky looking markup, e.g.:
+ *
+   <ol class=line-numbers>
+       <li><code>.nav{</code></li>
+       <li><code>    list-style:none;</code></li>
+       <li><code>    margin-left:0;</code></li>
+       <li><code>}</code></li>
+       <li><code>    .nav > li,</code></li>
+       <li><code>        .nav > li > a{</code></li>
+       <li><code>            display:inline-block;</code></li>
+       <li><code>           *display:inline-block;</code></li>
+       <li><code>            zoom:1;</code></li>
+       <li><code>        }</code></li>
+   </ol>
+ *
+ * 1. Make the list look like code.
+ * 2. Give the list flush numbers with a leading zero.
+ * 3. Make sure lines of code don’t wrap.
+ * 4. Give the code form by forcing the `code` to honour white-space.
+ */
+.line-numbers {
+  font-family: monospace, serif;
+  /* [1] */
+  list-style: decimal-leading-zero inside;
+  /* [2] */
+  white-space: nowrap;
+  /* [3] */
+  overflow: auto;
+  /* [3] */
+  margin-left: 0; }
+
+.line-numbers code {
+  white-space: pre;
+  /* [4] */ }
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+/**
+ * Demo: jsfiddle.net/inuitcss/yMtur
+ */
+/**
+ * Fluid images.
+ */
+img {
+  max-width: 100%; }
+
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+img[width], img[height] {
+  max-width: none; }
+
+/**
+ * Rounded images.
+ */
+.img--round {
+  border-radius: 2px; }
+
+/**
+ * Image placement variations.
+ */
+.img--right {
+  float: right;
+  margin-bottom: 25px;
+  margin-left: 25px; }
+
+.img--left {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 25px; }
+
+.img--center {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 25px;
+  margin-left: auto; }
+
+/**
+ * Keep your images on your baseline.
+ *
+ * Please note, these will not work too nicely with fluid images and will
+ * distort when resized below a certain width. Use with caution.
+ */
+.img--short {
+  height: 125px; }
+
+.img--medium {
+  height: 250px; }
+
+.img--tall {
+  height: 375px; }
+
+/**
+ * Images in `figure` elements.
+ */
+figure > img {
+  display: block; }
+
+/*------------------------------------*\
+    $LISTS
+\*------------------------------------*/
+/**
+ * Remove vertical spacing from nested lists.
+ */
+li > ul, li > ol {
+  margin-bottom: 0; }
+
+/**
+ * Have a numbered `ul` without the semantics implied by using an `ol`.
+ */
+/*ul*/
+.numbered-list {
+  list-style-type: decimal; }
+
+/*------------------------------------*\
+    $TABLES
+\*------------------------------------*/
+/**
+ * We have a lot at our disposal for making very complex table constructs, e.g.:
+ *
+   <table class="table--bordered  table--striped  table--data">
+       <colgroup>
+           <col class=t10>
+           <col class=t10>
+           <col class=t10>
+           <col>
+       </colgroup>
+       <thead>
+           <tr>
+               <th colspan=3>Foo</th>
+               <th>Bar</th>
+           </tr>
+           <tr>
+               <th>Lorem</th>
+               <th>Ipsum</th>
+               <th class=numerical>Dolor</th>
+               <th>Sit</th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr>
+               <th rowspan=3>Sit</th>
+               <td>Dolor</td>
+               <td class=numerical>03.788</td>
+               <td>Lorem</td>
+           </tr>
+           <tr>
+               <td>Dolor</td>
+               <td class=numerical>32.210</td>
+               <td>Lorem</td>
+           </tr>
+           <tr>
+               <td>Dolor</td>
+               <td class=numerical>47.797</td>
+               <td>Lorem</td>
+           </tr>
+           <tr>
+               <th rowspan=2>Sit</th>
+               <td>Dolor</td>
+               <td class=numerical>09.640</td>
+               <td>Lorem</td>
+           </tr>
+           <tr>
+               <td>Dolor</td>
+               <td class=numerical>12.117</td>
+               <td>Lorem</td>
+           </tr>
+       </tbody>
+   </table>
+ *
+ */
+table {
+  width: 100%; }
+
+th, td {
+  padding: 6.25px;
+  text-align: left; }
+  @media screen and (min-width: 480px) {
+    th, td {
+      padding: 12.5px; } }
+
+/**
+ * Cell alignments
+ */
+[colspan] {
+  text-align: center; }
+
+[colspan="1"] {
+  text-align: left; }
+
+[rowspan] {
+  vertical-align: middle; }
+
+[rowspan="1"] {
+  vertical-align: top; }
+
+.numerical {
+  text-align: right; }
+
+/**
+ * In the HTML above we see several `col` elements with classes whose numbers
+ * represent a percentage width for that column. We leave one column free of a
+ * class so that column can soak up the effects of any accidental breakage in
+ * the table.
+ */
+.t5 {
+  width: 5%; }
+
+.t10 {
+  width: 10%; }
+
+.t12 {
+  width: 12.5%; }
+
+/* 1/8 */
+.t15 {
+  width: 15%; }
+
+.t20 {
+  width: 20%; }
+
+.t25 {
+  width: 25%; }
+
+/* 1/4 */
+.t30 {
+  width: 30%; }
+
+.t33 {
+  width: 33.333%; }
+
+/* 1/3 */
+.t35 {
+  width: 35%; }
+
+.t37 {
+  width: 37.5%; }
+
+/* 3/8 */
+.t40 {
+  width: 40%; }
+
+.t45 {
+  width: 45%; }
+
+.t50 {
+  width: 50%; }
+
+/* 1/2 */
+.t55 {
+  width: 55%; }
+
+.t60 {
+  width: 60%; }
+
+.t62 {
+  width: 62.5%; }
+
+/* 5/8 */
+.t65 {
+  width: 65%; }
+
+.t66 {
+  width: 66.666%; }
+
+/* 2/3 */
+.t70 {
+  width: 70%; }
+
+.t75 {
+  width: 75%; }
+
+/* 3/4*/
+.t80 {
+  width: 80%; }
+
+.t85 {
+  width: 85%; }
+
+.t87 {
+  width: 87.5%; }
+
+/* 7/8 */
+.t90 {
+  width: 90%; }
+
+.t95 {
+  width: 95%; }
+
+/**
+ * Bordered tables
+ */
+.table--bordered th, .page-id-83 .table--finance th, .table--bordered td, .page-id-83 .table--finance td {
+  border: 1px solid #ccc; }
+  .table--bordered th:empty, .page-id-83 .table--finance th:empty, .table--bordered td:empty, .page-id-83 .table--finance td:empty {
+    border: none; }
+.table--bordered thead tr:last-child th, .page-id-83 .table--finance thead tr:last-child th {
+  border-bottom-width: 2px; }
+.table--bordered tbody tr th:last-of-type, .page-id-83 .table--finance tbody tr th:last-of-type {
+  border-right-width: 2px; }
+
+/**
+ * Striped tables
+ */
+.table--striped tbody tr:nth-of-type(odd) {
+  background-color: #ffc;
+  /* Override this color in your theme stylesheet */ }
+
+/**
+ * Data table
+ */
+.table--data, .page__content .price_list {
+  font: 12px/1.5 sans-serif; }
+
+/*------------------------------------*\
+    $FORMS
+\*------------------------------------*/
+/**
+ *
+ * Demo: jsfiddle.net/inuitcss/MhHHU
+ *
+ */
+fieldset {
+  padding: 25px; }
+
+/**
+ * Text inputs
+ *
+ * Instead of a `[type]` selector for each kind of form input, we just use a
+ * class to target any/every one, e.g.:
+   <input type=text class=text-input>
+   <input type=email class=text-input>
+   <input type=password class=text-input>
+ *
+ */
+.text-input, textarea {
+  /**
+     * Style these via your theme stylesheet.
+     */ }
+
+/**
+ * Group sets of form fields in a list, e.g.:
+ *
+   <ul class=form-fields>
+       <li>
+           <label />
+           <input />
+       </li>
+       <li>
+           <label />
+           <select />
+       </li>
+       <li>
+           <label />
+           <input />
+       </li>
+   </ul>
+ *
+ */
+.form-fields {
+  list-style: none;
+  margin: 0; }
+
+.form-fields > li:last-child {
+  margin-bottom: 0; }
+
+/**
+ * Labels
+ *
+ * Define a `.label` class as well as a `label` element. This means we can apply
+ * label-like styling to meta-labels for groups of options where a `label`
+ * element is not suitable, e.g.:
+ *
+   <li>
+       <span class=label>Select an option below:</span>
+       <ul class="multi-list  four-cols">
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+       </ul>
+   </li>
+ *
+ */
+label, .label {
+  display: block; }
+
+/**
+     * Extra help text in `label`s, e.g.:
+     *
+       <label>Card number <small class=additional>No spaces</small></label>
+     *
+     */
+.additional {
+  display: block;
+  font-weight: normal; }
+
+/*
+ * Groups of checkboxes and radios, e.g.:
+ *
+   <li>
+       <ul class=check-list>
+           <li>
+               <input /> <label />
+           </li>
+           <li>
+               <input /> <label />
+           </li>
+       </ul>
+   </li>
+ *
+ */
+.check-list {
+  list-style: none;
+  margin: 0; }
+
+/*
+     * Labels in check-lists
+     */
+.check-label, .check-list label, .check-list .label {
+  display: inline-block; }
+
+/**
+ * Spoken forms are for forms that read like spoken word, e.g.:
+ *
+   <li class=spoken-form>
+       Hello, my <label for=spoken-name>name</label> is
+       <input type=text class=text-input id=spoken-name>. My home
+       <label for=country>country</label> is
+       <select id=country>
+           <option>UK</option>
+           <option>US</option>
+           <option>Other</option>
+       </select>
+   </li>
+ *
+ */
+.spoken-form label {
+  display: inline-block;
+  font: inherit; }
+
+/**
+ * Extra help text displayed after a field when that field is in focus, e.g.:
+ *
+   <label for=email>Email:</label>
+   <input type=email class=text-input id=email>
+   <small class=extra-help>.edu emails only</small>
+ *
+ * We leave the help text in the document flow and merely set it to
+ * `visibility:hidden;`. This means that it won’t interfere with anything once
+ * it reappears.
+ *
+ */
+/*small*/
+.extra-help {
+  display: inline-block;
+  visibility: hidden; }
+
+.text-input:active + .extra-help, .text-input:focus + .extra-help {
+  visibility: visible; }
+
+/**
+ * Objects and abstractions
+ */
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/**
+ * Fluid and nestable grid system, e.g.:
+ *
+   <div class="grid">
+
+       <div class="grid__item  one-third">
+           <p>One third grid</p>
+       </div><!--
+
+    --><div class="grid__item  two-thirds">
+           <p>Two thirds grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-half">
+           <p>One half grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-quarter">
+           <p>One quarter grid</p>
+       </div><!--
+
+    --><div class="grid__item  one-quarter">
+           <p>One quarter grid</p>
+       </div>
+
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/CLYUC
+ *
+ */
+/**
+ * Grid wrapper
+ */
+.grid, .grid--rev, .grid--full, .page-id-25 .contact-boxes, .grid--center, .header--master__branding, .content__widget-area--below .widget-area, .content__widget-area--footer .widget-area {
+  margin-left: -25px;
+  list-style: none;
+  margin-bottom: 0; }
+
+/**
+     * Very infrequently occuring grid wrappers as children of grid wrappers.
+     */
+.grid > .grid, .grid--rev > .grid, .grid--full > .grid, .page-id-25 .contact-boxes > .grid, .grid--center > .grid, .header--master__branding > .grid, .content__widget-area--below .widget-area > .grid, .content__widget-area--footer .widget-area > .grid, .grid > .grid--rev, .grid--rev > .grid--rev, .grid--full > .grid--rev, .page-id-25 .contact-boxes > .grid--rev, .grid--center > .grid--rev, .header--master__branding > .grid--rev, .content__widget-area--below .widget-area > .grid--rev, .content__widget-area--footer .widget-area > .grid--rev, .grid > .grid--full, .grid--rev > .grid--full, .grid--full > .grid--full, .page-id-25 .contact-boxes > .grid--full, .grid--center > .grid--full, .header--master__branding > .grid--full, .content__widget-area--below .widget-area > .grid--full, .content__widget-area--footer .widget-area > .grid--full, .page-id-25 .grid > .contact-boxes, .page-id-25 .grid--rev > .contact-boxes, .page-id-25 .grid--full > .contact-boxes, .page-id-25 .contact-boxes > .contact-boxes, .page-id-25 .grid--center > .contact-boxes, .page-id-25 .header--master__branding > .contact-boxes, .content__widget-area--below .page-id-25 .widget-area > .contact-boxes, .page-id-25 .content__widget-area--below .widget-area > .contact-boxes, .content__widget-area--footer .page-id-25 .widget-area > .contact-boxes, .page-id-25 .content__widget-area--footer .widget-area > .contact-boxes, .grid > .grid--center, .grid--rev > .grid--center, .grid--full > .grid--center, .page-id-25 .contact-boxes > .grid--center, .grid--center > .grid--center, .header--master__branding > .grid--center, .content__widget-area--below .widget-area > .grid--center, .content__widget-area--footer .widget-area > .grid--center, .grid > .header--master__branding, .grid--rev > .header--master__branding, .grid--full > .header--master__branding, .page-id-25 .contact-boxes > .header--master__branding, .grid--center > .header--master__branding, .header--master__branding > .header--master__branding, .content__widget-area--below .widget-area > .header--master__branding, .content__widget-area--footer .widget-area > .header--master__branding, .content__widget-area--below .grid > .widget-area, .content__widget-area--below .grid--rev > .widget-area, .content__widget-area--below .grid--full > .widget-area, .page-id-25 .content__widget-area--below .contact-boxes > .widget-area, .content__widget-area--below .page-id-25 .contact-boxes > .widget-area, .content__widget-area--below .grid--center > .widget-area, .content__widget-area--below .header--master__branding > .widget-area, .content__widget-area--below .widget-area > .widget-area, .content__widget-area--footer .grid > .widget-area, .content__widget-area--footer .grid--rev > .widget-area, .content__widget-area--footer .grid--full > .widget-area, .page-id-25 .content__widget-area--footer .contact-boxes > .widget-area, .content__widget-area--footer .page-id-25 .contact-boxes > .widget-area, .content__widget-area--footer .grid--center > .widget-area, .content__widget-area--footer .header--master__branding > .widget-area, .content__widget-area--footer .widget-area > .widget-area {
+  margin-left: 0; }
+
+/**
+     * Grid
+     */
+.grid__item, .grid > *, .grid--rev > *, .grid--full > *, .page-id-25 .contact-boxes > *, .grid--center > *, .header--master__branding > *, .content__widget-area--below .widget-area > *, .content__widget-area--footer .widget-area > * {
+  display: inline-block;
+  width: 100%;
+  padding-left: 25px;
+  vertical-align: top; }
+
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/Vnph4
+ *
+ */
+.nav, .menu, .menu--site, .menu--site__menu-list {
+  list-style: none;
+  margin-left: 0; }
+  .nav > li, .menu > li, .menu--site > li, .menu--site__menu-list > li, .nav > li > a, .menu > li > a, .menu--site > li > a, .menu--site__menu-list > li > a {
+    display: inline-block;
+    *display: inline;
+    zoom: 1; }
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+   <ul class="nav  nav--stacked">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--stacked > li, .content__widget-area--main .menu > li, .content__widget-area--main .menu--site > li, .content__widget-area--main .menu--site__menu-list > li, .menu--footer-pages .menu > li, .menu--footer-services .menu > li, .menu--footer-pages .menu--site > li, .menu--footer-services .menu--site > li, .menu--footer-pages .menu--site__menu-list > li, .menu--footer-services .menu--site__menu-list > li, .menu--site nav > ul > li {
+  display: list-item; }
+  .nav--stacked > li > a, .content__widget-area--main .menu > li > a, .content__widget-area--main .menu--site > li > a, .content__widget-area--main .menu--site__menu-list > li > a, .menu--footer-pages .menu > li > a, .menu--footer-services .menu > li > a, .menu--footer-pages .menu--site > li > a, .menu--footer-services .menu--site > li > a, .menu--footer-pages .menu--site__menu-list > li > a, .menu--footer-services .menu--site__menu-list > li > a, .menu--site nav > ul > li > a {
+    display: block; }
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+   <ul class="nav  nav--banner">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--banner {
+  text-align: center; }
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.nav--block, .menu--site__menu-list, .content__widget-area--main .menu, .content__widget-area--main .menu--site, .content__widget-area--main .menu--site__menu-list {
+  line-height: 1;
+  /**
+     * Remove whitespace caused by `inline-block`.
+     */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+  white-space: nowrap; }
+  .nav--block > li, .menu--site__menu-list > li, .content__widget-area--main .menu > li, .content__widget-area--main .menu--site > li, .content__widget-area--main .menu--site__menu-list > li {
+    letter-spacing: normal;
+    word-spacing: normal; }
+    .nav--block > li > a, .menu--site__menu-list > li > a, .content__widget-area--main .menu > li > a, .content__widget-area--main .menu--site > li > a, .content__widget-area--main .menu--site__menu-list > li > a {
+      padding: 12.5px; }
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+.nav--fit {
+  display: table;
+  width: 100%; }
+  .nav--fit > li {
+    display: table-cell; }
+    .nav--fit > li > a {
+      display: block; }
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ *
+   `<ul class="nav  nav--keywords>`
+ *
+ */
+.nav--keywords > li:after {
+  content: "\002C" "\00A0"; }
+.nav--keywords > li:last-child:after {
+  display: none; }
+
+/*------------------------------------*\
+    $MEDIA
+\*------------------------------------*/
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * E.g.:
+ *
+   <div class=media>
+       <img src=http://placekitten.com/200/300 alt="" class=media__img>
+       <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/cf4Qs
+ *
+ */
+.media {
+  display: block; }
+
+.media__img {
+  float: left;
+  margin-right: 25px; }
+
+/**
+     * Reversed image location (right instead of left).
+     */
+.media__img--rev {
+  float: right;
+  margin-left: 25px; }
+
+.media__img img, .media__img--rev img {
+  display: block; }
+
+.media__body {
+  overflow: hidden; }
+
+.media__body, .media__body > :last-child {
+  margin-bottom: 0; }
+
+/**
+     * `.img`s in `.islet`s need an appropriately sized margin.
+     */
+.islet .media__img, .page-id-25 .contact-boxes__label .media__img, .page-id-25 .contact-boxes__deets .media__img, .page-id-85 .benifit .media__img {
+  margin-right: 12.5px; }
+
+.islet .media__img--rev, .page-id-25 .contact-boxes__label .media__img--rev, .page-id-25 .contact-boxes__deets .media__img--rev, .page-id-85 .benifit .media__img--rev {
+  margin-left: 12.5px; }
+
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/u8pV3
+ *
+ */
+.island, .islet, .page-id-25 .contact-boxes__label, .page-id-25 .contact-boxes__deets, .page-id-85 .benifit {
+  display: block; }
+
+.island {
+  padding: 25px; }
+
+.island > :last-child, .islet > :last-child, .page-id-25 .contact-boxes__label > :last-child, .page-id-25 .contact-boxes__deets > :last-child, .page-id-85 .benifit > :last-child {
+  margin-bottom: 0; }
+
+/**
+ * Just like `.island`, only smaller.
+ */
+.islet, .page-id-25 .contact-boxes__label, .page-id-25 .contact-boxes__deets, .page-id-85 .benifit {
+  padding: 12.5px; }
+
+/*------------------------------------*\
+    $BLOCK-LIST
+\*------------------------------------*/
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ *
+ */
+.block-list, .matrix, .menu--services__menu-list, .page__content .staff, .block-list > li, .matrix > li, .menu--services__menu-list > li, .page__content .staff > li {
+  border: 0 solid #ccc; }
+
+.block-list, .matrix, .menu--services__menu-list, .page__content .staff {
+  list-style: none;
+  margin-left: 0;
+  border-top-width: 1px; }
+  .block-list > li, .matrix > li, .menu--services__menu-list > li, .page__content .staff > li {
+    border-bottom-width: 1px;
+    padding: 12.5px; }
+
+.block-list__link, .matrix__link {
+  display: block;
+  padding: 12.5px;
+  margin: -12.5px; }
+
+/*------------------------------------*\
+    $MATRIX
+\*------------------------------------*/
+/**
+ * Create a grid of items out of a single list, e.g.:
+ *
+   <ul class="matrix  three-cols">
+       <li class=all-cols>Lorem</li>
+       <li>Ipsum <a href=#>dolor</a></li>
+       <li><a href=# class=matrix__link>Sit</a></li>
+       <li>Amet</li>
+       <li class=all-cols>Consectetuer</li>
+   </ul>
+ *
+ * Extend this object in your theme stylesheet.
+ *
+ * Demo: jsfiddle.net/inuitcss/Y2zrU
+ *
+ */
+.matrix, .menu--services__menu-list {
+  border-left-width: 1px; }
+  .matrix > li, .menu--services__menu-list > li {
+    float: left;
+    border-right-width: 1px; }
+
+/**
+ * The `.multi-list` object is a lot like the `.matrix` object only without the
+ * blocky borders and padding.
+ *
+   <ul class="multi-list  four-cols">
+       <li>Lorem</li>
+       <li>Ipsum</li>
+       <li>Dolor</li>
+       <li>Sit</li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/Y2zrU
+ *
+ */
+.multi-list {
+  list-style: none;
+  margin-left: 0; }
+
+.multi-list > li {
+  float: left; }
+
+/**
+     * Apply these classes alongside the `.matrix` or `.multi-list` classes on
+     * lists to determine how wide their columns are.
+     */
+.two-cols > li, .menu--services__menu-list > li {
+  width: 50%; }
+
+.three-cols > li {
+  width: 33.333%; }
+
+.four-cols > li {
+  width: 25%; }
+
+.five-cols > li {
+  width: 20%; }
+
+/**
+     * Unfortunately we have to qualify this selector in order to bring its
+     * specificity above the `.[number]-cols > li` selectors above.
+     */
+.matrix > .all-cols, .menu--services__menu-list > .all-cols, .multi-list > .all-cols {
+  width: 100%; }
+
+/*------------------------------------*\
+    $RULES
+\*------------------------------------*/
+/**
+ * Horizontal rules, extend `hr`.
+ *
+ * Demo: jsfiddle.net/inuitcss/L6GuZ
+ *
+ */
+.rule {
+  color: #ccc;
+  border: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 24px;
+  margin-bottom: 1.4117647059rem; }
+
+/**
+ * Dotted rules
+ */
+.rule--dotted {
+  border-bottom-style: dotted; }
+
+/**
+ * Dashed rules
+ */
+.rule--dashed {
+  border-bottom-style: dashed; }
+
+/**
+ * Ornamental rules. Places a § over the rule.
+ */
+.rule--ornament {
+  position: relative;
+  /**
+    * Pass in an arbitrary ornament though a data attribute, e.g.:
+    *
+      <hr class="rule  rule--ornament" data-ornament="!">
+    *
+    */ }
+  .rule--ornament:after {
+    content: "\00A7";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    line-height: 0;
+    text-align: center; }
+  .rule--ornament[data-ornament]:after {
+    content: attr(data-ornament); }
+
+/**
+ * Style trumps; helper and brand classes
+ */
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Sizes in human readable format. These are used in conjunction with other
+ * objects and abstractions found in inuit.css, most commonly the grid system
+ * and faux flexbox.
+ *
+ * We have a mixin to generate our widths and their breakpoint-specific
+ * variations.
+ */
+/**
+    * Whole
+    */
+.one-whole, .navigation--main__menu, .content__post-list, .content__post-archive, .content__single-post, .content__single-page, .content__search-list, .content__widget-area, .content__widget-area--main, .content__widget-area--below .widget-area__widget, .content__widget-area--footer .widget-area__widget {
+  width: 100%; }
+
+/**
+    * Halves
+    */
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%; }
+
+/**
+    * Thirds
+    */
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%; }
+
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%; }
+
+/**
+    * Quarters
+    */
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%; }
+
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%; }
+
+/**
+    * Fifths
+    */
+.one-fifth, .two-tenths {
+  width: 20%; }
+
+.two-fifths, .four-tenths {
+  width: 40%; }
+
+.three-fifths, .six-tenths {
+  width: 60%; }
+
+.four-fifths, .eight-tenths {
+  width: 80%; }
+
+/**
+    * Sixths
+    */
+.one-sixth, .two-twelfths {
+  width: 16.666%; }
+
+.five-sixths, .ten-twelfths {
+  width: 83.333%; }
+
+/**
+    * Eighths
+    */
+.one-eighth {
+  width: 12.5%; }
+
+.three-eighths {
+  width: 37.5%; }
+
+.five-eighths {
+  width: 62.5%; }
+
+.seven-eighths {
+  width: 87.5%; }
+
+/**
+    * Tenths
+    */
+.one-tenth {
+  width: 10%; }
+
+.three-tenths {
+  width: 30%; }
+
+.seven-tenths {
+  width: 70%; }
+
+.nine-tenths {
+  width: 90%; }
+
+/**
+    * Twelfths
+    */
+.one-twelfth {
+  width: 8.333%; }
+
+.five-twelfths {
+  width: 41.666%; }
+
+.seven-twelfths {
+  width: 58.333%; }
+
+.eleven-twelfths {
+  width: 91.666%; }
+
+/**
+ * If you have set `$responsive` to ‘true’ in `_vars.scss` then you now have
+ * access to these classes. You can define at which breakpoint you’d like an
+ * element to be a certain size, e.g.:
+ *
+ * `<div class="g  one-quarter  lap-one-half  palm-one-whole"> ... </div>`
+ *
+ * This would create a `div` that, at ‘desktop’ sizes, takes up a quarter of the
+ * horizontal space, a half of that space at ‘tablet’ sizes, and goes full width
+ * at ‘mobile’ sizes.
+ *
+ * Demo: jsfiddle.net/inuitcss/WS4Ge
+ *
+ */
+@media only screen and (max-width: 480px) {
+  /**
+    * Whole
+    */
+  .palm-one-whole {
+    width: 100%; }
+  /**
+    * Halves
+    */
+  .palm-one-half, .palm-two-quarters, .palm-three-sixths, .palm-four-eighths, .palm-five-tenths, .palm-six-twelfths {
+    width: 50%; }
+  /**
+    * Thirds
+    */
+  .palm-one-third, .palm-two-sixths, .palm-four-twelfths {
+    width: 33.333%; }
+  .palm-two-thirds, .palm-four-sixths, .palm-eight-twelfths {
+    width: 66.666%; }
+  /**
+    * Quarters
+    */
+  .palm-one-quarter, .palm-two-eighths, .palm-three-twelfths {
+    width: 25%; }
+  .palm-three-quarters, .palm-six-eighths, .palm-nine-twelfths {
+    width: 75%; }
+  /**
+    * Fifths
+    */
+  .palm-one-fifth, .palm-two-tenths {
+    width: 20%; }
+  .palm-two-fifths, .palm-four-tenths {
+    width: 40%; }
+  .palm-three-fifths, .palm-six-tenths {
+    width: 60%; }
+  .palm-four-fifths, .palm-eight-tenths {
+    width: 80%; }
+  /**
+    * Sixths
+    */
+  .palm-one-sixth, .palm-two-twelfths {
+    width: 16.666%; }
+  .palm-five-sixths, .palm-ten-twelfths {
+    width: 83.333%; }
+  /**
+    * Eighths
+    */
+  .palm-one-eighth {
+    width: 12.5%; }
+  .palm-three-eighths {
+    width: 37.5%; }
+  .palm-five-eighths {
+    width: 62.5%; }
+  .palm-seven-eighths {
+    width: 87.5%; }
+  /**
+    * Tenths
+    */
+  .palm-one-tenth {
+    width: 10%; }
+  .palm-three-tenths {
+    width: 30%; }
+  .palm-seven-tenths {
+    width: 70%; }
+  .palm-nine-tenths {
+    width: 90%; }
+  /**
+    * Twelfths
+    */
+  .palm-one-twelfth {
+    width: 8.333%; }
+  .palm-five-twelfths {
+    width: 41.666%; }
+  .palm-seven-twelfths {
+    width: 58.333%; }
+  .palm-eleven-twelfths {
+    width: 91.666%; } }
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  /**
+    * Whole
+    */
+  .lap-one-whole, .content__post-list, .content__post-archive, .content__single-post, .content__single-page, .content__search-list, .content__widget-area, .content__widget-area--main, .content__widget-area--below .widget-area__widget, .content__widget-area--footer .widget-area__widget {
+    width: 100%; }
+  /**
+    * Halves
+    */
+  .lap-one-half, .lap-two-quarters, .lap-three-sixths, .lap-four-eighths, .lap-five-tenths, .lap-six-twelfths {
+    width: 50%; }
+  /**
+    * Thirds
+    */
+  .lap-one-third, .lap-two-sixths, .lap-four-twelfths {
+    width: 33.333%; }
+  .lap-two-thirds, .lap-four-sixths, .lap-eight-twelfths, .content__search-list {
+    width: 66.666%; }
+  /**
+    * Quarters
+    */
+  .lap-one-quarter, .lap-two-eighths, .lap-three-twelfths {
+    width: 25%; }
+  .lap-three-quarters, .lap-six-eighths, .lap-nine-twelfths {
+    width: 75%; }
+  /**
+    * Fifths
+    */
+  .lap-one-fifth, .lap-two-tenths {
+    width: 20%; }
+  .lap-two-fifths, .lap-four-tenths {
+    width: 40%; }
+  .lap-three-fifths, .lap-six-tenths {
+    width: 60%; }
+  .lap-four-fifths, .lap-eight-tenths {
+    width: 80%; }
+  /**
+    * Sixths
+    */
+  .lap-one-sixth, .lap-two-twelfths {
+    width: 16.666%; }
+  .lap-five-sixths, .lap-ten-twelfths {
+    width: 83.333%; }
+  /**
+    * Eighths
+    */
+  .lap-one-eighth {
+    width: 12.5%; }
+  .lap-three-eighths {
+    width: 37.5%; }
+  .lap-five-eighths {
+    width: 62.5%; }
+  .lap-seven-eighths {
+    width: 87.5%; }
+  /**
+    * Tenths
+    */
+  .lap-one-tenth {
+    width: 10%; }
+  .lap-three-tenths {
+    width: 30%; }
+  .lap-seven-tenths {
+    width: 70%; }
+  .lap-nine-tenths {
+    width: 90%; }
+  /**
+    * Twelfths
+    */
+  .lap-one-twelfth {
+    width: 8.333%; }
+  .lap-five-twelfths {
+    width: 41.666%; }
+  .lap-seven-twelfths {
+    width: 58.333%; }
+  .lap-eleven-twelfths {
+    width: 91.666%; } }
+
+@media only screen and (min-width: 481px) {
+  /**
+    * Whole
+    */
+  .lap-and-up-one-whole {
+    width: 100%; }
+  /**
+    * Halves
+    */
+  .lap-and-up-one-half, .lap-and-up-two-quarters, .lap-and-up-three-sixths, .lap-and-up-four-eighths, .lap-and-up-five-tenths, .lap-and-up-six-twelfths {
+    width: 50%; }
+  /**
+    * Thirds
+    */
+  .lap-and-up-one-third, .lap-and-up-two-sixths, .lap-and-up-four-twelfths {
+    width: 33.333%; }
+  .lap-and-up-two-thirds, .lap-and-up-four-sixths, .lap-and-up-eight-twelfths {
+    width: 66.666%; }
+  /**
+    * Quarters
+    */
+  .lap-and-up-one-quarter, .lap-and-up-two-eighths, .lap-and-up-three-twelfths {
+    width: 25%; }
+  .lap-and-up-three-quarters, .lap-and-up-six-eighths, .lap-and-up-nine-twelfths {
+    width: 75%; }
+  /**
+    * Fifths
+    */
+  .lap-and-up-one-fifth, .lap-and-up-two-tenths {
+    width: 20%; }
+  .lap-and-up-two-fifths, .lap-and-up-four-tenths {
+    width: 40%; }
+  .lap-and-up-three-fifths, .lap-and-up-six-tenths {
+    width: 60%; }
+  .lap-and-up-four-fifths, .lap-and-up-eight-tenths {
+    width: 80%; }
+  /**
+    * Sixths
+    */
+  .lap-and-up-one-sixth, .lap-and-up-two-twelfths {
+    width: 16.666%; }
+  .lap-and-up-five-sixths, .lap-and-up-ten-twelfths {
+    width: 83.333%; }
+  /**
+    * Eighths
+    */
+  .lap-and-up-one-eighth {
+    width: 12.5%; }
+  .lap-and-up-three-eighths {
+    width: 37.5%; }
+  .lap-and-up-five-eighths {
+    width: 62.5%; }
+  .lap-and-up-seven-eighths {
+    width: 87.5%; }
+  /**
+    * Tenths
+    */
+  .lap-and-up-one-tenth {
+    width: 10%; }
+  .lap-and-up-three-tenths {
+    width: 30%; }
+  .lap-and-up-seven-tenths {
+    width: 70%; }
+  .lap-and-up-nine-tenths {
+    width: 90%; }
+  /**
+    * Twelfths
+    */
+  .lap-and-up-one-twelfth {
+    width: 8.333%; }
+  .lap-and-up-five-twelfths {
+    width: 41.666%; }
+  .lap-and-up-seven-twelfths {
+    width: 58.333%; }
+  .lap-and-up-eleven-twelfths {
+    width: 91.666%; } }
+
+@media only screen and (max-width: 799px) {
+  /**
+    * Whole
+    */
+  .portable-one-whole {
+    width: 100%; }
+  /**
+    * Halves
+    */
+  .portable-one-half, .portable-two-quarters, .portable-three-sixths, .portable-four-eighths, .portable-five-tenths, .portable-six-twelfths {
+    width: 50%; }
+  /**
+    * Thirds
+    */
+  .portable-one-third, .portable-two-sixths, .portable-four-twelfths {
+    width: 33.333%; }
+  .portable-two-thirds, .portable-four-sixths, .portable-eight-twelfths {
+    width: 66.666%; }
+  /**
+    * Quarters
+    */
+  .portable-one-quarter, .portable-two-eighths, .portable-three-twelfths {
+    width: 25%; }
+  .portable-three-quarters, .portable-six-eighths, .portable-nine-twelfths {
+    width: 75%; }
+  /**
+    * Fifths
+    */
+  .portable-one-fifth, .portable-two-tenths {
+    width: 20%; }
+  .portable-two-fifths, .portable-four-tenths {
+    width: 40%; }
+  .portable-three-fifths, .portable-six-tenths {
+    width: 60%; }
+  .portable-four-fifths, .portable-eight-tenths {
+    width: 80%; }
+  /**
+    * Sixths
+    */
+  .portable-one-sixth, .portable-two-twelfths {
+    width: 16.666%; }
+  .portable-five-sixths, .portable-ten-twelfths {
+    width: 83.333%; }
+  /**
+    * Eighths
+    */
+  .portable-one-eighth {
+    width: 12.5%; }
+  .portable-three-eighths {
+    width: 37.5%; }
+  .portable-five-eighths {
+    width: 62.5%; }
+  .portable-seven-eighths {
+    width: 87.5%; }
+  /**
+    * Tenths
+    */
+  .portable-one-tenth {
+    width: 10%; }
+  .portable-three-tenths {
+    width: 30%; }
+  .portable-seven-tenths {
+    width: 70%; }
+  .portable-nine-tenths {
+    width: 90%; }
+  /**
+    * Twelfths
+    */
+  .portable-one-twelfth {
+    width: 8.333%; }
+  .portable-five-twelfths {
+    width: 41.666%; }
+  .portable-seven-twelfths {
+    width: 58.333%; }
+  .portable-eleven-twelfths {
+    width: 91.666%; } }
+
+@media only screen and (min-width: 800px) {
+  /**
+    * Whole
+    */
+  .desk-one-whole {
+    width: 100%; }
+  /**
+    * Halves
+    */
+  .desk-one-half, .desk-two-quarters, .desk-three-sixths, .desk-four-eighths, .desk-five-tenths, .desk-six-twelfths, .page-id-25 .contact-boxes__email {
+    width: 50%; }
+  /**
+    * Thirds
+    */
+  .desk-one-third, .desk-two-sixths, .desk-four-twelfths, .content__widget-area, .content__widget-area--main, .content__widget-area--below .widget-area__widget, .content__widget-area--footer .widget-area__widget {
+    width: 33.333%; }
+  .desk-two-thirds, .desk-four-sixths, .desk-eight-twelfths, .content__post-list, .content__post-archive, .content__single-post, .content__single-page, .content__search-list, .content__widget-area--below .menu--dental-brands {
+    width: 66.666%; }
+  /**
+    * Quarters
+    */
+  .desk-one-quarter, .desk-two-eighths, .desk-three-twelfths, .page-id-25 .contact-boxes__tel, .page-id-25 .contact-boxes__fax {
+    width: 25%; }
+  .desk-three-quarters, .desk-six-eighths, .desk-nine-twelfths {
+    width: 75%; }
+  /**
+    * Fifths
+    */
+  .desk-one-fifth, .desk-two-tenths {
+    width: 20%; }
+  .desk-two-fifths, .desk-four-tenths {
+    width: 40%; }
+  .desk-three-fifths, .desk-six-tenths {
+    width: 60%; }
+  .desk-four-fifths, .desk-eight-tenths, .content__search-list {
+    width: 80%; }
+  /**
+    * Sixths
+    */
+  .desk-one-sixth, .desk-two-twelfths {
+    width: 16.666%; }
+  .desk-five-sixths, .desk-ten-twelfths {
+    width: 83.333%; }
+  /**
+    * Eighths
+    */
+  .desk-one-eighth {
+    width: 12.5%; }
+  .desk-three-eighths {
+    width: 37.5%; }
+  .desk-five-eighths {
+    width: 62.5%; }
+  .desk-seven-eighths {
+    width: 87.5%; }
+  /**
+    * Tenths
+    */
+  .desk-one-tenth {
+    width: 10%; }
+  .desk-three-tenths {
+    width: 30%; }
+  .desk-seven-tenths {
+    width: 70%; }
+  .desk-nine-tenths {
+    width: 90%; }
+  /**
+    * Twelfths
+    */
+  .desk-one-twelfth {
+    width: 8.333%; }
+  .desk-five-twelfths {
+    width: 41.666%; }
+  .desk-seven-twelfths {
+    width: 58.333%; }
+  .desk-eleven-twelfths {
+    width: 91.666%; } }
+
+/**
+ * If you have set the additional `$responsive-extra` variable to ‘true’ in
+ * `_vars.scss` then you now have access to the following class available to
+ * accomodate much larger screen resolutions.
+ */
+/* endif */
+/*------------------------------------*\
+    $PUSH
+\*------------------------------------*/
+/**
+ * Push classes, to move grid items over to the right by certain amounts.
+ */
+/*------------------------------------*\
+    $PULL
+\*------------------------------------*/
+/**
+ * Pull classes, to move grid items over to the right by certain amounts.
+ */
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * `.brand` is a quick and simple way to apply your brand face and/or color to
+ * any element using a handy helper class.
+ */
+.brand {
+  font-family: "Helvetica Neue", sans-serif!important;
+  color: #4a8ec2!important; }
+
+.brand-face {
+  font-family: "Helvetica Neue", sans-serif!important; }
+
+.brand-color, .brand-colour {
+  color: #4a8ec2!important; }
+
+/*------------------------------------*\
+    $HELPER
+\*------------------------------------*/
+/**
+ * A series of helper classes to use arbitrarily. Only use a helper class if an
+ * element/component doesn’t already have a class to which you could apply this
+ * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
+ * that ruleset as opposed to adding the `.float--left` class to the markup.
+ *
+ * A lot of these classes carry `!important` as you will always want them to win
+ * out over other selectors.
+ */
+/**
+ * Add/remove floats
+ */
+.float--right {
+  float: right !important; }
+
+.float--left {
+  float: left !important; }
+
+.float--none {
+  float: none !important; }
+
+/**
+ * Text alignment
+ */
+.text--left {
+  text-align: left  !important; }
+
+.text--center {
+  text-align: center !important; }
+
+.text--right {
+  text-align: right !important; }
+
+/**
+ * Font weights
+ */
+.weight--light {
+  font-weight: 300 !important; }
+
+.weight--normal {
+  font-weight: 400 !important; }
+
+.weight--semibold {
+  font-weight: 600 !important; }
+
+/**
+ * Add/remove margins
+ */
+.push {
+  margin: 25px !important; }
+
+.push--top {
+  margin-top: 25px !important; }
+
+.push--right {
+  margin-right: 25px !important; }
+
+.push--bottom {
+  margin-bottom: 25px !important; }
+
+.push--left {
+  margin-left: 25px !important; }
+
+.push--ends {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important; }
+
+.push--sides {
+  margin-right: 25px !important;
+  margin-left: 25px !important; }
+
+.push-half {
+  margin: 12.5px !important; }
+
+.push-half--top {
+  margin-top: 12.5px !important; }
+
+.push-half--right {
+  margin-right: 12.5px !important; }
+
+.push-half--bottom {
+  margin-bottom: 12.5px !important; }
+
+.push-half--left {
+  margin-left: 12.5px !important; }
+
+.push-half--ends {
+  margin-top: 12.5px !important;
+  margin-bottom: 12.5px !important; }
+
+.push-half--sides {
+  margin-right: 12.5px !important;
+  margin-left: 12.5px !important; }
+
+.flush {
+  margin: 0 !important; }
+
+.flush--top {
+  margin-top: 0 !important; }
+
+.flush--right {
+  margin-right: 0 !important; }
+
+.flush--bottom {
+  margin-bottom: 0 !important; }
+
+.flush--left {
+  margin-left: 0 !important; }
+
+.flush--ends {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+.flush--sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important; }
+
+/**
+ * Add/remove paddings
+ */
+.soft {
+  padding: 25px !important; }
+
+.soft--top {
+  padding-top: 25px !important; }
+
+.soft--right {
+  padding-right: 25px !important; }
+
+.soft--bottom {
+  padding-bottom: 25px !important; }
+
+.soft--left {
+  padding-left: 25px !important; }
+
+.soft--ends {
+  padding-top: 25px !important;
+  padding-bottom: 25px !important; }
+
+.soft--sides {
+  padding-right: 25px !important;
+  padding-left: 25px !important; }
+
+.soft-half {
+  padding: 12.5px !important; }
+
+.soft-half--top {
+  padding-top: 12.5px !important; }
+
+.soft-half--right {
+  padding-right: 12.5px !important; }
+
+.soft-half--bottom {
+  padding-bottom: 12.5px !important; }
+
+.soft-half--left {
+  padding-left: 12.5px !important; }
+
+.soft-half--ends {
+  padding-top: 12.5px !important;
+  padding-bottom: 12.5px !important; }
+
+.soft-half--sides {
+  padding-right: 12.5px !important;
+  padding-left: 12.5px !important; }
+
+.hard {
+  padding: 0 !important; }
+
+.hard--top {
+  padding-top: 0 !important; }
+
+.hard--right {
+  padding-right: 0 !important; }
+
+.hard--bottom {
+  padding-bottom: 0 !important; }
+
+.hard--left {
+  padding-left: 0 !important; }
+
+.hard--ends {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important; }
+
+.hard--sides {
+  padding-right: 0 !important;
+  padding-left: 0 !important; }
+
+/**
+ * Pull items full width of `.island` parents.
+ */
+.full-bleed {
+  margin-right: -25px !important;
+  margin-left: -25px !important; }
+  .islet .full-bleed, .page-id-25 .contact-boxes__label .full-bleed, .page-id-25 .contact-boxes__deets .full-bleed, .page-id-85 .benifit .full-bleed {
+    margin-right: -12.5px !important;
+    margin-left: -12.5px !important; }
+
+/**
+ * Add a help cursor to any element that gives the user extra information on
+ * `:hover`.
+ */
+.informative {
+  cursor: help !important; }
+
+/**
+ * Mute an object by reducing its opacity.
+ */
+.muted {
+  opacity: 0.5 !important;
+  filter: alpha(opacity=50) !important; }
+
+/**
+ * Align items to the right where they imply progression/movement forward, e.g.:
+ *
+   <p class=proceed><a href=#>Read more...</a></p>
+ *
+ */
+.proceed {
+  text-align: right !important; }
+
+/**
+ * Add a right-angled quote to links that imply movement, e.g.:
+ *
+   <a href=# class=go>Read more</a>
+ *
+ */
+.go:after {
+  content: "\00A0" "\00BB" !important; }
+
+/**
+ * Apply capital case to an element (usually a `strong`).
+ */
+.caps {
+  text-transform: uppercase !important; }
+
+/**
+ * Hide content off-screen without resorting to `display:none;`, also provide
+ * breakpoint specific hidden elements.
+ */
+.accessibility, .visuallyhidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important; }
+
+@media only screen and (max-width: 480px) {
+  .accessibility--palm, .visuallyhidden--palm {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  .accessibility--lap, .visuallyhidden--lap {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+
+@media only screen and (min-width: 481px) {
+  .accessibility--lap-and-up, .visuallyhidden--lap-and-up {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+
+@media only screen and (max-width: 799px) {
+  .accessibility--portable, .visuallyhidden--portable {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+
+@media only screen and (min-width: 800px) {
+  .accessibility--desk, .visuallyhidden--desk {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+
+@media only screen and (min-width: 1200px) {
+  .accessibility--desk-wide, .visuallyhidden--desk-wide {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important; } }
+
+/* endif */
+/**
+  * She’s all yours, cap’n... Begin importing your stuff here.
+*/
+/**
+ *
+ * base layout styles
+ *
+ */
+html {
+  font: 0.95625em/1.4705882353 proxima-nova, sans-serif; }
+  @media only screen and (min-width: 481px) {
+    html {
+      font: 1.0625em/1.4705882353 proxima-nova, sans-serif; } }
+
+body {
+  font-size: 90%;
+  background: #fff; }
+  @media only screen and (min-width: 481px) {
+    body {
+      font-size: 100%; } }
+
+.container, .header--master, .navigation--main, .navigation--services, .content, .content__widget-area--below, .content__widget-area--footer, .footer--master {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: 800px) {
+    .container, .header--master, .navigation--main, .navigation--services, .content, .content__widget-area--below, .content__widget-area--footer, .footer--master {
+      max-width: 1024px;
+      width: 100%; } }
+
+/*
+ * Typography
+ * set font size ems on text nodes P, H* LI, TD etc
+ * Set font size rems on containers / modules etc
+ */
+/*
+ * Set relative bottom margin
+ */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75em; }
+
+a, a:link, a:active {
+  text-decoration: none; }
+
+.footer--master a, .menu--footer-pages .menu .menu-item a, .menu--footer-services .menu .menu-item a, .menu--footer-pages .menu--site .menu-item a, .menu--footer-services .menu--site .menu-item a, .menu--footer-pages .menu--site__menu-list .menu-item a, .menu--footer-services .menu--site__menu-list .menu-item a, .textwidget--company-address a, .textwidget--company-contact a {
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease;
+  color: #fff;
+  padding: 0 3px;
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+  display: inline; }
+  .footer--master a:hover, .menu--footer-pages .menu .menu-item a:hover, .menu--footer-services .menu .menu-item a:hover, .menu--footer-pages .menu--site .menu-item a:hover, .menu--footer-services .menu--site .menu-item a:hover, .menu--footer-pages .menu--site__menu-list .menu-item a:hover, .menu--footer-services .menu--site__menu-list .menu-item a:hover, .textwidget--company-address a:hover, .textwidget--company-contact a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    border-bottom: solid 1px white; }
+
+.menu--site-map .menu-item a, .page__content p a, .page__content li a, .page__content dd a {
+  -webkit-transition: background 0.3s ease;
+          transition: background 0.3s ease;
+  color: #650360;
+  padding: 0 3px;
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px rgba(101, 3, 96, 0.3);
+  display: inline; }
+  .menu--site-map .menu-item a:hover, .page__content p a:hover, .page__content li a:hover, .page__content dd a:hover {
+    background: rgba(139, 66, 135, 0.2);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    border-bottom: solid 1px #650360; }
+
+@media only screen and (min-width: 481px) {
+  .text-columns--2 {
+    list-style-position: inside;
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2; }
+    .text-columns--2 li {
+      white-space: nowrap; } }
+
+@media only screen and (min-width: 800px) {
+  .text-columns--3 {
+    list-style-position: inside;
+    -webkit-columns: 3;
+       -moz-columns: 3;
+            columns: 3; }
+    .text-columns--3 li {
+      white-space: nowrap; } }
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  .text-columns--3 {
+    list-style-position: inside;
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2; }
+    .text-columns--3 li {
+      white-space: nowrap; } }
+
+.dagger {
+  font-size: 0.5em;
+  vertical-align: top;
+  line-height: 2em; }
+
+.lang--en, .lang--cy {
+  display: none; }
+
+.en .lang--en, .cy .lang--cy {
+  display: inherit; }
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10px);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+/*
+ * rem value with pixle fallback
+ */
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * RESPONSIVE HEADINGS
+ * As the view port gets narrower The ratio of body text size to heading size
+ * decreases slightly
+ */
+h1, .alpha {
+  font-size: 24px;
+  font-size: 1.4117647059rem;
+  line-height: 1.3888888889; }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    h1, .alpha {
+      font-size: 27.6923076923px;
+      font-size: 1.628959276rem;
+      line-height: 1.3888888889; } }
+  @media only screen and (min-width: 800px) {
+    h1, .alpha {
+      font-size: 36px;
+      font-size: 2.1176470588rem;
+      line-height: 1.3888888889; } }
+
+h2, .beta {
+  font-size: 21.4285714286px;
+  font-size: 1.2605042017rem;
+  line-height: 1.6666666667; }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    h2, .beta {
+      font-size: 25px;
+      font-size: 1.4705882353rem;
+      line-height: 1.6666666667; } }
+  @media only screen and (min-width: 800px) {
+    h2, .beta {
+      font-size: 30px;
+      font-size: 1.7647058824rem;
+      line-height: 1.6666666667; } }
+
+h3, .gamma, .header--master__strap, .testimonials__cite {
+  font-size: 18.4615384615px;
+  font-size: 1.0859728507rem;
+  line-height: 1.0416666667; }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    h3, .gamma, .header--master__strap, .testimonials__cite {
+      font-size: 21.8181818182px;
+      font-size: 1.2834224599rem;
+      line-height: 1.0416666667; } }
+  @media only screen and (min-width: 800px) {
+    h3, .gamma, .header--master__strap, .testimonials__cite {
+      font-size: 24px;
+      font-size: 1.4117647059rem;
+      line-height: 1.0416666667; } }
+
+h4, .delta, .header--master__tel, .home .header--master__tel, .footer--master {
+  font-size: 16.6666666667px;
+  font-size: 0.9803921569rem;
+  line-height: 1.25; }
+  @media only screen and (min-width: 481px) {
+    h4, .delta, .header--master__tel, .home .header--master__tel, .footer--master {
+      font-size: 20px;
+      font-size: 1.1764705882rem;
+      line-height: 1.25; } }
+
+h5, .epsilon, .branding .branding__description, .title--widget, .textwidget--opening-times .timetable, .test {
+  font-size: 14.5454545455px;
+  font-size: 0.8556149733rem;
+  line-height: 1.5625; }
+  @media only screen and (min-width: 481px) {
+    h5, .epsilon, .branding .branding__description, .title--widget, .textwidget--opening-times .timetable, .test {
+      font-size: 16px;
+      font-size: 0.9411764706rem;
+      line-height: 1.5625; } }
+
+h6, .zeta, .form-contact label, .form-contact--mobile label, .form-contact--primary label {
+  font-size: 14px;
+  font-size: 0.8235294118rem;
+  line-height: 1.7857142857; }
+
+/**
+ *
+ * .grid styles
+ *
+ */
+.grid, .grid--rev, .grid--full, .page-id-25 .contact-boxes, .grid--center, .header--master__branding, .content__widget-area--below .widget-area, .content__widget-area--footer .widget-area {
+  /* set the font size to 0 to fix the inline block white space issue (doesn't work on old android')*/
+  font-size: 0; }
+  .grid > *, .grid--rev > *, .grid--full > *, .page-id-25 .contact-boxes > *, .grid--center > *, .header--master__branding > *, .content__widget-area--below .widget-area > *, .content__widget-area--footer .widget-area > * {
+    /* Don't need to use the grid item class any more */
+    /* reset to the base font size */
+    font-size: 17px;
+    /* use rem if supported */
+    font-size: 1rem; }
+    .grid > * > *, .grid--rev > * > *, .grid--full > * > *, .page-id-25 .contact-boxes > * > *, .grid--center > * > *, .header--master__branding > * > *, .content__widget-area--below .widget-area > * > *, .content__widget-area--footer .widget-area > * > * {
+      /* if rems not supported resize the text now */
+      font-size: 90%;
+      /* if rems is supported reset */
+      font-size: 1rem; }
+      @media only screen and (min-width: 481px) {
+        .grid > * > *, .grid--rev > * > *, .grid--full > * > *, .page-id-25 .contact-boxes > * > *, .grid--center > * > *, .header--master__branding > * > *, .content__widget-area--below .widget-area > * > *, .content__widget-area--footer .widget-area > * > * {
+          font-size: 100%; } }
+
+/**
+ * Reversed grids
+ */
+.grid--rev {
+  direction: rtl;
+  text-align: right; }
+  .grid--rev > .grid__item, .grid--rev > *, .page-id-25 .contact-boxes.grid--rev > *, .content__widget-area--below .widget-area.grid--rev > *, .content__widget-area--footer .widget-area.grid--rev > * {
+    direction: ltr;
+    text-align: left; }
+
+/**
+ * Gutterless grids have all the properties of regular grids, minus any spacing.
+ */
+.grid--full, .page-id-25 .contact-boxes {
+  margin-left: 0; }
+  .grid--full > .grid__item, .page-id-25 .contact-boxes > .grid__item, .grid--full > *, .page-id-25 .contact-boxes > *, .content__widget-area--below .widget-area.grid--full > *, .content__widget-area--footer .widget-area.grid--full > * {
+    padding-left: 0; }
+
+/**
+ * Centered grids align grid items centrally without needing to use push or pull
+ * classes.
+ */
+.grid--center {
+  text-align: center; }
+  .grid--center > .grid__item, .page-id-25 .contact-boxes.grid--center > *, .grid--center > *, .content__widget-area--below .widget-area.grid--center > *, .content__widget-area--footer .widget-area.grid--center > * {
+    text-align: left; }
+
+.media {
+  padding: 1em;
+  background: rgba(178, 129, 175, 0.2);
+  border: solid 1px rgba(178, 129, 175, 0.5); }
+  .media img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto; }
+
+.media__img {
+  width: 30%; }
+
+.media__body {
+  font-size: 0.9em;
+  margin-bottom: 1.5em !important; }
+  .media__body:last-of-type {
+    margin-bottom: 0em !important; }
+
+.rule {
+  color: #650360; }
+
+.menu--dental-brands .menu, .menu--finance .menu, .menu--dental-brands .menu--site, .menu--finance .menu--site, .menu--dental-brands .menu--site__menu-list, .menu--finance .menu--site__menu-list {
+  font-size: 0; }
+.menu--dental-brands .menu-item, .menu--finance .menu-item {
+  font-size: 17px;
+  font-size: 1rem;
+  width: 50%;
+  margin-bottom: 0  !important;
+  box-shadow: none !important; }
+  .menu--dental-brands .menu-item .icon, .menu--finance .menu-item .icon {
+    padding: 0.5em 1.3em;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    fill: #797877; }
+    @media only screen and (min-width: 800px) {
+      .menu--dental-brands .menu-item .icon, .menu--finance .menu-item .icon {
+        width: 100%;
+        height: 50px; } }
+  .menu--dental-brands .menu-item a, .menu--finance .menu-item a {
+    margin: 0 1em;
+    display: block;
+    text-align: center;
+    border-style: none;
+    background: transparent;
+    color: #92836d; }
+    .menu--dental-brands .menu-item a:hover, .menu--finance .menu-item a:hover {
+      box-shadow: none;
+      color: inherit; }
+
+.site {
+  background: #fff;
+  color: #4d4b4a; }
+
+.site__header--master {
+  padding: 0;
+  margin-bottom: 25.5px;
+  margin-bottom: 1.5rem;
+  background: #eaece9; }
+
+.site__navigation--main {
+  background: #650360;
+  border-bottom: solid 3px #8b4287; }
+
+.site__content {
+  padding: 25px 0 0; }
+
+.site__footer-content {
+  padding: 25px 0 0;
+  background: #b281af;
+  border-top: solid 3px #ddd; }
+
+.site__footer {
+  padding: 0 0 25px 0;
+  background: #b281af; }
+
+.site__tel {
+  display: block;
+  text-decoration: none;
+  background: #eaece9;
+  color: #650360;
+  text-align: center;
+  padding-top: 12.75px;
+  padding-top: 0.75rem;
+  padding-bottom: 12.75px;
+  padding-bottom: 0.75rem; }
+  @media only screen and (min-width: 800px) {
+    .site__tel {
+      display: none; } }
+  .site__tel .header--master__tel__call {
+    display: inline;
+    height: 23px;
+    position: relative;
+    top: 5px;
+    width: 19px;
+    fill: #650360; }
+
+/*
+ * .header module
+ */
+/* Just a base class to extend all modifiers*/
+.header, .header--master, .header--article {
+  display: block; }
+
+/*
+ * .header--master modifier. It's at the top of the site!
+ */
+/* Just a container */
+.header--master {
+  padding: 0;
+  height: 170px;
+  overflow: hidden;
+  position: relative;
+  display: none; }
+  .home .header--master {
+    height: 335px;
+    display: block; }
+    @media only screen and (min-width: 800px) {
+      .home .header--master {
+        height: 325px; } }
+
+.header--master__widget-area--banner .widget {
+  border-bottom: none; }
+
+.header--master__banner-image {
+  max-width: 575px !important;
+  right: -50px;
+  top: -180px;
+  position: absolute; }
+  .home .header--master__banner-image {
+    right: -175px;
+    top: -10px; }
+  @media only screen and (min-width: 481px) {
+    .header--master__banner-image {
+      max-width: 1024px !important;
+      right: 0px;
+      top: -330px; }
+      .home .header--master__banner-image {
+        top: -50px;
+        right: 0px; } }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    .header--master__banner-image {
+      max-width: 800px !important;
+      top: -255px; }
+      .home .header--master__banner-image {
+        top: -75px;
+        right: -150px !important; } }
+
+.header--master__tel {
+  font-weight: 100;
+  display: none;
+  position: absolute;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 1em;
+  color: #fff;
+  padding: 0.4em 0.75em;
+  border: none; }
+  @media only screen and (min-width: 800px) {
+    .header--master__tel {
+      display: block; } }
+  .header--master__tel a {
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px; }
+    .header--master__tel a .icon {
+      margin-right: 0.3em; }
+  .header--master__tel .header--master__tel__call {
+    display: inline;
+    height: 23px;
+    position: relative;
+    top: 3px;
+    width: 19px; }
+
+.header--master__strap {
+  line-height: 1.5em;
+  font-weight: 100;
+  position: absolute;
+  z-index: 9999;
+  color: #650360;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.26);
+  top: 70px;
+  left: 1em; }
+  .home .header--master__strap {
+    top: 190px;
+    left: 1em; }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    .header--master__strap {
+      font-size: 1.5em;
+      line-height: 1.2em;
+      top: 50px !important;
+      right: 65% !important;
+      left: auto !important; }
+      .home .header--master__strap {
+        font-size: 1.5em;
+        right: 70% !important;
+        top: auto !important;
+        left: auto;
+        bottom: 2em !important; } }
+  @media only screen and (min-width: 800px) {
+    .header--master__strap {
+      font-size: 2.2em;
+      line-height: 1.2em;
+      font-weight: 100;
+      top: 0.5em;
+      bottom: auto;
+      right: auto;
+      left: 0.5em; }
+      .home .header--master__strap {
+        top: 100px;
+        right: 66%;
+        left: auto;
+        bottom: auto; }
+      .header--master__strap br {
+        display: none; }
+        .home .header--master__strap br {
+          display: block; } }
+  .header--master__strap b {
+    font-style: italic;
+    font-weight: 400; }
+
+@media (min-width: 610px) and (max-width: 1023px) {
+  .header--master__strap {
+    top: 0.5em;
+    bottom: auto;
+    right: auto;
+    left: 0.5em; }
+    .home .header--master__strap {
+      font-size: 2em;
+      right: 66% !important;
+      top: auto;
+      left: auto;
+      bottom: 0.5em; } }
+
+/* ? */
+.header--master__branding {
+  overflow: hidden; }
+
+/*
+ * .header--article modifier. The title containers above articles.
+ * also see _title.scss
+ */
+.header--article {
+  margin-bottom: 0; }
+  .header--article .header--article__title {
+    color: #650360;
+    border-bottom: 1px solid #650360;
+    margin-bottom: 0.25em;
+    padding-bottom: 0.25em; }
+
+.header__title {
+  margin-bottom: 17px;
+  margin-bottom: 1rem; }
+
+.branding {
+  height: 70px; }
+  @media only screen and (min-width: 800px) {
+    .branding {
+      height: 67px; } }
+  .branding .branding__site-title {
+    margin-top: 0.6em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    line-height: 1.333em;
+    color: #650360; }
+    .branding .branding__site-title a {
+      color: #650360;
+      text-decoration: none; }
+  .branding .branding__description {
+    display: none;
+    color: #650360;
+    margin-bottom: 0;
+    font-weight: normal; }
+
+.navigation, .navigation--main, .navigation--services {
+  display: block; }
+
+.navigation--main {
+  position: relative; }
+
+[id=nav-responsive] {
+  display: block; }
+  @media only screen and (min-width: 481px) {
+    [id=nav-responsive] {
+      display: none; } }
+
+[id=nav-main][data-responsive-clone] {
+  display: none; }
+  @media only screen and (min-width: 481px) {
+    [id=nav-main][data-responsive-clone] {
+      display: block; } }
+
+.menu__icon {
+  display: block; }
+
+@media only screen and (min-width: 800px) {
+  .menu--site__container {
+    float: right; } }
+
+.menu--site__menu-list {
+  word-spacing: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 9999; }
+  .menu--site__menu-list a {
+    text-decoration: none;
+    color: #fff;
+    background: #650360;
+    text-decoration: none !important;
+    padding: 1em 0.8em !important; }
+    .menu--site__menu-list a:hover {
+      background: #8b4287;
+      text-decoration: none !important; }
+
+.menu--services {
+  border-top: solid 1px #ada291;
+  border-bottom: solid 1px #ada291;
+  padding-top: 17px;
+  padding-top: 1rem;
+  padding-bottom: 17px;
+  padding-bottom: 1rem; }
+
+.menu--services__menu-list {
+  font-size: 0.8em;
+  margin: 0 auto;
+  border: none;
+  max-width: 320px; }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    .menu--services__menu-list {
+      max-width: 100%; } }
+  @media only screen and (min-width: 800px) {
+    .menu--services__menu-list {
+      max-width: 80%; } }
+  .menu--services__menu-list .menu-item {
+    text-align: center;
+    padding: 0;
+    position: relative;
+    border-width: 3px;
+    border-color: #fff; }
+    @media only screen and (min-width: 481px) and (max-width: 799px) {
+      .menu--services__menu-list .menu-item {
+        width: 25%;
+        border-width: 6px; } }
+    @media only screen and (min-width: 800px) {
+      .menu--services__menu-list .menu-item {
+        width: 25%;
+        border-width: 12px; }
+        .menu--services__menu-list .menu-item img {
+          border: solid 0px #650360; }
+        .menu--services__menu-list .menu-item:hover img {
+          border: solid 3px #650360; } }
+    .menu--services__menu-list .menu-item img {
+      width: 100%; }
+  .menu--services__menu-list .current-page-ancestor img, .menu--services__menu-list .current-menu-item img {
+    border: solid 3px #650360; }
+  .menu--services__menu-list .current-page-ancestor .menu--services__title, .menu--services__menu-list .current-menu-item .menu--services__title {
+    background: #650360; }
+
+.menu--services__title {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  left: 0;
+  display: block;
+  padding: 0.5em;
+  background: #650360;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+  @media (min-width: 481px) and (max-width: 570px) {
+    .menu--services__title {
+      font-size: .9em;
+      padding: 0.5em 0; } }
+  @media only screen and (min-width: 800px) {
+    .menu--services__title {
+      -webkit-transition: background 0.3s ease;
+              transition: background 0.3s ease; }
+      a:hover .menu--services__title {
+        background: #650360;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8); } }
+
+.menu--site-map {
+  font-size: 0; }
+  .menu--site-map > div > div > .menu > .menu-item, .menu--site-map > div > div > .menu--site > .menu-item, .menu--site-map > div > div > .menu--site__menu-list > .menu-item {
+    font-size: 17px;
+    font-size: 1rem;
+    width: 25%; }
+  .menu--site-map .menu-item {
+    vertical-align: top;
+    box-shadow: none !important;
+    list-style: square; }
+    .menu--site-map .menu-item a {
+      border-bottom: none; }
+    .menu--site-map .menu-item:hover {
+      background: transparent; }
+  .menu--site-map .sub-menu {
+    margin-left: 1em;
+    margin-top: 0.2em; }
+  .menu--site-map a:hover {
+    background: transparent;
+    box-shadow: none !important; }
+
+.content {
+  max-width: 924px; }
+
+.content__widget-area--main a {
+  -webkit-transition: background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+          transition: background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  color: #650360;
+  text-decoration: none;
+  border: solid 1px #fff;
+  background-color: rgba(178, 129, 175, 0.25); }
+  .content__widget-area--main a:hover {
+    color: #4b0248;
+    /* border-bottom: solid 1px $brand-col-3;*/
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 0px 10px #b281af;
+    background-color: rgba(178, 129, 175, 0.5); }
+.content__widget-area--main .current-menu-item a {
+  position: relative;
+  padding-left: 2em !important; }
+  .content__widget-area--main .current-menu-item a:hover {
+    text-shadow: none;
+    box-shadow: none;
+    background-color: rgba(178, 129, 175, 0.25);
+    color: #650360; }
+  .content__widget-area--main .current-menu-item a:before {
+    content: '';
+    height: 100%;
+    width: 1em;
+    background: #650360;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0; }
+
+.content__widget-area--below {
+  margin-bottom: 2em; }
+  @media only screen and (min-width: 800px) {
+    .content__widget-area--below {
+      border-top: solid 1px #ada291;
+      border-bottom: solid 1px #ada291;
+      padding-top: 1em; } }
+  @media only screen and (max-width: 480px) {
+    .content__widget-area--below {
+      max-width: 30em;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    .content__widget-area--below {
+      max-width: 30em;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 800px) {
+    .content__widget-area--below .widget {
+      height: 150px; } }
+
+@media only screen and (max-width: 480px) {
+  .content__widget-area--footer {
+    max-width: 30em;
+    margin: 0 auto; } }
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  .content__widget-area--footer {
+    max-width: 30em;
+    margin: 0 auto; } }
+.content__widget-area--footer .widget {
+  border: none; }
+
+/**
+  *
+  * post
+  *
+**/
+.post {
+  position: relative;
+  padding: 12.5px;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: solid 1px #b281af; }
+  .post .post__header {
+    margin-bottom: 25px; }
+    @media only screen and (min-width: 800px) {
+      .post .post__header {
+        padding-left: 20%; } }
+    .post .post__header .title, .post .post__header .title--article, .post .post__header .title--widget {
+      margin-bottom: 0; }
+      .post .post__header .title a, .post .post__header .title--article a, .post .post__header .title--widget a {
+        text-decoration: none; }
+  @media only screen and (min-width: 800px) {
+    .post .post__content {
+      padding-left: 20%; } }
+  .post .post__content p {
+    max-width: 33em; }
+    .post .post__content p .wp-caption-text {
+      max-width: none; }
+  .post .post__content li {
+    max-width: 33em; }
+  .post .post__content dd {
+    max-width: 33em; }
+  @media only screen and (min-width: 800px) {
+    .post .post__summary {
+      padding-left: 20%; } }
+  @media only screen and (min-width: 800px) {
+    .post .post__meta--footer {
+      width: 20%;
+      position: absolute;
+      padding: 1em;
+      left: 0;
+      top: 0;
+      box-sizing: border-box; } }
+
+.post__content--video {
+  margin-top: 25px; }
+
+/**
+  *
+  * Wordpress post images & captions
+  *
+**/
+.menu--dental-brands img, .menu--finance img, .menu--services img, .post img, .page img, .menu--dental-brands .wp-caption, .menu--finance .wp-caption, .menu--services .wp-caption, .post .wp-caption, .page .wp-caption {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden; }
+  .menu--dental-brands img.alignleft, .menu--finance img.alignleft, .menu--services img.alignleft, .post img.alignleft, .page img.alignleft, .menu--dental-brands .wp-caption.alignleft, .menu--finance .wp-caption.alignleft, .menu--services .wp-caption.alignleft, .post .wp-caption.alignleft, .page .wp-caption.alignleft {
+    float: left;
+    margin-right: 12.5px; }
+  .menu--dental-brands img.alignright, .menu--finance img.alignright, .menu--services img.alignright, .post img.alignright, .page img.alignright, .menu--dental-brands .wp-caption.alignright, .menu--finance .wp-caption.alignright, .menu--services .wp-caption.alignright, .post .wp-caption.alignright, .page .wp-caption.alignright {
+    float: right;
+    margin-left: 12.5px; }
+  .menu--dental-brands img.aligncenter, .menu--finance img.aligncenter, .menu--services img.aligncenter, .post img.aligncenter, .page img.aligncenter, .menu--dental-brands .wp-caption.aligncenter, .menu--finance .wp-caption.aligncenter, .menu--services .wp-caption.aligncenter, .post .wp-caption.aligncenter, .page .wp-caption.aligncenter {
+    margin: 0 auto;
+    text-align: center; }
+  .menu--dental-brands img .wp-caption-text, .menu--finance img .wp-caption-text, .menu--services img .wp-caption-text, .post img .wp-caption-text, .page img .wp-caption-text, .menu--dental-brands .wp-caption .wp-caption-text, .menu--finance .wp-caption .wp-caption-text, .menu--services .wp-caption .wp-caption-text, .post .wp-caption .wp-caption-text, .page .wp-caption .wp-caption-text {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 0.8em;
+    padding-bottom: 0.4em; }
+  .menu--dental-brands img img, .menu--finance img img, .menu--services img img, .post img img, .page img img, .menu--dental-brands .wp-caption img, .menu--finance .wp-caption img, .menu--services .wp-caption img, .post .wp-caption img, .page .wp-caption img {
+    margin: 5px auto; }
+
+.sticky {
+  background: rgba(234, 236, 233, 0.5); }
+
+.page__content ul, .page__content ol {
+  margin-left: 1.5em;
+  text-align: left; }
+.page__content li {
+  max-width: 36em;
+  margin: 0 0 0.5em; }
+.page__content dd {
+  max-width: 36em;
+  margin: 0 auto 0; }
+.page__content strong em, .page__content em strong {
+  font-style: normal;
+  font-weight: 700;
+  color: #650360; }
+.page__content h2 {
+  color: #650360;
+  margin-bottom: 0.2em;
+  font-weight: 500;
+  text-align: left; }
+.page__content .staff {
+  font-size: 0.9em; }
+  .page__content .staff li {
+    max-width: none;
+    text-align: left; }
+.page__content .price_list {
+  font-size: 14px;
+  font-size: 0.8235294118rem; }
+  .page__content .price_list tr:nth-of-type(odd) {
+    background-color: rgba(178, 129, 175, 0.2);
+    /* Override this color in your theme stylesheet */ }
+    .page__content .price_list tr:nth-of-type(odd) td {
+      border-color: rgba(178, 129, 175, 0.3) !important; }
+    .page__content .price_list tr:nth-of-type(odd):hover {
+      background-color: rgba(178, 129, 175, 0.25); }
+      .page__content .price_list tr:nth-of-type(odd):hover td {
+        border-color: rgba(178, 129, 175, 0.5) !important; }
+  .page__content .price_list .prefix {
+    text-align: right;
+    font-size: 0.9em; }
+  .page__content .price_list .price {
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.1em;
+    line-height: 1.2; }
+  .page__content .price_list a:link, .page__content .price_list a:visited, .page__content .price_list a:active {
+    color: #650360;
+    border-bottom: dashed 1px #650360; }
+  .page__content .price_list tr {
+    -webkit-transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0); }
+    .page__content .price_list tr td {
+      border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+      vertical-align: top; }
+      .page__content .price_list tr td p:last-of-type {
+        margin: 0; }
+    .page__content .price_list tr:hover {
+      background-color: rgba(255, 255, 255, 0.2); }
+      .page__content .price_list tr:hover td {
+        border-bottom: solid 1px rgba(255, 255, 255, 0.7); }
+  .page__content .price_list .heading {
+    background-color: #b281af !important;
+    letter-spacing: 1px; }
+    .page__content .price_list .heading td {
+      border-bottom: none; }
+    .page__content .price_list .heading strong {
+      font-size: 1.5em;
+      color: #fff;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+      font-weight: 500; }
+
+body.home .page__header, body.page-parent .page__header, body.page-template-page--no-title-php .page__header {
+  display: none; }
+
+.page__content {
+  text-align: justify;
+  padding-left: 1em;
+  padding-right: 1em; }
+  @media only screen and (min-width: 800px) {
+    .page__content {
+      padding-right: 0; } }
+  .page__content .sig {
+    float: right;
+    margin-bottom: 1.5em; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 28-Sep-2014, 16:05:20
+    Author     : Richard
+*/
+.video {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: solid 1px #650360; }
+  .video object {
+    max-width: 100%; }
+  .video .swf__video {
+    width: 400px;
+    margin: 0 auto; }
+
+.video__title {
+  font-weight: normal;
+  border-bottom: solid 1px #650360;
+  text-align: left;
+  color: #650360; }
+
+/*
+ * .title module
+ */
+/*
+ * Just a base class to extend all modifiers
+ * Remove the margin and uderline
+ */
+.title, .title--article, .title--widget {
+  text-decoration: none;
+  margin-bottom: 0; }
+
+/* colours for the article titles */
+.title--article {
+  display: block;
+  padding-left: 17px;
+  padding-left: 1rem;
+  font-weight: 500;
+  color: #650360; }
+  .video .title--article {
+    padding-left: 0px;
+    padding-left: 0rem; }
+  .page__content .title--article {
+    padding-left: 0; }
+
+/* colours and size for the widget titles */
+.title--widget {
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #4d4b4a;
+  background: #fff;
+  padding: 12.5px 25px;
+  letter-spacing: 0.1em; }
+
+.meta--footer .meta--footer__cat-links:after {
+  content: "|"; }
+  @media only screen and (min-width: 800px) {
+    .meta--footer .meta--footer__cat-links:after {
+      content: ""; } }
+
+/**
+ *
+ * .sidebar styles
+ *
+ */
+.widget-area {
+  display: block; }
+
+/**
+ *
+ * .sidebar styles
+ *
+ */
+.widget {
+  margin-bottom: 12.5px;
+  border-bottom: solid 3px #fff;
+  margin-bottom: 3px; }
+  .widget > ul {
+    margin: 0; }
+    .widget > ul li {
+      list-style: none; }
+  @media only screen and (min-width: 800px) {
+    .widget {
+      margin-bottom: 25px; } }
+
+.widget__header {
+  position: relative;
+  margin-bottom: 1em; }
+  .widget_nav_menu .widget__header {
+    margin-bottom: 1em; }
+    @media only screen and (min-width: 800px) {
+      .widget_nav_menu .widget__header {
+        margin-bottom: 1em; } }
+
+.textwidget {
+  padding: 0 25px 25px; }
+
+.footer, .footer--master {
+  display: block; }
+
+.footer--master__site-info {
+  color: #fff; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 12-Apr-2014, 19:05:35
+    Author     : Richard
+*/
+.site-info {
+  text-align: center;
+  font-size: 0.9em; }
+
+.navigation--main__menu .multi-dropdown ul, .navigation--main__menu .menu--site__menu-list ul {
+  background: #b281af;
+  z-index: 999; }
+  .navigation--main__menu .multi-dropdown ul li a, .navigation--main__menu .menu--site__menu-list ul li a {
+    display: block;
+    padding: 12.5px; }
+
+.site-title {
+  display: block;
+  line-height: 0;
+  margin-left: 25px; }
+
+@media (min-width: 1024px) {
+  .site-title {
+    margin-left: 0; } }
+
+.site-title__icon--mobile {
+  width: 164px;
+  height: 53px; }
+  @media only screen and (min-width: 800px) {
+    .site-title__icon--mobile {
+      display: none !important; } }
+
+.site-title__icon--desk {
+  width: 265px;
+  height: 89px;
+  display: none !important; }
+  @media only screen and (min-width: 800px) {
+    .site-title__icon--desk {
+      display: block !important; } }
+
+.form-contact, .form-contact--mobile, .form-contact--primary {
+  display: block; }
+  .form-contact .widget, .form-contact--mobile .widget, .form-contact--primary .widget {
+    background-color: #b281af;
+    padding-bottom: 1em;
+    border-color: #b281af; }
+  .form-contact .title--widget, .form-contact--mobile .title--widget, .form-contact--primary .title--widget {
+    background-color: #650360;
+    color: #fff; }
+  .form-contact label, .form-contact--mobile label, .form-contact--primary label {
+    color: #fff;
+    margin-bottom: 0.25em; }
+  .form-contact .form-contact__list, .form-contact--mobile .form-contact__list, .form-contact--primary .form-contact__list {
+    margin: 0 0 1em; }
+    .form-contact .form-contact__list li, .form-contact--mobile .form-contact__list li, .form-contact--primary .form-contact__list li {
+      list-style: none;
+      margin-bottom: 0.5em; }
+  .form-contact input, .form-contact--mobile input, .form-contact--primary input, .form-contact textarea, .form-contact--mobile textarea, .form-contact--primary textarea {
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    padding: 0.5em 1em;
+    font-style: italic;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    color: #4d4b4a; }
+  .form-contact textarea, .form-contact--mobile textarea, .form-contact--primary textarea {
+    padding: 0.5em;
+    height: 100px; }
+
+.form-contact--mobile {
+  margin-bottom: 1em; }
+  @media only screen and (min-width: 800px) {
+    .form-contact--mobile {
+      display: none !important; } }
+
+.form-contact--primary {
+  display: none; }
+  @media only screen and (min-width: 800px) {
+    .form-contact--primary {
+      display: block; } }
+  .form-contact--primary .widget {
+    padding-bottom: 5px; }
+
+.wpcf7-mail-sent-ok {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid green;
+  box-shadow: 0 0 0 3px #fff;
+  color: green;
+  display: block; }
+
+.wpcf7-validation-errors {
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid yellow;
+  box-shadow: 0 0 0 3px #fff;
+  display: block; }
+
+.form-contact__list [role="alert"] {
+  font-size: 14px;
+  font-size: 0.8235294118rem;
+  line-height: 1.7857142857;
+  background: none repeat scroll 0 0 white;
+  border: 2px solid red;
+  box-shadow: 0 0 0 2px #fff;
+  margin-top: 8px;
+  padding: 2px 5px;
+  position: relative;
+  top: 0; }
+
+.btn, .form-contact .form-contact__submit input, .form-contact--mobile .form-contact__submit input, .form-contact--primary .form-contact__submit input, .form-submit [id="submit"] {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 1;
+  border: none;
+  margin: 0 auto 0em;
+  top: 0px;
+  font-style: normal;
+  font-family: proxima-nova, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #650360;
+  border-radius: 4px;
+  box-shadow: 0 5px 0 #4b0248, 0 5px 5px 1px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.2) inset;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  padding: 0; }
+
+.btn:hover, .form-contact .form-contact__submit input:hover, .form-contact--mobile .form-contact__submit input:hover, .form-contact--primary .form-contact__submit input:hover, .form-submit [id="submit"]:hover {
+  background-color: #8b4287;
+  box-shadow: 0 4px 0 #640360, 0 5px 5px 1px rgba(0, 0, 0, 0.4); }
+
+.btn:active, .form-contact .form-contact__submit input:active, .form-contact--mobile .form-contact__submit input:active, .form-contact--primary .form-contact__submit input:active, .form-submit [id="submit"]:active {
+  position: relative;
+  top: 4px;
+  box-shadow: none; }
+
+.btn--brand-col-3 {
+  color: #fff;
+  background-color: #92836d;
+  box-shadow: 0 5px 0 #494136, 0 5px 5px 1px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.2) inset;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+.btn--brand-col-3:hover {
+  background-color: #bc77b8;
+  box-shadow: 0 4px 0 #946b92, 0 5px 5px 1px rgba(0, 0, 0, 0.4); }
+
+.btn--brand-col-4 {
+  color: #fff;
+  background-color: #b281af;
+  box-shadow: 0 5px 0 #856083, 0 5px 5px 1px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.2) inset;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); }
+
+.btn--brand-col-4:hover {
+  background-color: #bc77b8;
+  box-shadow: 0 4px 0 #946b92, 0 5px 5px 1px rgba(0, 0, 0, 0.4); }
+
+.widget_nav_menu {
+  margin-bottom: 0; }
+  @media only screen and (min-width: 800px) {
+    .widget_nav_menu {
+      margin-bottom: 0; } }
+  .widget_nav_menu .title--widget {
+    background: #650360;
+    color: #fff;
+    position: relative; }
+  .widget_nav_menu .widget {
+    border-color: #650360; }
+    @media only screen and (max-width: 799px) {
+      .widget_nav_menu .widget {
+        margin-bottom: 25px !important; } }
+  .widget_nav_menu .menu--responsive-toggle__toggle {
+    background: #650360 !important;
+    position: absolute;
+    top: 0;
+    color: #fff !important;
+    border: none; }
+    .widget_nav_menu .menu--responsive-toggle__toggle:hover {
+      box-shadow: none !important;
+      text-shadow: none !important; }
+  .widget_nav_menu .menu, .widget_nav_menu .menu--site, .widget_nav_menu .menu--site__menu-list {
+    margin-bottom: 17px;
+    margin-bottom: 1rem;
+    height: auto;
+    overflow: hidden; }
+    @media only screen and (min-width: 800px) {
+      .widget_nav_menu .menu, .widget_nav_menu .menu--site, .widget_nav_menu .menu--site__menu-list {
+        margin-bottom: 17px;
+        margin-bottom: 1rem;
+        height: auto; } }
+    @media only screen and (max-width: 799px) {
+      .widget_nav_menu .menu, .widget_nav_menu .menu--site, .widget_nav_menu .menu--site__menu-list {
+        margin-bottom: 2px !important; } }
+  .widget_nav_menu .menu-item {
+    margin-bottom: 0.5em;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.05); }
+  .widget_nav_menu a {
+    color: #650360;
+    text-decoration: none; }
+    .widget_nav_menu a:hover {
+      color: #4b0248; }
+  @media only screen and (max-width: 799px) {
+    .widget_nav_menu.menu--responsive .widget__header {
+      -webkit-transition: margin-bottom 0.3s ease;
+              transition: margin-bottom 0.3s ease;
+      margin-bottom: 0; }
+      .widget_nav_menu.menu--responsive .widget__header.active {
+        margin-bottom: 1em; }
+    .widget_nav_menu.menu--responsive .menu, .widget_nav_menu.menu--responsive .menu--site, .widget_nav_menu.menu--responsive .menu--site__menu-list {
+      -webkit-transition: max-height 0.3s ease;
+              transition: max-height 0.3s ease;
+      max-height: 0;
+      overflow: hidden; }
+      .widget_nav_menu.menu--responsive .menu.active, .widget_nav_menu.menu--responsive .active.menu--site, .widget_nav_menu.menu--responsive .active.menu--site__menu-list {
+        max-height: 30em; } }
+
+.menu--dental-brands .widget__header {
+  margin-bottom: 0.5em; }
+.menu--dental-brands .title--widget {
+  background: #c9c1b6;
+  color: #4d4b4a;
+  padding-bottom: 0.3em;
+  padding-top: 0.4em;
+  line-height: 1;
+  text-align: center; }
+.menu--dental-brands .widget {
+  border-color: #ada291;
+  border-width: 0px;
+  margin-bottom: 1em; }
+.menu--dental-brands .menu-item {
+  width: 50%; }
+  @media only screen and (min-width: 800px) {
+    .menu--dental-brands .menu-item {
+      width: 25%; } }
+
+.menu--finance .widget__header {
+  margin-bottom: 0.5em; }
+.menu--finance .title--widget {
+  background: #c9c1b6;
+  color: #4d4b4a;
+  padding-bottom: 0.3em;
+  padding-top: 0.4em;
+  line-height: 1;
+  text-align: center; }
+.menu--finance .widget {
+  border-color: #ada291;
+  border-width: 0px;
+  margin-bottom: 1em; }
+.menu--finance .menu, .menu--finance .menu--site, .menu--finance .menu--site__menu-list {
+  /*/margin-bottom: 1em;*/ }
+
+.menu--footer-pages {
+  display: none !important; }
+  @media only screen and (min-width: 800px) {
+    .menu--footer-pages {
+      display: inline-block !important;
+      width: 16.666% !important; } }
+
+.menu--footer-services {
+  display: none !important; }
+  @media only screen and (min-width: 800px) {
+    .menu--footer-services {
+      display: inline-block !important;
+      width: 16.666% !important; } }
+
+.menu--footer-pages .menu, .menu--footer-services .menu, .menu--footer-pages .menu--site, .menu--footer-services .menu--site, .menu--footer-pages .menu--site__menu-list, .menu--footer-services .menu--site__menu-list {
+  font-size: 13.6px;
+  font-size: 0.8rem; }
+  .menu--footer-pages .menu .menu-item, .menu--footer-services .menu .menu-item, .menu--footer-pages .menu--site .menu-item, .menu--footer-services .menu--site .menu-item, .menu--footer-pages .menu--site__menu-list .menu-item, .menu--footer-services .menu--site__menu-list .menu-item {
+    box-shadow: none;
+    margin: 0; }
+
+.textwidget--single-image, .textwidget--official, .textwidget--service-award, .textwidget--flagship {
+  text-align: center; }
+  .textwidget--single-image .widget, .textwidget--official .widget, .textwidget--service-award .widget, .textwidget--flagship .widget {
+    border-color: #c9c1b6;
+    border-width: 0px;
+    height: 130px;
+    margin-bottom: 1em; }
+  .textwidget--single-image .title--widget, .textwidget--official .title--widget, .textwidget--service-award .title--widget, .textwidget--flagship .title--widget {
+    text-transform: none;
+    color: #4d4b4a;
+    background: #c9c1b6;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.3em;
+    padding-top: 0.4em;
+    line-height: 1; }
+  .textwidget--single-image .textwidget, .textwidget--official .textwidget, .textwidget--service-award .textwidget, .textwidget--flagship .textwidget {
+    padding-bottom: 1.5em; }
+  .textwidget--single-image img, .textwidget--official img, .textwidget--service-award img, .textwidget--flagship img {
+    display: inline; }
+  .textwidget--single-image .icon, .textwidget--official .icon, .textwidget--service-award .icon, .textwidget--flagship .icon {
+    width: 100%;
+    height: 60px;
+    fill: #797877; }
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  .textwidget--official {
+    width: 33.33% !important; } }
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  .textwidget--service-award {
+    width: 33.33% !important; } }
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  .textwidget--flagship {
+    width: 33.33% !important; } }
+
+/*.textwidget--service-award{
+  @include media-query(desk){
+    display:none !important;
+  }
+  padding-top: 1em;
+  text-align:center;
+  .textwidget{
+    padding-bottom: 1.5em;
+  }
+  .icon{
+    width: 100%;
+    height: 134px;
+    fill:$brand-col-1
+  }
+
+}*/
+.textwidget--company-address {
+  color: #fff; }
+  @media only screen and (min-width: 800px) {
+    .textwidget--company-address {
+      width: 16.666% !important; } }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    .textwidget--company-address {
+      width: 33.33% !important; } }
+  .textwidget--company-address .textwidget {
+    font-size: 13.6px;
+    font-size: 0.8rem;
+    padding: 0 0 0 12.5px; }
+    @media (min-width: 1100px) {
+      .textwidget--company-address .textwidget {
+        padding: 0; } }
+
+.textwidget--social-media {
+  width: 16.666% !important;
+  color: #fff; }
+  .textwidget--social-media a {
+    text-decoration: none; }
+  .textwidget--social-media .textwidget {
+    font-size: 13.6px;
+    font-size: 0.8rem; }
+    @media (min-width: 1100px) {
+      .textwidget--social-media .textwidget {
+        padding: 0; } }
+  .textwidget--social-media .icon {
+    height: 4em;
+    width: 4em; }
+
+.textwidget--company-contact {
+  color: #fff; }
+  @media only screen and (max-width: 480px) {
+    .textwidget--company-contact {
+      width: 66.66% !important; } }
+  .textwidget--company-contact .textwidget {
+    font-size: 13.6px;
+    font-size: 0.8rem;
+    padding: 0 0 0 12.5px; }
+    @media (min-width: 1100px) {
+      .textwidget--company-contact .textwidget {
+        padding: 0; } }
+  .textwidget--company-contact .icon {
+    fill: #fff;
+    height: 1em;
+    vertical-align: middle;
+    width: 1em; }
+
+.textwidget--service-award--mobile {
+  display: none !important;
+  text-align: center; }
+  @media only screen and (min-width: 800px) {
+    .textwidget--service-award--mobile {
+      display: inline-block !important; } }
+  .textwidget--service-award--mobile .textwidget {
+    padding: 0 0 1.5em 0; }
+  .textwidget--service-award--mobile .icon {
+    width: 65%;
+    height: 87px;
+    fill: #4d4b4a; }
+
+.textwidget--opening-times .textwidget {
+  padding: 0 0 1.5em 0; }
+.textwidget--opening-times .title--widget {
+  background: #b281af;
+  color: #fff; }
+.textwidget--opening-times .timetable {
+  margin-bottom: 0;
+  line-height: 1.28; }
+  .textwidget--opening-times .timetable tr:nth-of-type(odd) {
+    background-color: rgba(178, 129, 175, 0.2);
+    /* Override this color in your theme stylesheet */
+    /*      td{
+              border-color: rgba($brand-col-4, 0.3)!important;
+            }*/ }
+  .textwidget--opening-times .timetable th {
+    padding: 0.75em; }
+  .textwidget--opening-times .timetable td {
+    padding: 0.75em; }
+.textwidget--opening-times.open .open-highlight {
+  border: solid 1px #b281af;
+  font-weight: 700; }
+
+.textwidget--spacer .widget {
+  margin-bottom: 0 !important;
+  border-bottom: none; }
+.textwidget--spacer .textwidget {
+  padding: 0;
+  padding-top: 20.4px;
+  padding-top: 1.2rem; }
+
+.textwidget--book-online, .textwidget--finance {
+  background-color: #b281af;
+  color: #fff;
+  margin-bottom: 25px; }
+  @media only screen and (min-width: 800px) {
+    .textwidget--book-online, .textwidget--finance {
+      margin-bottom: 0;
+      border-radius: 4px; } }
+  .textwidget--book-online .widget, .textwidget--finance .widget {
+    padding-top: 1em;
+    border-bottom: none; }
+  .textwidget--book-online .title--widget, .textwidget--finance .title--widget {
+    background-color: transparent;
+    color: #fff; }
+  .textwidget--book-online svg, .textwidget--finance svg {
+    max-width: 100%; }
+
+.textwidget--finance {
+  background-color: rgba(178, 129, 175, 0.25); }
+
+.textwidget--book-online--underline .widget {
+  border-bottom: solid 3px #650360;
+  padding-bottom: 25px; }
+
+.icon {
+  fill: #fff; }
+
+.icon__use--hover-on {
+  display: none; }
+
+.icon--hover .icon__use--hover-on {
+  -webkit-transition: opacity 0.3s ease;
+          transition: opacity 0.3s ease;
+  opacity: 0;
+  display: block; }
+.icon--hover .icon__use--hover-off {
+  -webkit-transition: opacity 0.3s ease;
+          transition: opacity 0.3s ease;
+  opacity: 1; }
+.icon--hover:hover .icon__use--hover-on {
+  opacity: 1; }
+.icon--hover:hover .icon__use--hover-off {
+  opacity: 0; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 13-Nov-2014, 18:20:48
+    Author     : Richard
+*/
+.testimonials {
+  margin-bottom: 25px; }
+
+.testimonials__year {
+  -webkit-transition: max-height 0.3s ease;
+          transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding-left: 1em; }
+  .testimonials__year.open {
+    max-height: 300em; }
+
+.testimonials__this-year {
+  max-height: none; }
+
+.testimonials__testimonial {
+  list-style: none; }
+
+.testimonials__cite {
+  font-weight: 600;
+  font-style: normal;
+  color: #650360; }
+
+.testimonials__meta {
+  line-height: 1.4em;
+  margin-bottom: 1em;
+  border-bottom: solid 1px #ada291; }
+
+.testimonials__year-toggle {
+  -webkit-transition: background 0.3s ease, text-shadow 0.3s ease;
+          transition: background 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  background: #b281af;
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
+  margin: 0 0 1em 1em;
+  display: block;
+  color: #fff; }
+  .testimonials__year-toggle.closed .hide {
+    display: none; }
+  .testimonials__year-toggle.open .show {
+    display: none; }
+  .testimonials__year-toggle:hover {
+    background: #650360;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7); }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-Nov-2014, 08:10:33
+    Author     : Richard
+*/
+.comment-respond {
+  margin: 0 0 25px 1em;
+  border: solid 1px #ada291;
+  padding: 1em;
+  background-color: rgba(178, 129, 175, 0.25); }
+
+.comment-form input {
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5em 1em;
+  font-style: italic;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  color: #4d4b4a;
+  border: solid 1px #ada291; }
+.comment-form textarea {
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5em 1em;
+  font-style: italic;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  color: #4d4b4a;
+  border: solid 1px #ada291; }
+
+/*
+ * video-preview
+ */
+.video-preview {
+  display: block;
+  width: 100%;
+  left: 0px;
+  position: relative;
+  padding: 12px 10px;
+  font-size: 0;
+  text-align: center;
+  margin: 20px 0;
+  border: solid 1px #fff; }
+
+.video-preview__video-thumb {
+  padding: 5px;
+  display: block;
+  width: 100%;
+  margin: 0 auto 12.5px;
+  max-width: 200px;
+  background: white;
+  position: relative;
+  vertical-align: top;
+  line-height: 14px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
+  @media only screen and (min-width: 481px) {
+    .video-preview__video-thumb {
+      display: inline-block;
+      width: 32.333%;
+      margin: 0 0 0 0.7%; } }
+
+@media only screen and (min-width: 481px) {
+  .video-preview__video-thumb:first-of-type {
+    margin-left: 0; } }
+
+@media only screen and (min-width: 481px) {
+  .video-preview__video-thumb:last-of-type {
+    margin-right: 0; } }
+
+.video-thumb {
+  background: #650360;
+  height: 104px;
+  position: relative; }
+
+.video-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none !important; }
+
+.video-link__icon--play {
+  -webkit-transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+          transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  height: 80px;
+  width: 80px;
+  margin-top: 12px;
+  opacity: 0.3; }
+
+.video-link:hover .video-link__icon--play {
+  margin-top: 9px;
+  opacity: 0.4;
+  height: 86px;
+  width: 86px; }
+
+.video-link__logo {
+  color: #3F002E;
+  line-height: 2;
+  display: block;
+  font-size: 1em;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%; }
+
+.video-link__play-text {
+  color: #fff;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  left: 50%;
+  margin-left: -18px;
+  padding: 10px 0;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 36px;
+  width: 35px; }
+
+.video-thumb img {
+  width: 100%;
+  height: auto;
+  border: none !important; }
+
+.video-thumb .wp-post-image {
+  padding: 0 !important;
+  margin: 0 !important; }
+
+.video-preview__video-title {
+  color: #3F002E;
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin: 0; }
+
+.video-thumb .video-link__icon {
+  width: 45px;
+  height: 45px;
+  margin-top: 10px;
+  opacity: 0.5;
+  position: relative; }
+
+.menu--site nav {
+  clear: both;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
+  max-height: 0; }
+  @media only screen and (min-width: 800px) {
+    .menu--site nav {
+      overflow: visible;
+      max-height: none; } }
+  .menu--site nav.active {
+    max-height: 30em; }
+  .menu--site nav > ul {
+    border-top: 1px solid #8b4287; }
+    @media only screen and (min-width: 800px) {
+      .menu--site nav > ul {
+        border-top: none; } }
+    @media only screen and (min-width: 800px) {
+      .menu--site nav > ul > .menu-item {
+        display: inline-block; } }
+    .menu--site nav > ul > .menu-item a {
+      padding: 0.8em;
+      border-bottom: 1px solid #8b4287; }
+      @media only screen and (min-width: 800px) {
+        .menu--site nav > ul > .menu-item a {
+          border-bottom: none; } }
+
+.menu--responsive-toggle__toggle {
+  position: absolute;
+  float: right;
+  display: block;
+  padding: 0.75em 2.75em .75em .5em;
+  margin: 0 0 0.5em 0;
+  line-height: 1;
+  right: -0.75em;
+  text-decoration: none;
+  color: #fff;
+  background: #8b4287;
+  top: 1em;
+  right: 0;
+  font-size: 1.14em;
+  text-transform: uppercase; }
+  @media only screen and (min-width: 800px) {
+    .menu--responsive-toggle__toggle {
+      display: none; } }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    .menu--responsive-toggle__toggle {
+      margin: 0 0 100px 0;
+      font-size: 1em; } }
+  .menu--responsive-toggle__toggle:after {
+    content: '';
+    width: 1.75em;
+    border-bottom: solid 0.1764705882em #fff;
+    border-top: solid 0.1764705882em #fff;
+    position: absolute;
+    height: 0.8823529412em;
+    right: 0.5em; }
+  .menu--responsive-toggle__toggle:before {
+    content: '';
+    width: 1.75em;
+    border-bottom: solid 0.1764705882em #fff;
+    border-top: solid 0.1764705882em #fff;
+    position: absolute;
+    height: 0.8823529412em;
+    right: 0.5em;
+    margin-top: 0.3529411765em; }
+
+/*------------------------------------*\
+    MULTIDROPDOWN CORE
+\*------------------------------------*/
+/**
+ * MultiDropdown is a plugin for inuit.css to create multi level dropdown menus
+ *
+ * LICENSE
+ *
+ * Copyright 2013 Samuel Turner
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+.multi-dropdown, .menu--site__menu-list {
+  overflow: visible; }
+
+.multi-dropdown li, .menu--site__menu-list li {
+  position: relative; }
+
+/* Set up child levels and hide off-screen. */
+.multi-dropdown li ul, .menu--site__menu-list li ul {
+  position: absolute;
+  left: -99999px;
+  display: none;
+  top: 100%;
+  margin-left: 0; }
+
+.multi-dropdown li ul a, .menu--site__menu-list li ul a {
+  white-space: nowrap;
+  /* Stop the list items breaking. */
+  display: block;
+  margin: 0;
+  padding: 0; }
+
+/* Style each link when hovered, keep styled while child ul is displayed */
+.multi-dropdown a:hover, .menu--site__menu-list a:hover, .multi-dropdown li:hover > a, .menu--site__menu-list li:hover > a {
+  text-decoration: underline; }
+
+.multi-dropdown li ul li, .menu--site__menu-list li ul li {
+  display: block; }
+
+/* Bring the first dropdown level back onto screen when you hover its parent li. */
+.multi-dropdown li:hover > ul, .menu--site__menu-list li:hover > ul {
+  left: 0;
+  display: block; }
+
+/* Bring all lower levels back on screen to the right when their parent li is hovered. */
+.multi-dropdown ul li:hover > ul, .menu--site__menu-list ul li:hover > ul {
+  margin-left: 100%;
+  top: 0; }
+
+.widget_search .searchform [type=search] {
+  max-width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box; }
+
+.widget_calendar table th {
+  padding: 0;
+  text-align: center; }
+.widget_calendar table td {
+  padding: 0;
+  text-align: center; }
+
+.wp-caption-text {
+  max-width: none !important; }
+
+/*
+ *  Remodal - v0.6.3
+ *  Flat, responsive, lightweight, easy customizable modal window plugin with declarative state notation and hash tracking.
+ *  http://vodkabears.github.io/remodal/
+ *
+ *  Made by Ilya Makarov
+ *  Under MIT License
+ */
+/* ==========================================================================
+   Remodal necessary styles
+   ========================================================================== */
+/* Hide scroll bar */
+html.remodal-is-locked {
+  overflow: hidden; }
+
+/* Anti FOUC */
+.remodal, [data-remodal-id] {
+  visibility: hidden; }
+
+/* Necessary styles of the overlay */
+.remodal-overlay {
+  position: fixed;
+  z-index: 9999;
+  top: -5000px;
+  right: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+  display: none; }
+
+/* Necessary styles of the wrapper */
+.remodal-wrapper {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  text-align: center;
+  -webkit-overflow-scrolling: touch; }
+
+.remodal-wrapper:after {
+  display: inline-block;
+  height: 100%;
+  margin-left: -0.05em;
+  content: ""; }
+
+/* Fix iPad, iPhone glitches */
+.remodal-overlay, .remodal-wrapper {
+  -webkit-transform: translateZ(0px); }
+
+/* Necessary styles of the modal dialog */
+.remodal {
+  position: relative;
+  display: inline-block; }
+
+/* Anti-zoom. Font-size should be >= 16px. */
+.remodal select, .remodal textarea, .remodal input, .remodal select:focus, .remodal textarea:focus, .remodal input:focus {
+  font-size: 16px; }
+
+/* ==========================================================================
+   Remodal default theme
+   ========================================================================== */
+/* Default theme font */
+.remodal, .remodal * {
+  font-family: "Exo 2", sans-serif; }
+
+/* Background for effects */
+.remodal-bg {
+  -webkit-transition: -webkit-filter 0.2s ease-out;
+  transition: filter 0.2s ease-out; }
+
+body.remodal-is-active .remodal-bg {
+  -webkit-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px); }
+
+/* Default theme styles of the overlay */
+.remodal-overlay {
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  opacity: 0;
+  background: rgba(33, 36, 46, 0.6); }
+
+body.remodal-is-active .remodal-overlay {
+  opacity: 1; }
+
+/* Default theme styles of the modal dialog */
+.remodal {
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 35px;
+  -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+  opacity: 0;
+  color: #182a3c;
+  background: #f4f4f4;
+  background-clip: padding-box; }
+  @media only screen and (max-width: 480px) {
+    .remodal {
+      padding: 35px 0; } }
+
+body.remodal-is-active .remodal {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  opacity: 1; }
+
+/* Vertical align of the modal dialog */
+.remodal, .remodal-wrapper:after {
+  vertical-align: middle; }
+
+/* Close button */
+.remodal-close {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 28px;
+  height: 28px;
+  -webkit-transition: background 0.2s ease-out;
+  transition: background 0.2s ease-out;
+  text-decoration: none;
+  border-radius: 50%;
+  border: solid 1px #ccc; }
+
+.remodal-close:after {
+  font-family: arial, sans-serif !important;
+  font-size: 50px;
+  line-height: 46px;
+  display: block;
+  content: "\02df";
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  color: #3e5368; }
+
+.remodal-close:hover, .remodal-close:active {
+  background: #3e5368; }
+
+.remodal-close:hover.remodal-close:after, .remodal-close:active.remodal-close:after {
+  color: #f4f4f4; }
+
+/* Dialog buttons */
+.remodal-confirm, .remodal-cancel {
+  font-size: 10pt;
+  display: inline-block;
+  width: 120px;
+  margin: 0 0 5px 0;
+  padding: 9px 0;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  background-clip: padding-box; }
+
+.remodal-confirm {
+  color: #16a085;
+  border: 2px solid #16a085;
+  background: #f4f4f4; }
+
+.remodal-confirm:hover, .remodal-confirm:active {
+  color: #f4f4f4;
+  background: #16a085; }
+
+.remodal-cancel {
+  color: #c0392b;
+  border: 2px solid #c0392b;
+  background: #f4f4f4; }
+
+.remodal-cancel:hover, .remodal-cancel:active {
+  color: #f4f4f4;
+  background: #c0392b; }
+
+/* Media queries
+   ========================================================================== */
+@media only screen and (min-width: 40.063em) {
+  .remodal {
+    max-width: 700px;
+    min-height: 0;
+    margin: 20px auto;
+    border-radius: 6px; } }
+
+/* IE8
+   ========================================================================== */
+.lt-ie9 .remodal-overlay {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F021242E, endColorstr=#F021242E); }
+
+.lt-ie9 .remodal {
+  width: 700px;
+  min-height: 0;
+  margin: 20px auto; }
+
+.lt-ie9 .remodal-close:after {
+  margin: auto;
+  text-align: center; }
+
+.lt-ie9 .remodal-close:hover, .lt-ie9 .remodal-close:active {
+  background: transparent; }
+
+.lt-ie9 .remodal-close:hover.remodal-close:after, .lt-ie9 .remodal-close:active.remodal-close:after {
+  color: #3e5368; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29-Sep-2014, 08:59:48
+    Author     : Richard
+    description: styles for page-id-25 (contact us)
+*/
+.page-id-25 .contact-boxes__content {
+  border: solid 1px #b281af;
+  margin-left: 3.4px;
+  margin-left: 0.2rem;
+  margin-right: 3.4px;
+  margin-right: 0.2rem;
+  margin-bottom: 12.5px; }
+.page-id-25 .contact-boxes__label {
+  background: #b281af;
+  color: #fff;
+  margin-bottom: 0; }
+.page-id-25 .contact-boxes__deets {
+  background: #fff;
+  margin-bottom: 0;
+  text-align: center;
+  color: #4d4b4a; }
+.page-id-25 a.contact-boxes__deets, .page-id-25 .contact-boxes__deets a {
+  -webkit-transition: background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+          transition: background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+  background-color: rgba(178, 129, 175, 0.25);
+  color: #650360; }
+  .page-id-25 a.contact-boxes__deets:hover, .page-id-25 .contact-boxes__deets a:hover {
+    color: #4b0248;
+    /* border-bottom: solid 1px $brand-col-3;*/
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0px 0px 10px #b281af;
+    background-color: rgba(178, 129, 175, 0.5); }
+.page-id-25 .contact-boxes__tel {
+  font-size: 15.3px;
+  font-size: 0.9rem; }
+.page-id-25 .contact-boxes__fax {
+  font-size: 15.3px;
+  font-size: 0.9rem; }
+.page-id-25 .contact-boxes__email {
+  font-size: 15.3px;
+  font-size: 0.9rem; }
+.page-id-25 .contact-boxes__address {
+  margin-bottom: 1em; }
+.page-id-25 [id=cdc-map] {
+  margin-bottom: 1em; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29-Sep-2014, 08:59:48
+    Author     : Richard
+    description: styles for page-id-25 (contact us)
+*/
+.page-id-83 .table--options tr {
+  background: #c5a0c3;
+  color: #262525; }
+  .page-id-83 .table--options tr:first-child td {
+    border-bottom: solid 1px #b281af; }
+.page-id-83 th.col {
+  text-align: center; }
+.page-id-83 .table--finance tbody tr th:last-of-type {
+  border-right-width: 1px; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29-Sep-2014, 08:59:48
+    Author     : Richard
+    description: styles for page-id-25 (contact us)
+*/
+.page-id-85 .benifit {
+  background: #b281af;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29-Sep-2014, 08:59:48
+    Author     : Richard
+    description: styles for page-id-25 (contact us)
+*/
+@media only screen and (max-width: 480px) {
+  .page-id-6 .media__img {
+    display: block;
+    float: none;
+    margin: 0 0 12.5px 0;
+    width: auto; } }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 03-Nov-2014, 10:31:03
+    Author     : Richard
+*/
+.page-template-page--full-width-php .title--article {
+  padding-left: 0; }
+.page-template-page--full-width-php .page__content {
+  padding-left: 0;
+  padding-right: 0; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 03-Nov-2014, 10:31:03
+    Author     : Richard
+*/
+.page-template-page--header-banner-php .header--master {
+  display: block !important;
+  height: 170px !important; }
+  @media only screen and (min-width: 481px) {
+    .page-template-page--header-banner-php .header--master {
+      height: 325px !important; } }
+.page-template-page--header-banner-php .header--master__banner-image {
+  top: -210px; }
+.page-template-page--header-banner-php .header--master__strap {
+  color: #fff;
+  bottom: auto;
+  left: auto;
+  right: 60%;
+  top: 50px; }
+  @media only screen and (min-width: 481px) {
+    .page-template-page--header-banner-php .header--master__strap {
+      right: 66%;
+      top: 100px !important; } }
+.page-template-page--header-banner-php .header--master__strap br {
+  display: block; }
+
+/*
+removes max-widths from p that have no text node
+*/
+.is-empty {
+  max-width: none !important; }

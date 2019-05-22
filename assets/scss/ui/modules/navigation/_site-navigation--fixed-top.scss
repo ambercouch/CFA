@@ -1,0 +1,15 @@
+/**
+ *
+ * .site-navigation--fixed-top
+ *
+ */
+
+%site-navigation--fixed-top{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+}
+.admin-bar %site-navigation--fixed-top{ 
+    top:28px;
+}

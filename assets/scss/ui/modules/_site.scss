@@ -1,0 +1,50 @@
+.site{
+  //background: $brand-col-6;
+  background: #fff;
+  color: $brand-col-1;
+}
+.site__header--master{
+  padding: 0;
+  @include x-rem(margin-bottom,1.5);
+  background: $brand-col-6;
+}
+.site__navigation--main{
+  background: $brand-col-2;
+  border-bottom: solid 3px $brand-col-2--tint;
+  //height: 150px;
+}
+.site__content{
+  padding: $base-spacing-unit 0 0;
+}
+.site__footer-content{
+  padding: $base-spacing-unit 0 0;
+  background: $brand-col-4;
+  border-top:solid 3px $brand-col-5;
+}
+.site__footer{
+  padding: 0 0 $base-spacing-unit 0;
+  background: $brand-col-4;
+}
+.site__tel{
+  @include media-query(desk){
+    display:none;
+  }
+  display: block;
+  text-decoration: none;
+  background: $brand-col-6;
+  color: $brand-col-2;
+  text-align: center;
+  @include x-rem(padding-top, 0.75);
+  @include x-rem(padding-bottom, 0.75);
+
+  .header--master__tel__call{
+    display: inline;
+    height: 23px;
+    position: relative;
+    top: 5px;
+    width: 19px;
+    fill: $brand-col-2;
+
+  }
+
+}

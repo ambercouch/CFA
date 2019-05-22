@@ -1,0 +1,40 @@
+/**
+ *
+ * base layout styles
+ *
+ */
+html{
+
+  font:#{($base-font-size/16px)*0.9em}/#{$line-height-ratio} $base-font-family;
+  @include media-query(lap-and-up){
+    font:#{($base-font-size/16px)*1em}/#{$line-height-ratio} $base-font-family;
+  }
+  //opacity: 0;
+  &.wf-active{
+    //transition: opacity 0.3s ease;
+    //opacity: 1;
+  }
+}
+body{
+  font-size: 90%;
+  //background: $brand-col-6;
+  background: #fff;
+  @include media-query(lap-and-up){
+    font-size: 100%
+  }
+}
+
+
+.site-main{
+
+}
+.container{
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  @include media-query(desk){
+    max-width: 1024px;
+    width: 100%
+  }
+}
+

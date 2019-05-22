@@ -1,0 +1,256 @@
+.menu{
+  @extend .nav;
+  .rtl &{
+    direction: rtl;
+  }
+}
+.menu__icon{
+  display: block;
+}
+
+.menu--site{
+  @extend .menu;
+  @extend %menu--responsive-toggle;
+}
+.menu--site__container{
+  @include media-query(desk){
+    float: right;
+  }
+
+}
+.menu--site__menu-list{
+  @extend .menu;
+  @extend .nav--block;
+  @extend .multi-dropdown;
+  word-spacing: 0;
+
+  margin-bottom: 0;
+  position: relative;
+  z-index:9999;
+  a{
+    text-decoration: none;
+    color:#fff;
+    background: $brand-col-2;
+    text-decoration:none !important;
+    padding: 1em 0.8em !important;
+    &:hover{
+      background: $brand-col-2--tint;
+      text-decoration:none !important;
+    }
+  }
+}
+.menu--services{
+  border-top: solid 1px $brand-col-3--tint;
+  border-bottom: solid 1px $brand-col-3--tint;
+  @include x-rem(padding-top, 1);
+  @include x-rem(padding-bottom, 1);
+  @extend %post__img;
+}
+.menu--services__menu-list{
+  @extend .matrix;
+  @extend .two-cols;
+  font-size: 0.8em;
+  margin: 0 auto;
+  border: none;
+  max-width:320px;
+
+  @include media-query(lap){
+    max-width:100%;
+  }
+  @include media-query(desk){
+    max-width:92%;
+  }
+  .menu-item{
+    text-align: center;
+    padding:0;
+    position: relative;
+    border-width: 3px;;
+    border-color: #fff;
+    .rtl &{
+      float: right;
+    }
+    @include media-query(palm) {
+      &:last-child {
+        width: 100%;
+        height: 154px;
+        overflow: hidden;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    @include media-query(lap){
+      width: 20%;
+      border-width: 3px;
+
+    }
+    @include media-query(desk){
+      width: 20%;
+
+      border-width: 12px;
+      img{
+       //transition: border 0.2s ease;
+       border: solid 0px $brand-col-2;
+      }
+      
+      &:hover img{
+        
+        border: solid 3px $brand-col-2;
+      
+      }
+    }
+
+
+    img{
+      width: 100%;
+      &.palm-last{
+        object-position: 0 -62px;
+      }
+    }
+  }
+  .current-page-ancestor, .current-menu-item{
+    img{
+      border: solid 3px $brand-col-2;
+    }
+    .menu--services__title{
+      background: $brand-col-2;
+    }
+  }
+
+}
+.menu--services__title{
+  //height: 4em;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  left: 0;
+  display: block;
+  padding: 0.5em 0;
+  background: rgba($brand-col-2,1);
+
+  text-shadow: 0 1px 0 rgba(#000, 0.3);
+
+  @media (min-width: $lap-start)  and (max-width: 570px) {
+    font-size: .9em;
+    padding: 0.5em 0;
+  }
+
+  @include media-query(desk){
+    transition: background 0.3s ease;
+    //background: rgba($brand-col-2,0.7);
+
+    a:hover &{
+      background: rgba($brand-col-2,1);
+      text-shadow: 0 1px 1px rgba(#000, 0.8);
+      
+    }
+  }
+}
+.menu{
+  .content__widget-area--main &{
+    @extend .nav--stacked;
+    @extend .nav--block
+  }
+}
+
+.menu--site-map{
+  font-size: 0;
+
+  & > div > div > .menu > .menu-item{
+    @include x-rem(font-size, 1);
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    @include media-query(lap){
+      width: 50%;
+      display: inline-block;
+    }
+    @include media-query(desk){
+      display: inline-block;
+      width: 25%;
+    }
+  }
+  &.is-4-col > div > div > .menu > .menu-item{
+    @include x-rem(font-size, 1);
+    width: 100%;
+    @include media-query(lap){
+      width: 50%;
+    }
+    @include media-query(desk){
+      width: 25%;
+    }
+  }
+
+  &.is-5-col > div > div > .menu > .menu-item{
+    @include x-rem(font-size, 1);
+    width: 100%;
+    @include media-query(lap){
+      width: 50%;
+    }
+    @include media-query(desk){
+      width: 20%;
+    }
+
+  }
+  .menu-item{
+    vertical-align: top;
+    box-shadow: none !important;
+    list-style: square;
+    a{
+      @extend %link-style-1--col-2;
+      border-bottom: none;
+    }
+    &:hover{
+      background:transparent;
+    }
+  }
+  .sub-menu{
+    margin-left: 1em;
+    margin-top: 0.2em;
+  }
+  a:hover{
+    background:transparent;
+    box-shadow:none !important;
+  }
+}
+
+
+%has-sep{
+  a{
+    border-right: solid 1px;
+  }
+  .menu-item{
+    a{
+      border: none;
+      border-left: none !important;
+    }
+  }
+
+  .menu-item:first-child{
+    a{
+      border-left: solid 1px;
+
+    }
+  }
+}
+
+.menu-item-has-children{
+
+  position: relative;
+  > a{
+    padding-right:$base-spacing-unit  !important;
+  }
+&:after{
+content : url('assets/images/svg/down.svg');
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  right: 0.6em;
+  top:15px;
+}
+}
+
+

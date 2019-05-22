@@ -1,0 +1,73 @@
+/*------------------------------------*\
+    MULTIDROPDOWN CORE
+\*------------------------------------*/
+/**
+ * MultiDropdown is a plugin for inuit.css to create multi level dropdown menus
+ *
+ * LICENSE
+ *
+ * Copyright 2013 Samuel Turner
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+.multi-dropdown {
+	overflow: visible;
+}
+
+.multi-dropdown li {
+	position: relative;
+}
+
+/* Set up child levels and hide off-screen. */
+.multi-dropdown li ul {
+	position: absolute;
+	left: -99999px;
+	display: none;
+	top: 100%;
+	margin-left: 0;
+}
+
+.multi-dropdown li ul a {
+	white-space: nowrap; /* Stop the list items breaking. */
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+/* Style each link when hovered, keep styled while child ul is displayed */
+.multi-dropdown a:hover,
+.multi-dropdown li:hover>a {
+	text-decoration: underline;
+}
+
+.multi-dropdown li ul li {
+	display: block;
+}
+
+/* Bring the first dropdown level back onto screen when you hover its parent li. */
+.multi-dropdown li:hover>ul {
+	left: 0;
+	display: block;
+	@include media-query(portable){
+		display: none;
+	}
+}
+
+/* Bring all lower levels back on screen to the right when their parent li is hovered. */
+.multi-dropdown ul li:hover>ul {
+	margin-left: 100%;
+	top: 0;
+
+}

@@ -1,0 +1,29 @@
+.site-title{
+  display:block;
+  line-height: 0;
+  margin-left: $base-spacing-unit;
+
+}
+@media (min-width: 1024px) {
+  .site-title{
+    margin-left: 0;
+
+  }
+
+}
+.site-title__icon--mobile{
+  width:164px;
+  height:53px;
+  @include media-query(desk){
+    display:none !important;
+  }
+}
+
+.site-title__icon--desk{
+  width:265px;
+  height:89px;
+  display: none !important;
+  @include media-query(desk){
+    display:block !important;
+  }
+}

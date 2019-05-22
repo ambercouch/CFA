@@ -1,0 +1,40 @@
+.icon{
+  fill: #fff;
+  .icon__group & {
+    display: inline-block;
+    max-width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+.icon__group{
+  font-size: 0;
+}
+
+ .icon__use--hover-on{
+    display: none;
+   
+  }
+.icon--hover{
+  .icon__use--hover-on{
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    display: block;
+   
+  }
+  .icon__use--hover-off{
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    
+  }
+  &:hover{
+    
+    .icon__use--hover-on{
+    opacity: 1;
+    }
+    .icon__use--hover-off{
+      opacity: 0;
+    }
+  }
+  
+}

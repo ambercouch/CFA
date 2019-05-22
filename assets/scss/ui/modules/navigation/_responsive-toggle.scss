@@ -1,0 +1,83 @@
+
+%menu--responsive-toggle{
+
+
+  nav {
+    clear: both;
+    @include vendor(transition, all 0.5s);
+    overflow: hidden;
+    max-height: 0;
+    @include media-query(desk){
+      overflow: visible;
+      max-height:none;
+    }
+    &.active{
+      max-height: 30em;
+    }
+    > ul{
+
+      @extend .nav--stacked;
+      border-top: 1px solid $brand-col-2--tint;
+      @include media-query(desk){
+        border-top: none;
+      }
+      > .menu-item{
+        @include media-query(desk){
+          display: inline-block;
+        }
+        a{
+          padding: 0.8em;
+          border-bottom: 1px solid $brand-col-2--tint;
+          @include media-query(desk){
+            border-bottom: none;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.menu--responsive-toggle__toggle{
+  position: absolute;
+  float: right;
+  display: block;
+  padding: 0.75em 2.75em .75em .5em;
+  margin:  0 0 0.5em 0;
+  line-height: 1;
+  right: -0.75em;
+  text-decoration: none;
+  color:#fff;
+  background: $brand-col-2--tint;
+  top:2.8em;
+  right: 0;
+  font-size: 1.14em;
+  text-transform: uppercase;
+  //border:solid 1px rgba(#000, 0.2);
+  @include media-query(desk){
+    display:none;
+  }
+  @include media-query(lap){
+    margin:  0 0 100px 0;
+    font-size: 1em;
+  }
+  &:after{
+    content :'';
+    width: 1.75em;
+    border-bottom: solid (3/17) * 1em #fff;
+    border-top: solid (3/17) * 1em #fff;
+    position: absolute;
+    height: (15/17) * 1em;
+    right: 0.5em;
+  }
+  &:before{
+    content :'';
+    width: 1.75em;
+    border-bottom: solid (3/17) * 1em #fff;
+    border-top: solid (3/17) * 1em #fff;
+    position: absolute;
+    height: (15/17) * 1em;
+    right: 0.5em;
+    margin-top: (6/17) * 1em;
+  }
+}

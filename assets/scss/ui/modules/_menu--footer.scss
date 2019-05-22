@@ -1,0 +1,15 @@
+%menu--footer{
+  .menu{
+    @extend .nav--stacked;
+    @include x-rem(font-size, 0.8);
+    .menu-item{
+      box-shadow: none;
+      margin:0;
+      a{
+        @extend %link-style-1;
+      }
+    }
+  }
+}
+
+

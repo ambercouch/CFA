@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29-Sep-2014, 08:59:48
+    Author     : Richard
+    description: styles for page-id-25 (contact us)
+*/
+
+.page-id-83, .page-id-528{
+  .table--finance{
+    @extend .table--bordered;
+  }
+  .table--options{
+    tr{
+      background: $brand-col-4--tint;
+      color: $brand-col-1--shade;
+      &:first-child td{
+        border-bottom: solid 1px $brand-col-4;
+      }
+    }
+
+  }
+  th.col{
+    text-align: center;
+  }
+  .table--finance tbody tr th:last-of-type {
+    border-right-width: 1px;
+  }
+}

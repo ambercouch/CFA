@@ -1,0 +1,45 @@
+/*
+ * .title module
+ */
+
+/*
+ * Just a base class to extend all modifiers
+ * Remove the margin and uderline
+ */
+.title{
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+/* colours for the article titles */
+.title--article{
+  @extend .title;
+  display:block;
+  @include x-rem(padding-left, 1);
+  font-weight: 500;
+  color: $brand-col-2;
+  &:hover{
+    //color: $brand-col-1;
+  }
+  .video &{
+    @include x-rem(padding-left, 0);
+  }
+  .page__content &{
+    padding-left: 0;
+  }
+}
+
+/* colours and size for the widget titles */
+.title--widget{
+  @extend .title;
+  @extend .epsilon;
+
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $brand-col-1;
+  background: #fff;
+  padding: ($half-spacing-unit) $base-spacing-unit;
+  letter-spacing: 0.1em;
+
+
+}

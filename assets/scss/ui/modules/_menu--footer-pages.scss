@@ -1,0 +1,9 @@
+.menu--footer-pages{
+  display: none !important;
+  @include media-query(desk){
+    display: inline-block !important;
+    width: 16.666% !important;
+  }
+  @extend %menu--footer;
+}
+

@@ -1,0 +1,39 @@
+/**
+ *
+ * .sidebar styles
+ *
+ */
+
+.widget{
+  .rtl &{
+    direction: rtl;
+
+  }
+  margin-bottom: $half-spacing-unit;
+  > ul{
+    margin: 0;
+    li{
+      list-style:none;
+    }
+  }
+  border-bottom: solid 3px #fff;
+  margin-bottom: 3px;
+  @include media-query(desk){
+    margin-bottom: $base-spacing-unit;
+  }
+}
+
+.widget__header{
+  position: relative;
+  margin-bottom: 1em;
+  .widget_nav_menu &{
+    margin-bottom: 1em;
+    @include media-query(desk){
+      margin-bottom: 1em;
+    }
+  }
+
+}
+.textwidget{
+  padding: 0 $base-spacing-unit $base-spacing-unit;
+}

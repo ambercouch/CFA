@@ -1,0 +1,83 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 29-Sep-2014, 08:59:48
+    Author     : Richard
+    description: styles for page-id-25 (contact us)
+*/
+
+
+  .contact-boxes{
+    @extend .grid--full;
+    //margin-bottom: $half-spacing-unit;
+
+  }
+  .contact-boxes__content{
+    border:solid 1px $brand-col-4;
+    @include x-rem(margin-left, 0.2);
+    @include x-rem(margin-right, 0.2);
+
+    margin-bottom: $half-spacing-unit;
+
+  }
+  .contact-boxes__label{
+    @extend .islet;
+    background: $brand-col-4;
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .contact-boxes__deets{
+    @extend .islet;
+    background: #fff;
+    margin-bottom: 0;
+    text-align: center;
+    color: $brand-col-1;
+  }
+  a.contact-boxes__deets,
+  .contact-boxes__deets a{
+    transition: background 0.3s ease,
+      border-bottom 0.3s ease,
+      box-shadow 0.3s ease,
+      text-shadow 0.3s ease;
+    background-color:rgba($brand-col-4, 0.25);
+    color: $brand-col-2;
+    &:hover{
+      color: $brand-col-2--shade;
+      //background: rgba($brand-col-3--tint, 0.1);
+      /* border-bottom: solid 1px $brand-col-3;*/
+      text-shadow: 0 1px 0 rgba(#fff, 0.8);
+      box-shadow: inset 0px 0px 10px rgba($brand-col-4, 1);
+      background-color:rgba($brand-col-4, 0.5);
+
+    }
+  }
+
+  .contact-boxes__tel{
+    @extend .desk-one-quarter;
+    @include x-rem(font-size, 0.9);
+    .contact-boxes__content{
+      //margin-left: 0;
+    }
+  }
+  .contact-boxes__fax{
+    @extend .desk-one-quarter;
+    @include x-rem(font-size, 0.9);
+  }
+  .contact-boxes__email{
+    @extend .desk-one-half;
+    @include x-rem(font-size, 0.9);
+    .contact-boxes__content{
+      //margin-right: 0;
+    }
+  }
+  .contact-boxes__address{
+    margin-bottom: 1em;
+  }
+  [id=cdc-map]{
+    margin-bottom: 1em;
+  }
+
+
