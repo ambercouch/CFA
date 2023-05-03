@@ -92,18 +92,19 @@ $desk-wide-start:   1200px!default;
   @return mix(black, $color, $percent);
 }
 
-$brand-col-1: #4d4b4a;
+$brand-col-1: #293944;
 $brand-col-1--shade: shade($brand-col-1, 50%);
 $brand-col-1--tint: tint($brand-col-1, 25%);
 $brand-col-1--light: lighten($brand-col-1, 50%);
-$brand-col-2: #650360;
+$brand-col-1--light: lighten($brand-col-1, 50%);
+$brand-col-2: #00a7b8;
 $brand-col-2--shade: shade($brand-col-2, 25%);
 $brand-col-2--tint: tint($brand-col-2,25%);
 $brand-col-3: #92836d;
 $brand-col-3--tint: tint($brand-col-3, 25%);
 $brand-col-3--light: lighten($brand-col-3, 25%);
 $brand-col-3--shade: shade($brand-col-3, 50%);
-$brand-col-4: #b281af;
+$brand-col-4: #b4e1e0;
 $brand-col-4--tint: tint($brand-col-4, 25%);
 $brand-col-4--light: lighten($brand-col-4, 25%);
 $brand-col-4--shade: shade($brand-col-4, 25%);
