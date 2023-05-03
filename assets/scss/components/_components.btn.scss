@@ -1,0 +1,83 @@
+/*
+  BEM BLOCK .c-btn
+ */
+
+.c-btn {
+  display: block;
+  cursor: pointer;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-btn--
+ */
+
+.c-btn-- {
+  &expand {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    &[data-state=on], .c-header__header--staff[data-state=on] &{
+      transform: rotateZ(-180deg);
+    }
+  }
+  &primary{
+    box-shadow: none;
+    border-radius: 0;
+    line-height: 2.5em!important;
+    height: 45px;
+    padding: 0 !important;
+    background-color: #650360 !important;
+    display: block;
+    width: 100%;
+    border: none;
+    margin: 0 auto;
+    top: 0;
+    font-style: normal;
+    font-family: proxima-nova,sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff !important;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-btn--
+
+[class*=c-btn--] {
+  @extend .c-btn;
+}
+
+/*
+  BEM ELEMENTS .c-btn__
+ */
+
+.c-btn__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn--
+
+[class*=c-btn__header--] {
+  @extend .c-btn__header;
+}

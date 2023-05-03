@@ -1,0 +1,59 @@
+/*
+  BEM BLOCK .c-faux-icon
+ */
+
+.c-faux-icon {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-faux-icon--
+ */
+
+.c-faux-icon-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-faux-icon--
+
+[class*=c-faux-icon--] {
+  @extend .c-faux-icon;
+}
+
+/*
+  BEM ELEMENTS .c-faux-icon__
+ */
+
+.c-faux-icon__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-faux-icon--
+
+[class*=c-faux-icon__header--] {
+  @extend .c-faux-icon__header;
+}

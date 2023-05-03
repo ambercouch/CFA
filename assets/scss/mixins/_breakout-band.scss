@@ -1,0 +1,25 @@
+@mixin breakout-band($bgc : #ccc, $padding : 0, $pos : 'centre'){
+  position: relative;
+  z-index: 1;
+  &:after{
+    position: absolute;
+    content: '';
+    width: 200vw;
+    right: 50%;
+    top: 0;
+    height: 100%;
+    display: block;
+    background: $bgc;
+    z-index: -1;
+    transform: translate( 50%, 0 );
+    @if $pos == 'left'{
+      transform: translate(0 );
+      right: 0;
+    }
+    @if $pos == 'right'{
+      transform: translate(0 );
+      left: 0;
+      right: auto;
+    }
+  }
+}

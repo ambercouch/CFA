@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .u-faux-icon
+ */
+
+.u-faux-icon {
+  display: block;
+  @include size($act-unit / 1.75)
+}
+
+/*
+  BEM BLOCK MODIFIER .u-faux-icon--
+ */
+
+.u-faux-icon-- {
+  &angle {
+    border: solid;
+    border-width: $act-unit-t   $act-unit-t 0 0;
+    border-color: $brand-col-2;
+    transform: rotateZ(135deg);
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .u-faux-icon--
+
+[class*=u-faux-icon--] {
+  @extend .u-faux-icon;
+}
+
+/*
+  BEM ELEMENTS .u-faux-icon__
+ */
+
+.u-faux-icon__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .u-faux-icon--
+
+[class*=u-faux-icon__header--] {
+  @extend .u-faux-icon__header;
+}

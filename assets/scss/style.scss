@@ -10,13 +10,32 @@
   * project-specific components afterwards.
 */
 
+/*
+ FUCTIONS
+ */
+@import "functions";
 
+@import "mixins";
 
+@import "../../node_modules/inuitcss/tools/tools.font-size";
 /**
   * Setup
   */
+
+@import "settings/inuit/settings.config";
+@import "../../node_modules/inuitcss/settings/settings.core";
+@import "../../node_modules/inuitcss/settings/settings.core";
+@import "../../node_modules/inuitcss/settings/example.settings.global";
+
+@import "settings/settings.headings";
+
 @import "vars";
 @import "../vendor/inuit.css/inuit";
+
+
+@import "tools";
+
+@import "../../node_modules/sass-mq/mq";
 
 /**
   * She’s all yours, cap’n... Begin importing your stuff here.
@@ -80,7 +99,7 @@
 @import "ui/modules/widgets/widget_calendar";
 @import "ui/modules/wp-caption";
 @import "ui/plugins/remodal";
-@import "ui/pages/page-id-25";
+//@import "ui/pages/page-id-25";
 @import "ui/pages/page-id-83";
 @import "ui/pages/page-id-85";
 @import "ui/pages/page-id-6";
@@ -90,6 +109,11 @@
 
 
 @import "ui/states/is-empty";
+@import "components";
+
+
+@import "utilities";
+@import "shame";
 
 /*! jQuery UI - v1.10.3 - 2013-05-03
 * http://jqueryui.com
@@ -1679,3 +1703,5 @@ body .ui-tooltip {
 
 
 
+//body {
+//  display: none !important;}
