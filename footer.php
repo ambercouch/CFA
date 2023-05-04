@@ -21,17 +21,17 @@
       <div class="footer--master__site-info" >
         <div class="site-info">
 			<div style="">
-				
-			
+
+
 			<svg role="img" aria-label="<?php echo esc_attr(get_bloginfo('name', 'display')); ?> <?php echo esc_attr(get_bloginfo('description', 'display')); ?>" preserveAspectRatio="none" class="icon site-title__icon" style="width: 167px;height: 57px;">
                     <title><?php echo esc_attr(get_bloginfo('name', 'display')); ?></title>
                     <desc><?php echo esc_attr(get_bloginfo('description', 'display')); ?></desc>
                     <use xlink:href="#icon-cfa-logo-white-2017" />
                     </svg><br>
           <small><?php _e('is the cosmetic team of', 'ac_inuk'); ?></small><br>
-          
+
           <a href="https://cathedraldentalclinic.com" target="_blank">
-            <img class="parent-logo" src="/content/uploads/2018/02/CDC-logo-300.png" alt="Cathedral Dental Clinic">
+            <img class="parent-logo" src="/wp-content/uploads/2018/02/CDC-logo-300.png" alt="Cathedral Dental Clinic">
           </a>
 				</div>
 			          <small><?php _e('© 2015 - 2018 Cathedral Facial Aesthetics', 'ac_inuk'); ?></small><br/>
