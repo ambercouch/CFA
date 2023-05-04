@@ -10,7 +10,8 @@
   .title--widget{
     text-transform: none;
     background: $brand-col-4 !important;
-    color: #fff !important;
+    color: $brand-col-1 !important;
+
     //text-align:left;
     //font-weight: 600;
     //text-align: center;
@@ -80,9 +81,9 @@
   @include media-query(lap){
     width: 33.33% !important;
   }
-  color: #fff;
+  color: $brand-col-1;
   a{
-    @extend %link-style-1;
+    @extend %link-style-3;
   }
   .textwidget{
     @include x-rem(font-size, 0.8);
@@ -94,7 +95,7 @@
 }
 .textwidget--social-media{
   width: 16.666% !important;
-  color: #fff;
+  color: $brand-col-1;
   a{
     text-decoration: none;
   }
@@ -113,9 +114,11 @@
   @include media-query(palm){
     width: 66.66% !important;
   }
-  color: #fff;
+  color: $brand-col-1;
+
   a{
-    @extend %link-style-1;
+    @extend %link-style-3;
+    // display: none;
   }
   .textwidget{
     @include x-rem(font-size, 0.8);
@@ -125,7 +128,7 @@
     }
   }
   .icon{
-    fill: #fff;
+    fill: $brand-col-1;
     height: 1em;
     vertical-align: middle;
     width: 1em;

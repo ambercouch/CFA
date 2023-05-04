@@ -1,6 +1,17 @@
 .content{
   @extend .container;
-  max-width:924px;
+  max-width: 1024px !important;
+
+
+  @include media-query(lap) {
+    padding: 0 ;
+  }
+  @include media-query(desk) {
+    padding: 0 ;
+  }
+  @media only screen and (max-width:1018px) and (min-width : 798px){
+    padding: 0 6px ;
+  }
 }
 
 .content__post-list,
@@ -27,51 +38,68 @@
 
 }
 
-.content__widget-area--main{
+.content__widget-area--main {
   @extend .content__widget-area;
-  a{
-    transition: background 0.3s ease,
-      border-bottom 0.3s ease,
-      box-shadow 0.3s ease,
-      text-shadow 0.3s ease;
-    color: $brand-col-2;
-    text-decoration: none;
-    border: solid 1px #fff;
-    background-color:rgba($brand-col-4, 0.25);
-    &:hover{
-      color: $brand-col-2--shade;
-      //background: rgba($brand-col-3--tint, 0.1);
-      /* border-bottom: solid 1px $brand-col-3;*/
-      text-shadow: 0 1px 0 rgba(#fff, 0.8);
-      box-shadow: inset 0px 0px 10px rgba($brand-col-4, 1);
-      background-color:rgba($brand-col-4, 0.5);
 
+  padding: 0 $act-unit $act-unit-l $act-unit-l !important;
+
+  @include media-query(desk) {
+    padding: 0 0 0 $act-unit !important;
+  }
+
+  a {
+    transition: all 0.3s;
+    color: $brand-primary;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 1rem 3rem 1rem 1rem;
+
+    &:hover {
+      color: white !important;
+      background-color: $brand-primary;
     }
   }
-  .current-menu-item a{
-    position: relative;
-    //background: $brand-col-4;
-    //color: #fff;
-    padding-left: 2em !important;
-    &:hover{
-      //color: #fff;
-      text-shadow: none;
-      box-shadow: none;
-      background-color:rgba($brand-col-4, 0.25);
-      color: $brand-col-2
+
+  li.menu-item {
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $border-colour;
     }
-    &:before{
-      content: '';
-      height: 100%;
-      width: 1em;
-      background: $brand-col-2;
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
+
+    a {
+      position: relative;
+      padding-right: 3rem;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0.7rem;
+        height: 0.7rem;
+        top: 50%;
+        right: 1.75rem;
+        transform: translateY(-50%) rotate(45deg);
+        border-width: 0.25rem 0.25rem 0 0;
+        border-style: solid;
+        border-color: #e0ccdf;
+      }
+
+      &:hover::after {
+        border-color: white;
+      }
+    }
+
+    &.current-menu-item a {
+      color: white !important;
+      background-color: $brand-primary;
+      &:after {
+        border-color: white;
+      }
     }
   }
 }
+
 .content__widget-area--below{
   @include media-query(desk){
     border-top: solid 1px $brand-col-3--tint;
@@ -112,14 +140,18 @@
 .content__widget-area--footer{
   @extend .container;
 
-  @include media-query(palm){
-    max-width: 30em;
-    margin: 0 auto;
-  }
-  @include media-query(lap){
-    max-width: 30em;
-    margin: 0 auto;
-  }
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  // @include media-query(palm){
+  //   padding-left: 1rem;
+  //   padding-right: 1rem;
+  // }
+
+  // @include media-query(lap){
+  //   padding-left: 1rem;
+  //   padding-right: 1rem;
+  // }
 
   .widget-area{
     @extend .grid;
@@ -137,4 +169,51 @@
   }
 
 
+}
+
+//CFA colours
+[data-post-slug=facial_aesthetics] .content__widget-area--main{
+  //@extend .content__widget-area;
+  //a{
+  //  transition: background 0.3s ease,
+  //  border-bottom 0.3s ease,
+  //  box-shadow 0.3s ease,
+  //  text-shadow 0.3s ease;
+  //  color: $brand-cfa-col-2;
+  //  text-decoration: none;
+  //  border: solid 1px #fff;
+  //  background-color:rgba($brand-cfa-col-4, 0.25);
+  //  &:hover{
+  //    color: $brand-cfa-col-2--shade;
+  //    //background: rgba($brand-col-3--tint, 0.1);
+  //    /* border-bottom: solid 1px $brand-col-3;*/
+  //    text-shadow: 0 1px 0 rgba(#fff, 0.8);
+  //    box-shadow: inset 0px 0px 10px rgba($brand-cfa-col-4, 1);
+  //    background-color:rgba($brand-cfa-col-4, 0.5);
+  //
+  //  }
+  //}
+  //.current-menu-item a{
+  //  position: relative;
+  //  //background: $brand-col-4;
+  //  //color: #fff;
+  //  padding-left: 2em !important;
+  //  &:hover{
+  //    //color: #fff;
+  //    text-shadow: none;
+  //    box-shadow: none;
+  //    background-color:rgba($brand-cfa-col-4, 0.25);
+  //    color: $brand-cfa-col-2
+  //  }
+  //  &:before{
+  //    content: '';
+  //    height: 100%;
+  //    width: 1em;
+  //    background: $brand-cfa-col-2;
+  //    display: block;
+  //    position: absolute;
+  //    left: 0;
+  //    top: 0;
+  //  }
+  //}
 }

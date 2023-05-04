@@ -16,7 +16,6 @@
   @include media-query(desk){
     float: right;
   }
-
 }
 .menu--site__menu-list{
   @extend .menu;
@@ -39,38 +38,67 @@
     }
   }
 }
+
+.menu--services__title-text {
+  position: relative;
+  &::after {
+    // TODO: Add the down-primary svg file to the folder and uncomment this line
+    // content: url("assets/images/svg/down-primary.svg");
+    content: url("assets/images/svg/down.svg");
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 10px;
+    height: 10px;
+    margin-left: 0.1em;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
+
+.menu--services__wrapper:hover{
+  .menu--services__title{
+    color: white;
+    background: $brand-primary;
+  }
+}
+
 .menu--services{
-  border-top: solid 1px $brand-col-3--tint;
-  border-bottom: solid 1px $brand-col-3--tint;
+  //border-top: solid 1px $brand-col-3--tint;
+  //border-bottom: solid 1px $brand-col-3--tint;
   @include x-rem(padding-top, 1);
   @include x-rem(padding-bottom, 1);
   @extend %post__img;
 }
+
 .menu--services__menu-list{
-  @extend .matrix;
-  @extend .two-cols;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   font-size: 0.8em;
   margin: 0 auto;
   border: none;
-  max-width:320px;
+  max-width:100%;
 
   @include media-query(lap){
     max-width:100%;
   }
   @include media-query(desk){
-    max-width:92%;
+    max-width:100%
   }
   .menu-item{
+    width: 50%;
+    list-style: none;
     text-align: center;
     padding:0;
-    position: relative;
-    border-width: 3px;;
+    //position: relative;
+    //border-width: 3px;;
     border-color: #fff;
     .rtl &{
       float: right;
     }
     @include media-query(palm) {
-      &:last-child {
+      &:last-child:nth-child(odd) {
         width: 100%;
         height: 154px;
         overflow: hidden;
@@ -81,54 +109,178 @@
       }
     }
     @include media-query(lap){
-      width: 20%;
-      border-width: 3px;
+      width: 33.333%;
+      //border-width: 6px;
 
     }
     @include media-query(desk){
-      width: 20%;
-
-      border-width: 12px;
+      width: 16.666%;
+      //border-width: 12px;
       img{
-       //transition: border 0.2s ease;
-       border: solid 0px $brand-col-2;
+        //transition: border 0.2s ease;
+        border: solid 0px $brand-col-2;
       }
-      
+
       &:hover img{
-        
-        border: solid 3px $brand-col-2;
-      
+
+        //border: solid 3px $brand-col-2;
+
       }
     }
 
+    .image{
+      position: relative;
+      &:hover:after{
+
+        opacity: 0.5;
+      }
+      &:after{
+        transition: opacity 0.3s ease-in-out;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: $brand-primary ;
+        opacity: 0.4;
+        mix-blend-mode: soft-light;
+
+      }
+    }
 
     img{
       width: 100%;
+      aspect-ratio: 1.25;
+      object-fit: cover;
+
       &.palm-last{
-        object-position: 0 -62px;
+        //only if it is the last in the list and odd (:last-child:nth-child)
+        //object-position: 0 -62px;
       }
     }
   }
   .current-page-ancestor, .current-menu-item{
     img{
-      border: solid 3px $brand-col-2;
+      //border: solid 3px $brand-col-2;
     }
     .menu--services__title{
-      background: $brand-col-2;
+      background: transparent;
+      color: $brand-primary;
     }
   }
 
 }
+
+.home {
+  .menu--services{
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .menu--services__menu-list {
+    font-size: 1em;
+
+    .menu-item {
+      padding-left: 0;
+      padding-right: 0;
+
+      @include media-query(palm) {
+        width: 50%;
+      }
+
+      @include media-query(lap) {
+        width: 50%;
+      }
+
+      @include media-query(desk) {
+        width: 33.333%;
+      }
+
+      .image {
+        position: relative;
+        padding-top: 75%;
+        overflow: hidden;
+
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+
+      }
+
+      .menu--services__title {
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: white;
+        color: $brand-primary;
+        transform: all 0.3s !important;
+        text-shadow: none;
+        justify-content: flex-start;
+
+        .menu--services__title-text {
+          position: relative;
+
+          &::after {
+            // TODO: Add the down-primary svg file to the folder and uncomment this line
+            // content: url("assets/images/svg/down-primary.svg");
+            content: url("assets/images/svg/down.svg");
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 10px;
+            height: 10px;
+            margin-left: 0.1em;
+            transform: translateY(-50%) rotate(-90deg);
+          }
+        }
+      }
+
+      &:hover {
+        .image {
+          img {
+            border: none;
+          }
+        }
+
+        .menu--services__title {
+          background-color: $brand-primary;
+          color: white;
+          text-shadow: none;
+
+          .menu--services__title-text::after {
+            content: url("assets/images/svg/down.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu--services__wrapper{
+  //padding: 6px;
+  position: relative;
+}
 .menu--services__title{
-  //height: 4em;
-  position: absolute;
+  position: static;
+  //transform: translate(0, -100%);
+  font-weight: 700;
   bottom: 0;
-  color: #fff;
+  color: $brand-primary;
   width: 100%;
   left: 0;
-  display: block;
-  padding: 0.5em 0;
-  background: rgba($brand-col-2,1);
+  display: flex;
+  align-items: left;
+  justify-content: flex-start;
+  padding: 0.75em 0.5em;
+  //background: rgba($brand-col-2,1);
 
   text-shadow: 0 1px 0 rgba(#000, 0.3);
 
@@ -142,9 +294,9 @@
     //background: rgba($brand-col-2,0.7);
 
     a:hover &{
-      background: rgba($brand-col-2,1);
-      text-shadow: 0 1px 1px rgba(#000, 0.8);
-      
+      //background: rgba($brand-col-2,1);
+      //text-shadow: 0 1px 1px rgba(#000, 0.8);
+
     }
   }
 }
@@ -160,40 +312,7 @@
 
   & > div > div > .menu > .menu-item{
     @include x-rem(font-size, 1);
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
-    @include media-query(lap){
-      width: 50%;
-      display: inline-block;
-    }
-    @include media-query(desk){
-      display: inline-block;
-      width: 25%;
-    }
-  }
-  &.is-4-col > div > div > .menu > .menu-item{
-    @include x-rem(font-size, 1);
-    width: 100%;
-    @include media-query(lap){
-      width: 50%;
-    }
-    @include media-query(desk){
-      width: 25%;
-    }
-  }
-
-  &.is-5-col > div > div > .menu > .menu-item{
-    @include x-rem(font-size, 1);
-    width: 100%;
-    @include media-query(lap){
-      width: 50%;
-    }
-    @include media-query(desk){
-      width: 20%;
-    }
-
+    width: 25%;
   }
   .menu-item{
     vertical-align: top;
@@ -238,19 +357,16 @@
 }
 
 .menu-item-has-children{
-
   position: relative;
   > a{
     padding-right:$base-spacing-unit  !important;
   }
-&:after{
-content : url('assets/images/svg/down.svg');
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  right: 0.6em;
-  top:15px;
+  &:after{
+    content : url('assets/images/svg/down.svg');
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 0.6em;
+    top:15px;
+  }
 }
-}
-
-

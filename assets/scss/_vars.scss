@@ -92,12 +92,15 @@ $desk-wide-start:   1200px!default;
   @return mix(black, $color, $percent);
 }
 
+$brand-primary: #00a7b8;
+$border-colour: #ebc8e9;
+
 $brand-col-1: #293944;
 $brand-col-1--shade: shade($brand-col-1, 50%);
 $brand-col-1--tint: tint($brand-col-1, 25%);
 $brand-col-1--light: lighten($brand-col-1, 50%);
 $brand-col-1--light: lighten($brand-col-1, 50%);
-$brand-col-2: #00a7b8;
+$brand-col-2: $brand-primary;
 $brand-col-2--shade: shade($brand-col-2, 25%);
 $brand-col-2--tint: tint($brand-col-2,25%);
 $brand-col-3: #92836d;
@@ -113,6 +116,5 @@ $brand-col-6: #eaece9;
 $brand-col-7: #AF859B;
 $brand-col-8: #AF859B;
 $brand-col-9: #AF859B;
-
 
 $brand-round: 2px;
