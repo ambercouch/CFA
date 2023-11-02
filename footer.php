@@ -31,10 +31,10 @@
           <small><?php _e('is the cosmetic team of', 'ac_inuk'); ?></small><br>
           
           <a href="https://cathedraldentalclinic.com" target="_blank">
-            <img class="parent-logo" src="/content/uploads/2018/02/CDC-logo-300.png" alt="Cathedral Dental Clinic">
+            <img class="parent-logo" src="/wp-content/uploads/2018/02/CDC-logo-300.png" alt="Cathedral Dental Clinic">
           </a>
 				</div>
-			          <small><?php _e('© 2015 - 2018 Cathedral Facial Aesthetics', 'ac_inuk'); ?></small><br/>
+			          <small><?php _e('© 2015 - <script>document.write(new Date().getFullYear())</script> Cathedral Facial Aesthetics', 'ac_inuk'); ?></small><br/>
           <small><?php _e('Website design by <a href="http://ambercouch.co.uk"><strong>Ambercouch', 'ac_inuk'); ?></strong></a></small>
         </div><!-- .site-info -->
       </div>
