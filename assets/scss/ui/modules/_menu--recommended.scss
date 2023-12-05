@@ -1,6 +1,8 @@
 .menu--recommended{
   @extend %menu--image-menu;
-  width: 66.6666% !important;
+  @include media-query(desk){
+    width: 66.6666% !important;
+  }
   .widget__header{
     margin-bottom: 0.5em;
 
@@ -24,6 +26,7 @@
     @include media-query(desk){
       width: 25%;
     }
+
 
   }
   .menu-item:nth-of-type(5) a,

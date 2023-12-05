@@ -18,9 +18,13 @@
     margin-bottom: 1em
   }
   .menu-item{
-    width: 50%;
+    width: 33.333%;
+    margin-bottom: 0 !important;
     @include media-query(desk){
-      width: 16.6666%;
+      width:  16.6%;
+    }
+    a{
+      margin: 0 1em !important;
     }
 
   }
@@ -31,6 +35,29 @@
     //border-bottom: solid 1px rgba($brand-col-1,0.3);
   }
 
+  .menu-brands-container ul{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
 
 }
 
+.teosyal .icon{
+  height: 40px !important;
+}
+
+.elionce .icon{
+  height: 55px !important;
+}
+
+.mint .icon{
+  height: 40px !important;
+}
+
+.menu--dental-brands{
+  @include media-query(desk) {
+    width: 75% !important;
+  }
+}

@@ -212,3 +212,29 @@
 
   }
 }
+
+.restylane .icon
+{
+  height: 37px !important;
+  @include media-query(desk){
+    height: 50px !important;
+  }
+}
+
+
+.payment a{
+  font-weight: bold;
+  color: #650360 !important;
+}
+
+.menu-payment-plans-container .menu{
+  display: flex;
+}
+.content__widget-area--below .widget-area{
+  display: flex;
+  flex-direction: column;
+  @include media-query(desk){
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
