@@ -6,6 +6,13 @@
   @include hide;
 }
 
+.u-hide--wide{
+  @include mq($from : wide){
+    @include hide;
+  }
+}
+
+
 .u-hide--desktop{
   @include mq($from : desktop, $until : wide){
     @include hide;

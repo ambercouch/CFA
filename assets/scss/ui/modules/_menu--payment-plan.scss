@@ -1,9 +1,11 @@
 .menu--payment-plan{
   @extend %menu--image-menu;
-  width: 33.33% !important;
+  width: 100% !important;
+  @include media-query(desk){
+    width: 25% !important;
+  }
   .widget__header{
     margin-bottom: 0.5em;
-
   }
   .title--widget{
     background: $brand-col-4 !important;
@@ -51,7 +53,25 @@
       border-right: none;
     }
   }
+}
+.payment a{
+  @include act-font-size($act-fs-4);
+  padding: 0 15px;
+  line-height: 1;
+  @include media-query(desk){
+    @include act-font-size($act-fs-5);
+    padding: 0;
+    line-height: 1;
 
-
+  }
 }
 
+.payment{
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+[rel="finance"]{
+  display: flex !important;
+}

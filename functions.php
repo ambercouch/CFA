@@ -4,30 +4,42 @@ require( get_template_directory() . '/lib/ac-inuk.php' );
 add_filter( 'wpcf7_support_html5_fallback', '__return_true' );
 
 
-function langSwitch(){
-    if( ! function_exists('icl_get_languages')){
-      return;
-    }
-    $langs = array_reverse(icl_get_languages('skip_missing=N&orderby=KEY&order=DIR&link_empty_to=str'));
-   unset($langs['ar']);
 
-    $current_lang = ICL_LANGUAGE_CODE;
-
-    $count = count($langs);
-
-
-    $output = '';
-    foreach ($langs as $key => $lang){
-        $activeClass = ($current_lang == $key)? 'lang-active' : '';
-        $output .= '<span class="header--master__lang" ><a class=" header--master__lang-a '.$activeClass.' " href="'.$lang['url'].'" >'.$lang[native_name].'</a></span>';
-        if ($count > 1)
+    function langSwitch()
+    {
+        if (!function_exists('icl_get_languages'))
         {
-            $output .= '<span> | </span>';
+            return;
         }
-        $count -= 1;
-    }
-    return $output;
+        $langs = array_reverse(icl_get_languages('skip_missing=N&orderby=KEY&order=DIR&link_empty_to=str'));
+        unset($langs['ar']);
+
+        $current_lang = ICL_LANGUAGE_CODE;
+
+        $count = count($langs);
+
+
+        $output = '';
+        foreach ($langs as $key => $lang)
+        {
+            $activeClass = ($current_lang == $key) ? 'lang-active' : '';
+            $output .= '<span class="header--master__lang" ><a class=" header--master__lang-a ' . $activeClass . ' " href="' . $lang['url'] . '" >' . $lang['native_name'] . '</a></span>';
+            if ($count > 1)
+            {
+                $output .= '<span> | </span>';
+            }
+            $count -= 1;
+        }
+        return $output;
+
 }
+
+add_filter( 'wp_theme_editor_filetypes', function( $filetypes ) {
+    $filetypes[] = 'twig';
+    return $filetypes;
+} );
+
+add_filter('wpcf7_autop_or_not', '__return_false');
 
 
 if (!defined('ACAI1M_FTP_TYPE'))

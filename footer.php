@@ -34,7 +34,7 @@
             <img class="parent-logo" src="/wp-content/uploads/2018/02/CDC-logo-300.png" alt="Cathedral Dental Clinic">
           </a>
 				</div>
-			          <small><?php _e('© 2015 - 2018 Cathedral Facial Aesthetics', 'ac_inuk'); ?></small><br/>
+			          <small><?php _e('© 2015 - <script>document.write(new Date().getFullYear())</script> Cathedral Facial Aesthetics', 'ac_inuk'); ?></small><br/>
           <small><?php _e('Website design by <a href="http://ambercouch.co.uk"><strong>Ambercouch', 'ac_inuk'); ?></strong></a></small>
         </div><!-- .site-info -->
       </div>
@@ -43,11 +43,11 @@
 </footer><!-- #colophon -->
 </div><!-- #page -->
 
-<link type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>?v=1.4" rel="stylesheet" >
+<link type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>?v=1.5" rel="stylesheet" >
 <?php wp_footer(); ?>
 
 <?php if(is_page() && get_field('scripts') != '') : ?>
-    <!-- Page Scripts --!>
+    <!-- Page Scripts -->
     <?php the_field('scripts'); ?>
     <?php else : ?>
     <!-- No Page Script -->
