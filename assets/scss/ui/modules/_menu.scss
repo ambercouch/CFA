@@ -151,7 +151,7 @@
 
     img{
       width: 100%;
-      aspect-ratio: 1.25;
+      aspect-ratio: 1;
       object-fit: cover;
 
       &.palm-last{
@@ -198,13 +198,13 @@
       }
 
       .image {
-        position: relative;
-        padding-top: 75%;
+        //position: relative;
+        //padding-top: 75%;
         overflow: hidden;
 
 
         img {
-          position: absolute;
+          //position: absolute;
           top: 0;
           left: 0;
           width: 100%;
