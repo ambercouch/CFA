@@ -2,18 +2,24 @@
 .form--cdc {
   display: block;
   .widget {
-    background-color: $brand-col-4;
+    background-color: transparent;
     padding-bottom: 1em;
-    border-color: $brand-col-4;
+    border-color: transparent;
   }
 
   .title--widget {
-    background-color: $brand-col-2;
-    color: #fff;
+    background-color: white;
+    color: $brand-col-2;
+    @include inuk-font-size($h3-size);
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
   label {
     @extend .zeta;
-    color: #fff;
+    color: $brand-col-2;
     //text-transform: uppercase;
     margin-bottom: 0.25em;
     text-align: left;
@@ -54,20 +60,39 @@
   .form-contact__submit {
     input {
       @extend .btn;
+      box-shadow: none !important;
+      border-radius: 0 !important;
     }
   }
 }
 
+
+
 .form-contact {
+  background: white;
+  &__wrapper{
+    padding: 0 $act-unit;
+    @include media-query(lap-and-up){
+      padding: 0;
+    }
+  }
   @extend .form--cdc;
+  input{
+    box-shadow:  none !important;
+    border-radius: 1px !important;
+  }
+
 }
 
 .form--register {
   @extend .form--cdc;
-  background: $brand-col-4;
+  background: white;
   max-width: 600px;
   margin: 0 auto;
-
+  label {
+    color: $brand-col-2;
+    font-size: .82353rem;
+  }
   .form__header {
     margin-bottom: $half-spacing-unit;
   }
@@ -96,6 +121,9 @@
   .title--form {
     @extend .title--widget;
     text-align: left;
+    .remodal &{
+      padding-left: 25px;
+    }
     .rtl &{
       text-align: right;
       direction: rtl;
@@ -105,6 +133,7 @@
 
 .form-contact--mobile {
   @extend .form-contact;
+  padding: $act-unit !important;
   @include media-query(desk) {
     display: none !important;
   }
@@ -113,16 +142,51 @@
 
 .form-contact--primary {
   @extend .form-contact;
-  display: none;
+
   @include media-query(desk) {
     display: block;
   }
   .widget {
-    padding-bottom: 5px;;
+    padding-bottom: 5px;
+    background: transparent !important;
+  }
+  label{
+    color: $brand-col-2;
+  }
+  input{
+    border: solid 1px $brand-col-4--light;
+  }
+  textarea{
+    border: solid 1px $brand-col-4--light;
+  }
+  .title--widget{
+    background: transparent;
+    color: $brand-col-2;
+    @include inuk-font-size($h3-size);
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .textwidget{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  form{
+    padding: 25px;
+  }
+  .title--form {
+    @extend .title--widget;
+    text-align: left;
+    .remodal &{
+      padding-left: 25px;
+    }
+    .rtl &{
+      text-align: right;
+      direction: rtl;
+    }
   }
 }
 
-.wpcf7-mail-sent-ok {
+cf7-mail-sent-ok {
   background: none repeat scroll 0 0 #fff;
   border: 1px solid green;
   box-shadow: 0 0 0 3px #fff;
@@ -321,8 +385,8 @@
 
 .form--referral {
   @extend .form--satisfaction;
-  form{
-    padding: 0 $half-spacing-unit $half-spacing-unit;
+  form {
+    padding: 0;
   }
   &__fs{
     border:solid 1px rgba(#fff, 0.2);
@@ -334,12 +398,18 @@
 
   }
   &__legend{
-    color:#fff;
-    padding: 0 1em;
+    color: $brand-col-2; //(#fff)
+    padding: 0; //(0 1em)
     position: absolute;
     top: -.7em;
-    background: $brand-col-4;;
+    //background: $brand-col-4;
     //margin-bottom: -1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    @include media-query (desk){
+      font-size: 1.41em;
+      letter-spacing: 0.1em;
+    }
 
   }
   &__item{
@@ -351,22 +421,15 @@
     .is-hidden{
       display: none;
     }
-    @include media-query(palm){
-      width: 100%;
-      margin-bottom: 0;
-    }
   }
   &__q {
     span {
       font-size: 1rem;
-      color: #fff;
+      color: $brand-col-2;
       display: block;
-      margin-bottom: $half-spacing-unit;
       text-align: left;
       font-weight:300;
-      @include media-query(palm){
-        margin-bottom: $half-spacing-unit / 4;
-      }
+      font-size: .82353rem;
     }
 
   }
@@ -376,7 +439,7 @@
     flex-direction: column;
     @include media-query(palm) {
 
-      padding: 0;
+      padding: $half-spacing-unit;
       margin-bottom: $half-spacing-unit;
     }
     @include media-query(lap-and-up) {
@@ -449,18 +512,6 @@
   &__a--ttt{
     @extend .form--referral__a;
     flex-wrap: wrap;
-    flex-direction: row;
-    @include media-query(palm){
-
-      padding: 0;
-    }
-
-    input{
-      @include media-query(palm){
-
-        padding: 0.5em 0.25em;
-      }
-    }
   }
   &__a--upper-left{
     width: 50%;
@@ -541,4 +592,14 @@
     font-style: normal;
   }
 }
-
+.wpcf7-form-control-wrap{
+  input {
+    border: solid 1px $brand-col-4 !important;
+  }
+  select {
+    border: solid 1px $brand-col-4 !important;
+  }
+  textarea {
+    border: solid 1px $brand-col-4 !important;
+  }
+}

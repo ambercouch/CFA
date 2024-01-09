@@ -1,0 +1,66 @@
+/*
+  BEM BLOCK .c-icon
+ */
+
+.c-icon {
+  display: block;
+  @include size(100%)
+}
+
+/*
+  BEM BLOCK MODIFIER .c-icon--
+ */
+
+.c-icon-- {
+  &type {
+    display: block
+  }
+  &instagram{
+    .contact-boxes__deets &{
+      height: 28px;
+    }
+
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-icon--
+
+[class*=c-icon--] {
+  @extend .c-icon;
+}
+
+/*
+  BEM ELEMENTS .c-icon__
+ */
+
+.c-icon__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-icon--
+
+[class*=c-icon__header--] {
+  @extend .c-icon__header;
+}

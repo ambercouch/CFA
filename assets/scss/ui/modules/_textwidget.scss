@@ -157,8 +157,11 @@
     padding: 0 0 1.5em 0;
   }
   .title--widget{
-    background: $brand-col-4;
-    color: #fff;
+    background: white;
+    color: $brand-col-2;
+    @include inuk-font-size($h3-size);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .timetable{
@@ -166,24 +169,34 @@
     //@extend .table--data;
     @extend .epsilon;
     line-height: 1.28;
+    tr{
+      border-bottom: solid 1px $brand-col-4;
+    }
     tr:nth-of-type(odd){
-      background-color:rgba($brand-col-4, 0.2); /* Override this color in your theme stylesheet */
+      //background-color:rgba($brand-col-4, 0.2); /* Override this color in your theme stylesheet */
       /*      td{
               border-color: rgba($brand-col-4, 0.3)!important;
             }*/
 
     }
     th{
-      padding: 0.75em
+      padding: 0.75em 0;
+      font-weight: 300;
+      color: $brand-col-4;
     }
     td{
-      padding: 0.75em
+      padding: 0.75em 0 ;
+      color: $brand-col-2;
     }
   }
   &.open{
     .open-highlight{
-      border: solid 1px $brand-col-4;
-      font-weight: 700;
+      font-weight: 700 !important;
+      color: $brand-col-2 !important;
+      th{
+        font-weight: 700 !important;
+        color: $brand-col-2 !important;
+      }
     }
   }
 }

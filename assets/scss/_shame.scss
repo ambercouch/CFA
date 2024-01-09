@@ -248,3 +248,80 @@
 .widget__header{
   position: relative !important;
 }
+
+/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+
+.banner-reset {
+  top: 0!important;
+}
+
+.contact-boxes__content .contact-boxes__label {
+  //color: #fff;
+}
+
+/* Override background colour on table row */
+.bg-override {
+  background-color: rgba(255,255,255,0)!important;
+}
+
+.textwidget--opening-times{
+  //display:none;
+}
+
+.textwidget--opening-times .title--widget{
+  color: black !important;
+}
+
+.home .header--master__strap {
+  top: 230px;
+  left: 20px;
+}
+
+@media only screen and (min-width: 800px){
+
+  .home .header--master__strap {
+    top: 75pt;
+    right: 56%;
+    left: auto;
+    bottom: auto;
+  }
+}
+
+@media only screen and (max-width: 799px) and (min-width: 481px){
+  .home .textwidget .header--master__strap {
+    font-size: 1.5em;
+    right: 55% !important;
+    top: auto!important;
+    left: auto;
+    bottom: 2em!important;
+  }
+}
+
+.page-template-page--header-banner-php .header--master__strap {
+  color: #00a7b8 !important;
+}
+
+#text-5.textwidget--company-address{
+  width: 33.333% !important;
+}
+
+/* Finance Options table styling */
+.table--finance td, .table--finance th, .table--bordered td, .table--bordered th {
+  border: 1px solid #ccc;
+}
+
+/* CDC Logo in Footer */
+.parent-logo {
+  margin: 1em auto;
+  height: 50px!important;
+  width: auto;
+}
+
+/* Reduce kerning on H3 Title Widget */
+h3.title--widget {
+  letter-spacing: 0.05em;
+}
