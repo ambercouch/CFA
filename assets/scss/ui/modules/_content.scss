@@ -82,7 +82,7 @@
         transform: translateY(-50%) rotate(45deg);
         border-width: 0.25rem 0.25rem 0 0;
         border-style: solid;
-        border-color: #e0ccdf;
+        border-color: $brand-col-4;
       }
 
       &:hover::after {

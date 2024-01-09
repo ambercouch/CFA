@@ -93,7 +93,7 @@ $desk-wide-start:   1200px!default;
 }
 
 $brand-primary: #00a7b8;
-$border-colour: #ebc8e9;
+
 
 $brand-col-1: #293944;
 $brand-col-1--shade: shade($brand-col-1, 50%);
@@ -116,5 +116,7 @@ $brand-col-6: #eaece9;
 $brand-col-7: #AF859B;
 $brand-col-8: #AF859B;
 $brand-col-9: #AF859B;
+
+$border-colour: $brand-col-4;
 
 $brand-round: 2px;
