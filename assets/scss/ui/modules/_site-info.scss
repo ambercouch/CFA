@@ -9,6 +9,9 @@ and open the template in the editor.
 */
 
 .site-info{
-  text-align: center;
+  text-align: left;
   font-size:0.9em;
+  border-top: solid 2px $brand-col-5;
+  padding-top: 1em;
+
 }

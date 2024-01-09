@@ -1,5 +1,7 @@
 .footer{
   display:block;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .footer--master{
   @extend .footer;
@@ -7,9 +9,121 @@
   @extend .delta;
   a{
     @extend %link-style-1;
+
+    color: $brand-primary;
   }
 }
-.footer--master__site-info{
-  color: #fff;
+
+.footer--master__site-info {
+  .nav-footer {
+    font-size: 0.9rem;
+
+    li {
+      line-height: 1;
+      padding: 0 0.4rem 0 0.2rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      a {
+        padding: 0;
+        border-bottom: none;
+      }
+
+      &:not(:last-child) {
+        border-right: 1px solid $brand-primary;
+      }
+    }
+  }
 }
 
+.site__footer-content {
+  color: $brand-primary;
+  font-size: 0.9rem;
+
+  a {
+    color: $brand-primary;
+    border-bottom: 1px solid rgba($brand-primary, 0.05);
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom-color: $brand-primary;
+    }
+  }
+
+  .widget-area {
+    display: flex;
+    flex-wrap: wrap;
+
+    > aside {
+      flex: 0 0 22%;
+
+      @include media-query(palm) {
+        flex: 0 0 100%;
+        margin-bottom: 1rem;
+      }
+
+      @include media-query(lap) {
+        flex: 0 0 50%;
+        margin-bottom: 1rem;
+      }
+
+      .widget {
+        font-size: 0.9rem;
+
+        .widget__header {
+          margin: 0 0 1.2rem 0 ;
+          border-bottom: solid 1px;
+
+          .title--widget {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1rem;
+            color: $brand-primary;
+            background-color: transparent;
+            text-transform: none;
+            letter-spacing: 0;
+          }
+        }
+      }
+
+      &.widget_nav_menu {
+        li {
+          display: block;
+          box-shadow: none;
+        }
+      }
+
+      .contact-detail {
+        margin-bottom: 0.4rem;
+      }
+
+      &:last-child {
+        margin-left: auto;
+      }
+
+      &.col-social {
+        @include media-query(desk) {
+          text-align: right;
+        }
+
+        a {
+          border-bottom: none;
+          margin-right: 0.3rem;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          svg.icon {
+            width: 1.6rem;
+            height: 1.6rem;
+            fill: $brand-primary;
+          }
+        }
+      }
+    }
+  }
+}

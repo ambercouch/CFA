@@ -18,12 +18,13 @@
 }
 .site__footer-content{
   padding: $base-spacing-unit 0 0;
-  background: $brand-col-4;
+  background: $brand-col-6;
   border-top:solid 3px $brand-col-5;
 }
 .site__footer{
   padding: 0 0 $base-spacing-unit 0;
-  background: $brand-col-4;
+  background: $brand-col-6;
+  text-align: left;
 }
 .site__tel{
   @include media-query(desk){
