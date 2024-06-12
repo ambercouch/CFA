@@ -4,9 +4,15 @@
     margin-bottom: 0;
   }
   .title--widget{
-    background: $brand-col-2;
-    color: #fff;
-    position: relative;
+    background: transparent;
+    color: $brand-col-2;
+    @include inuk-font-size($h3-size);
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0;
+
   }
   .widget{
     border-color: $brand-col-2;

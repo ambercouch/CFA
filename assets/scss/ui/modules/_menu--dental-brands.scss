@@ -5,12 +5,12 @@
 
   }
   .title--widget{
-    background: $brand-col-4 !important;
-    color: #fff !important;
+    background: transparent !important;
+    color: $brand-col-2 !important;
     padding-bottom: 0.3em;
     padding-top: 0.4em;
     line-height: 1;
-    text-align: center;
+    text-align: left;
   }
   .widget{
     border-color: $brand-col-3--tint;

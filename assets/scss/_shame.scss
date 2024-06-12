@@ -339,3 +339,66 @@ h3.title--widget {
 .u-fg-1 {
   flex-grow: 1!important;
 }
+
+.c-cta--banner{
+  display: block;
+  @include media-query(lap-and-up){
+    display: none;
+  }
+}
+
+.c-banner--no-image-2024 .header--master__banner-image{
+  display: none;
+}
+.c-banner--no-image-2024 .header--master__strap{
+  position: static;
+  text-align: center;
+  font-size: 4em !important;
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.c-cta--banner{
+  margin-top:24px;
+}
+.c-banner--no-image-2024 .header--master__strap br{
+  display: none;
+}
+.header--master div, .header--master aside{
+  height: 100%;
+}
+.c-cta--banner{
+  height: auto !important
+}
+.c-btn--cta-book{
+  padding: 0 12px !important;
+  width: 300px
+}
+
+.c-link__lable--tel {
+  margin-left: 6px;
+  position: relative;
+  top: 2px;
+}
+
+.a--icon, .a--icon .icon {
+  fill: $brand-col-2--shade;
+  color: $brand-col-2--shade;
+}
+
+.a--social-nav{
+  display: inline-block;
+  padding: 10px 12px;
+  color: $brand-col-2--shade;
+  margin: 0 .5em;
+}
+.a--icon{
+  margin: 0 .5em;
+}
+
+html{
+  overflow-x: hidden;
+}

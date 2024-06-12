@@ -79,6 +79,10 @@
   margin: 0 auto;
   border: none;
   max-width:100%;
+  gap: 2px;
+  .home &{
+    gap: 0px;
+  }
 
   @include media-query(lap){
     max-width:100%;
@@ -114,7 +118,7 @@
 
     }
     @include media-query(desk){
-      width: 16.666%;
+      width: calc(16.666% - 2px);
       //border-width: 12px;
       img{
         //transition: border 0.2s ease;

@@ -267,3 +267,15 @@
     box-shadow: none;
   }
 }
+
+.widget__header{
+  position: relative;
+  margin-bottom: 1em;
+  .widget_nav_menu &{
+    margin-bottom: 1em;
+    @include media-query(desk){
+      margin-bottom: 1em;
+    }
+  }
+
+}
