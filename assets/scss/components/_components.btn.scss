@@ -25,7 +25,7 @@
     line-height: 2.5em!important;
     height: 45px;
     padding: 0 !important;
-    background-color: #650360 !important;
+    background-color: $brand-col-1 !important;
     display: block;
     width: 100%;
     border: none;
@@ -45,17 +45,19 @@
     &:hover{
       .page & {
         color: white !important;
+        background-color: darken($brand-col-2, 10%)!important;
       }
 
     }
   }
   &tertiary{
     @extend .c-btn--primary;
-    background-color: $brand-col-4--light !important;
-    color: $brand-col-2 !important;
+    background-color: $brand-col-2--shade !important;
+    color: #fff !important;
     &:hover{
       .page & {
-        color: $brand-col-2 !important;
+        color: #fff !important;
+        background-color: darken($brand-col-2--shade, 10%)!important;
       }
 
     }

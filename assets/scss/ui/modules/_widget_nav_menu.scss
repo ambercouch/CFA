@@ -15,7 +15,7 @@
 
   }
   .widget{
-    border-color: $brand-col-2;
+    //border-color: $brand-col-2;
     @include media-query(portable){
       margin-bottom: $base-spacing-unit !important;
     }

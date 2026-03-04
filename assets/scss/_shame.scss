@@ -402,3 +402,11 @@ h3.title--widget {
 html{
   overflow-x: hidden;
 }
+
+.remodal{
+  display: none;
+}
+
+.remodal-is-locked .remodal{
+  display: block;
+}

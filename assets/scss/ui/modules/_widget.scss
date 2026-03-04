@@ -1,4 +1,25 @@
 
+.widget{
+  padding-top: 0 !important;
+  .rtl &{
+    direction: rtl;
+  }
+  margin-bottom: $half-spacing-unit;
+  > ul{
+    margin: 0;
+    li{
+      list-style:none;
+    }
+  }
+  border-bottom: solid 3px #fff;
+  margin-bottom: 3px;
+  @include media-query(desk){
+    margin-bottom: $base-spacing-unit;
+  }
+  .has-no-border &{
+    border-bottom: 0px !important;
+  }
+}
 .textwidget--single-image{
   text-align:center;
   .widget{
@@ -198,7 +219,7 @@
   }
 }
 %textwidget--boxy{
-  background-color: $brand-col-4;
+  background-color: transparent;
   color: #fff;
   margin-bottom: $base-spacing-unit;
   @include media-query(desk){
@@ -223,13 +244,13 @@
   @extend %textwidget--boxy;
   a.btn{
     color:#fff !important;
-    background-color: $brand-col-2;
+    background-color: transparent;
     border: none !important;
     line-height: 2.3em;
   }
   a.btn:hover {
     text-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
-    background-color: $brand-col-2--tint;
+    background-color: transparent;
     box-shadow: 0 4px 0  lighten($brand-col-2--shade, 5%), 0 5px 5px 1px rgba(0, 0, 0, 0.4) !important;
 
   }
@@ -251,13 +272,13 @@
   }
   a.btn{
     color:#fff !important;
-    background-color: $brand-col-2;
+    background-color: transparent;
     border: none !important;
     line-height: 2.3em;
   }
   a.btn:hover {
     text-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
-    background-color: $brand-col-2--tint;
+    background-color: transparent;
     box-shadow: 0 4px 0  lighten($brand-col-2--shade, 5%), 0 5px 5px 1px rgba(0, 0, 0, 0.4) !important;
 
   }

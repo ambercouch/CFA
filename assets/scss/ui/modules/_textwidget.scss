@@ -211,16 +211,17 @@
   }
 }
 %textwidget--boxy{
-  background-color: $brand-col-4;
+  background-color: transparent;
+  height: auto;
   color: #fff;
   margin-bottom: $base-spacing-unit;
   @include media-query(desk){
     margin-bottom: 0;
-    border-radius: 4px;
+    border-radius:0;
   }
 
   .widget{
-    padding-top: 1em;
+    padding-top: 0;
     border-bottom: none;
   }
   .title--widget{
@@ -243,13 +244,13 @@
   a.btn:hover {
     text-shadow: 0 1px 0 rgba(0,0,0,0.2) !important;
     background-color: $brand-col-2--tint;
-    box-shadow: 0 4px 0  lighten($brand-col-2--shade, 5%), 0 5px 5px 1px rgba(0, 0, 0, 0.4) !important;
+
 
   }
 
   a.btn:active {
     position: relative;
-    top: 4px;
+    top: 0px;
     box-shadow: none;
   }
 }

@@ -103,6 +103,7 @@ $brand-col-1--light: lighten($brand-col-1, 50%);
 $brand-col-2: $brand-primary;
 $brand-col-2--shade: shade($brand-col-2, 25%);
 $brand-col-2--tint: tint($brand-col-2,25%);
+$brand-col-2--light: lighten($brand-col-2, 10%);
 $brand-col-3: #92836d;
 $brand-col-3--tint: tint($brand-col-3, 25%);
 $brand-col-3--light: lighten($brand-col-3, 25%);
