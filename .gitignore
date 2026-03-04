@@ -1,3 +1,5 @@
 *.css.map
 
 node_modules/
+
+style.css
