@@ -111,6 +111,20 @@
   > * {
     //display: none;
   }
+  .sep{
+   border-left: solid 1px $brand-col-2--shade;
+  }
+  .a--tel{
+    margin-right: $act-unit-s;
+  }
+  .a--fb{
+    margin-left: $act-unit-s;
+    padding-right: 0;
+  }
+  .a--insta{
+
+    padding-left: 0;
+  }
   .a--icon{
     //display: none;
   }

@@ -92,7 +92,8 @@
   //color: white;
 }
 
-.icon--header{ width: 1.75em; height: 1.75em; vertical-align: middle; padding: 0px 0.25em; }
+.icon--header{ width: 1.75em; height: 1.75em; vertical-align: middle; padding: 0px 0em; }
+.icon-phone.icon--header{padding: $act-unit-t / 2}
 
 
 .lang-active {
@@ -327,8 +328,8 @@ h3.title--widget {
 }
 
 .icon--footer{
-  width: 1.75em;
-  height: 1.75em;
+  width: 1.75rem;
+  height: 1.75rem;
   fill: $brand-col-2;
 }
 
@@ -391,12 +392,12 @@ h3.title--widget {
 
 .a--social-nav{
   display: inline-block;
-  padding: 10px 12px;
+  padding: 10px $act-unit-t;
   color: $brand-col-2--shade;
   margin: 0 .5em;
 }
 .a--icon{
-  margin: 0 .5em;
+  margin: $act-unit-t;
 }
 
 html{

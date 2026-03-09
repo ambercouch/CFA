@@ -49,7 +49,7 @@
     </div>
     <a class="site__tel" href="tel:02920382671">
       <svg preserveAspectRatio="none" class="icon header--master__tel__call ">
-      <use xlink:href="<?php //echo '/content/themes/ac-inuk/assets/images/defs.svg';                                    ?>#icon-call" />
+      <use xlink:href="<?php //echo '/content/themes/ac-inuk/assets/images/defs.svg'; ?>#icon-call" />
       </svg>
       <span>029 2038 2671</span>
     </a>

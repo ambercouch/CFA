@@ -46,10 +46,10 @@
               <?php endif; ?>
               <div class="header--master__lang-switch">
                 <div class="social-nav--header">
-                  <a href="tel:02920382671" target="_blank" class="a--icon a--social-nav"><svg class="icon icon-phone icon--header"><use xlink:href="#icon-phone"></use></svg><span class="c-link__lable--tel">029 2038 2671</span></a>
-                  <a href="https://www.facebook.com/cathedralfacialaesthetics" target="_blank" class="a--icon"><svg class="icon icon-facebook2 icon--header"><use xlink:href="#icon-facebook2"></use></svg></a>
+                  <a href="tel:02920382671" target="_blank" class="a--icon a--social-nav a--tel "><svg class="icon icon-phone icon--header"><use xlink:href="#icon-phone"></use></svg><span class="c-link__lable--tel">029 2038 2671</span></a><span class="sep"></span>
+                  <a href="https://www.facebook.com/cathedralfacialaesthetics" target="_blank" class="a--icon a--fb a--social-nav"><svg class="icon icon-facebook2 icon--header"><use xlink:href="#icon-facebook2"></use></svg></a>
 
-                  <a href="https://www.instagram.com/cathedralfacialaesthetics/" target="_blank" class="a--icon"><svg class="icon icon-instagram icon--header"><use xlink:href="#icon-instagram"></use></svg></a>
+                  <a href="https://www.instagram.com/cathedralfacialaesthetics/" target="_blank" class="a--icon a--insta a--social-nav"><svg class="icon icon-instagram icon--header"><use xlink:href="#icon-instagram"></use></svg></a>
 
                 </div>
                 <?php echo  langSwitch(); ?>
