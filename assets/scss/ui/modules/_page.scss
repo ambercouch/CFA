@@ -152,6 +152,7 @@
 
 .page-accordion-content {
   margin: 0 0 2rem 0;
+  text-align: left;
 
   .main-item {
     > .title {
@@ -214,13 +215,19 @@
         }
 
         .item-title {
-          padding-right: 2rem;
+          padding-right: 0.5em;
           margin-bottom: 6px;
           @include media-query(lap-and-up){
             margin-bottom: 0;
           }
           a{
             color: #007d8a;
+            small{
+              display: block;
+              @include media-query(lap-and-up){
+                display: inline;
+              }
+            }
 
           }
         }
