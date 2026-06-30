@@ -1,7 +1,9 @@
+console.log("ac inuk 123")
 ACINUK = {
+
   common: {
     init: function () {
-      //console.log('common test');
+      console.log('common test');
 
         try {
             Typekit.load();
@@ -228,7 +230,8 @@ ACINUK = {
         return false;
       });
 
-    }, emergency_dentist_cardiff: function () {
+    },
+      emergency_dentist_cardiff: function () {
 
 
       var mins = new Date().getMinutes(),
@@ -250,6 +253,38 @@ ACINUK = {
         jQuery('.open-highlight').attr('title', 'We are currently open.');
       }
       console.log('emergency_dentist_cardiff');
+    },
+      price_guide: function(){
+        console.log('AC price Guide');
+
+          document.querySelectorAll('.page-accordion-content .item-title a').forEach(el => {
+              el.innerHTML = el.innerHTML.replace(/\(([^)]+)\)/, '<small>($1)</small>');
+          });
+
+          // Targeting .item-title without <a> tags
+          document.querySelectorAll('.page-accordion-content .item-title:not(:has(a))').forEach(el => {
+              el.innerHTML = el.innerHTML.replace(/\(([^)]+)\)/, '<small>($1)</small>');
+          });
+
+          $('.page-accordion-content .main-item > .title').on('click', function() {
+              // Get the sibling item to slide
+              var $siblings = $(this).siblings('.items');
+
+              if ( false === $(this).hasClass('active') ) {
+                  var $title = $(this);
+
+                  $siblings.stop().slideDown(400, function() {
+                      $title.addClass('active');
+                  });
+
+              } else {
+                  var $title = $(this);
+
+                  $siblings.stop().slideUp(400, function() {
+                      $title.removeClass('active');
+                  });
+              }
+          });
     }
 
   },
