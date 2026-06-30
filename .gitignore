@@ -3,3 +3,7 @@
 node_modules/
 
 style.css
+
+dist/js/main.js
+
+gulpfile.js
