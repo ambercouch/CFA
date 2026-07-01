@@ -232,11 +232,11 @@
   display: flex;
 }
 .content__widget-area--below .widget-area{
-  display: flex;
-  flex-direction: column;
+  display: block;
+  //flex-direction: column;
   @include media-query(desk){
-    display: flex;
-    flex-direction: row-reverse;
+    display: block;
+    //flex-direction: row-reverse;
   }
 }
 
@@ -405,9 +405,15 @@ html{
 }
 
 .remodal{
-  display: none;
+  //display: none;
 }
 
 .remodal-is-locked .remodal{
-  display: block;
+  //display: block;
+}
+
+.site__below-content {
+  margin-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

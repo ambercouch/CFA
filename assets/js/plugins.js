@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-console.log('plugins');
 
 /*!
  * jQuery Tools v1.2.7 - The missing UI library for the Web

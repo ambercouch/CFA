@@ -6,7 +6,7 @@
   @extend %post__img;
   .menu-item{
     @include x-rem(font-size, 1);
-    width: 50%;
+    width: auto;
     //margin-bottom:0  !important;
     box-shadow: none !important;
     margin-bottom:1em !important;
@@ -19,14 +19,16 @@
     .icon{
 
       //padding: 8px 17px;
-      width: 100%;
+      max-width: 160px;
+      width: auto;
       height: 30px;
       margin: 0 auto;
       fill: $brand-col-1--tint;
       @include media-query(desk){
-        padding: 8px 2px;
-        width: 100%;
+        padding: 7px 17px;
+        width: auto;
         height: 50px;
+        max-width: 145px;
       }
     }
     a{

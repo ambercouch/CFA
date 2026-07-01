@@ -1,9 +1,7 @@
-console.log("ac inuk 123")
 ACINUK = {
 
   common: {
     init: function () {
-      console.log('common test');
 
         try {
             Typekit.load();
@@ -25,25 +23,17 @@ ACINUK = {
             var $fithtService = jQuery('#menu-services .wp-post-image:eq(4)');
             if (mq.matches) {
                 $fithtService.removeClass('palm-last');
-                console.log('no palm');
-                console.log($fithtService);
             } else {
                 //palm view
                 $fithtService.addClass('palm-last');
-                console.log('palm');
-                console.log($fithtService);
             }
 
         }
 
         $(document).on('change', '.form--referral__select--referral-reason', function () {
-           console.log('changed');
-           console.log($(this).val());
             if($(this).val() === 'Implantology'){
                 $('[data-control=referral-reason]').show('slow');
-                console.log('boom');
             }else {
-                console.log('no boom');
                 $('[data-control=referral-reason]').hide('slow');
             }
         });
@@ -114,7 +104,6 @@ ACINUK = {
         $menulink.toggleClass('active');
         $menu.toggleClass('active');
         var height = jQuery('.menu-main-container.active').height();
-        console.log(height);
         return false;
       });
 
@@ -125,6 +114,8 @@ ACINUK = {
       });
 
       //jQuery('.widget_nav_menu .widget__header').append('<a class="menu--responsive-toggle__toggle" href="#menu">Menu</a>');
+
+      ACINUK.common.initLogoMenuCarousel();
 
       //svg hover effect for menu items;
       jQuery('.menu__icon').each(function (i, e) {
@@ -137,20 +128,61 @@ ACINUK = {
         }
       });
 
+    },
+    initLogoMenuCarousel: function () {
+        console.log('initLogoMenuCarousel');
+      if (typeof jQuery.fn.flickity !== 'function') return;
+        console.log('jQuery.fn.flickity');
+
+        jQuery('.logo-menu--carousel').each(function () {
+            var $widget = jQuery(this);
+            var $menu = $widget.find('ul.menu').first();
+
+            if (!$menu.length) return;
+
+            var menuWidth = $menu.outerWidth();
+            var cellsWidth = 0;
+
+            $menu.find('> li').each(function () {
+                cellsWidth += jQuery(this).outerWidth(true);
+            });
+
+            // If all logos fit, don't use Flickity.
+            if (cellsWidth <= menuWidth) {
+                if ($menu.data('flickity')) {
+                    $menu.flickity('destroy');
+                }
+
+                $widget.addClass('logo-menu--carousel-fits');
+                return;
+            }
+
+            if ($menu.data('flickity')) return;
+
+            $widget.removeClass('logo-menu--carousel-fits');
+
+            $menu.flickity({
+                cellSelector: 'li',
+                cellAlign: 'center',
+                contain: true,
+                wrapAround: true,
+                prevNextButtons: true,
+                pageDots: true,
+                imagesLoaded: true,
+                groupCells: '25%'
+            });
+        });
     }
   },
   page: {
     init: function () {
 
-      console.log('page');
       var ac_window = jQuery(window);
       var $menu = jQuery('.menu--responsive');
 
 
 
       $menu.each(function (i, el) {
-        console.log('element');
-        console.log(jQuery(el));
 
         jQuery('.title--widget', this).after('<a class="menu--responsive-toggle__toggle">MENU</a>');
         //var toggle = jQuery(this)
@@ -162,10 +194,8 @@ ACINUK = {
       });
 
 
-      console.log(ac_window.width());
 
       var page_title = jQuery('.title--article').text();
-      console.log(page_title);
 
       jQuery('[name=page-name]').val(page_title);
         ACINUK.gaq.video();
@@ -173,7 +203,6 @@ ACINUK = {
         ACINUK.gaq.contact();
     },
     testimonials: function () {
-      console.log('pages__testimonials');
       var q = jQuery('.comments ol li');
       var thisYear;
       var nextYear;
@@ -252,10 +281,8 @@ ACINUK = {
         jQuery('#opening-times .day--' + day).addClass('open-highlight');
         jQuery('.open-highlight').attr('title', 'We are currently open.');
       }
-      console.log('emergency_dentist_cardiff');
     },
       price_guide: function(){
-        console.log('AC price Guide');
 
           document.querySelectorAll('.page-accordion-content .item-title a').forEach(el => {
               el.innerHTML = el.innerHTML.replace(/\(([^)]+)\)/, '<small>($1)</small>');
@@ -290,25 +317,18 @@ ACINUK = {
   },
   post: {
     init: function () {
-      console.log('all posts');
     }
   },
     gaq :{
         video : function(){
 
             jQuery(document).on('open','.remodal', function(e) {
-                console.log('clicked');
-                console.log(e);
 
                 var title = jQuery(e.target.innerHTML).find('.title').text();
                 var current_url = e.currentTarget.baseURI;
-                console.log(current_url);
-                console.log(title);
                 if (typeof __gaTracker != "undefined") {
-                    console.log('__gaTracker');
                     __gaTracker('send', 'event', 'videos', 'open ' + current_url, title);
                 }else{
-                    console.log('__gaTracker undefined');
                 }
             });
 
@@ -316,20 +336,13 @@ ACINUK = {
         tel : function(){
 
             jQuery(document).on('click','[href^="tel:"]', function(e) {
-                console.log('tel clicked');
-                console.log(e);
                 var current_url = e.currentTarget.baseURI;
                 var tel = $(this).attr('href');
                 var parent = $(this).parent().attr('class') || $(this).parent().parent().attr('class');
-                console.log(current_url);
 
                 if (typeof __gaTracker != "undefined") {
-                    console.log('__gaTracker');
                     __gaTracker('send', 'event', tel, 'clicked ' + parent, current_url);
                 }else{
-                    console.log('__gaTracker undefined');
-                    console.log(tel);
-                    console.log(parent);
 
 
                 }
@@ -342,11 +355,8 @@ ACINUK = {
                 var current_url = e.currentTarget.baseURI;
                
                 if (typeof __gaTracker != "undefined") {
-                    console.log('__gaTracker');
                     __gaTracker('send', 'event', 'contact', 'submit' , current_url);
                 }else{
-                    console.log('__gaTracker undefined');
-                    console.log(current_url);
                 }
             });
 

@@ -34,7 +34,7 @@ function ad_filter_menu($sorted_menu_objects, $args) {
 
         foreach ($sorted_menu_objects as $menu_object) {
 
-            $menu_object->title = $menu_object->xfn == '' ? $menu_object->title : '<svg preserveAspectRatio="none" class="icon menu__icon--old "><!--<use class="icon__use--hover-off"  xlink:href="#icon-' . $menu_object->xfn . '" />--><use class="icon__use--hover-on--old"  xlink:href="#icon-' . $menu_object->xfn . '--rgb" /></svg>';
+            $menu_object->title = $menu_object->xfn == '' ? $menu_object->title : '<svg preserveAspectRatio="none" class="icon menu__icon--old "> <use   class="icon__use--hover-off"  xlink:href="#icon-' . $menu_object->xfn . '--rgb" /> <use class="icon__use--hover-on--old"  xlink:href="#icon-' . $menu_object->xfn . '--rgb" /></svg>';
         }
     }
 
