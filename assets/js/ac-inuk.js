@@ -130,25 +130,48 @@ ACINUK = {
 
     },
     initLogoMenuCarousel: function () {
+        console.log('initLogoMenuCarousel');
       if (typeof jQuery.fn.flickity !== 'function') return;
+        console.log('jQuery.fn.flickity');
 
-      jQuery('.logo-menu--carousel').each(function () {
-        var $widget = jQuery(this);
-        var $menu = $widget.find('ul.menu').first();
+        jQuery('.logo-menu--carousel').each(function () {
+            var $widget = jQuery(this);
+            var $menu = $widget.find('ul.menu').first();
 
-        if (!$menu.length || $menu.data('flickity')) return;
+            if (!$menu.length) return;
 
-        $menu.flickity({
-          cellSelector: 'li',
-          cellAlign: 'center',
-          contain: true,
-          wrapAround: true,
-          prevNextButtons: true,
-          pageDots: true,
-          imagesLoaded: true,
-          groupCells: '25%'
+            var menuWidth = $menu.outerWidth();
+            var cellsWidth = 0;
+
+            $menu.find('> li').each(function () {
+                cellsWidth += jQuery(this).outerWidth(true);
+            });
+
+            // If all logos fit, don't use Flickity.
+            if (cellsWidth <= menuWidth) {
+                if ($menu.data('flickity')) {
+                    $menu.flickity('destroy');
+                }
+
+                $widget.addClass('logo-menu--carousel-fits');
+                return;
+            }
+
+            if ($menu.data('flickity')) return;
+
+            $widget.removeClass('logo-menu--carousel-fits');
+
+            $menu.flickity({
+                cellSelector: 'li',
+                cellAlign: 'center',
+                contain: true,
+                wrapAround: true,
+                prevNextButtons: true,
+                pageDots: true,
+                imagesLoaded: true,
+                groupCells: '25%'
+            });
         });
-      });
     }
   },
   page: {

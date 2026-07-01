@@ -99,7 +99,7 @@
 @import "ui/modules/widgets/widget_search";
 @import "ui/modules/widgets/widget_calendar";
 @import "ui/modules/wp-caption";
-@import "ui/plugins/remodal";
+//@import "ui/plugins/remodal";
 //@import "ui/pages/page-id-25";
 @import "ui/pages/page-id-83";
 @import "ui/pages/page-id-85";
@@ -112,6 +112,7 @@
 @import "ui/states/is-empty";
 @import "components";
 
+@import "vendor";
 
 @import "utilities";
 @import "shame";

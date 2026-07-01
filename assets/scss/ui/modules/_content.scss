@@ -102,8 +102,7 @@
 
 .content__widget-area--below{
   @include media-query(desk){
-    border-top: solid 1px $brand-col-3--tint;
-    border-bottom: solid 1px $brand-col-3--tint;
+
     padding-top: 1em;
   }
   @extend .container;

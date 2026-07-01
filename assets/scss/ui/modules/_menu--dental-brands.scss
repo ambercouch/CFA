@@ -18,13 +18,13 @@
     margin-bottom: 1em
   }
   .menu-item{
-    width: 33.333%;
+    width: auto;
     margin-bottom: 0 !important;
     @include media-query(desk){
-      width:  16.6%;
+      width:  auto;
     }
     a{
-      margin: 0 1em !important;
+      //margin: 0 1em !important;
     }
 
   }
@@ -36,9 +36,9 @@
   }
 
   .menu-brands-container ul{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    //display: flex;
+    //align-items: center;
+    //flex-wrap: wrap;
   }
 
 
