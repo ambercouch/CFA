@@ -155,8 +155,9 @@
 
     img{
       width: 100%;
-      aspect-ratio: 1;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
+
 
       &.palm-last{
         //only if it is the last in the list and odd (:last-child:nth-child)
@@ -373,4 +374,9 @@
     right: 0.6em;
     top:15px;
   }
+}
+
+
+.menu-item-16 img{
+  object-position: 0 -77px
 }
