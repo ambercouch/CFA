@@ -20,13 +20,19 @@ and open the template in the editor.
 [class*=contact-boxes__box]{
   @extend .islet;
 
-  height: 140px;
+  height: auto;
+  aspect-ratio: 10/2;
   background: $brand-col-4;
+  border-radius: 12px;
   margin: 0 0 4% 0;
   width: 100%;
   @include mq($from : tablet){
+    aspect-ratio: 5/2;
     width: 46% !important;
     margin: 0 4% 4% 0;
+    .content__widget-area--main &{
+      width: 100% !important;
+    }
   }
 }
 
