@@ -417,3 +417,14 @@ html{
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.hero-banner--2026{
+  height: auto;
+  width: 100vw;
+  aspect-ratio: 1.76 / 1;
+  @include media-query(lap){
+    aspect-ratio: 1.47 / 1;
+  }
+  @include media-query(desk){
+    height: 562px;
+  }
+}
