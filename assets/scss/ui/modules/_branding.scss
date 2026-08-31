@@ -9,7 +9,7 @@
 
   .branding__site-title{
     @extend .kilo;
-    margin-top: 72px;
+    margin-top: $act-unit;
     margin-bottom: 0.5em;
     font-weight: bold;
     line-height: 1.333em;
@@ -17,6 +17,9 @@
     a{
       color: $brand-col-2;
       text-decoration: none;
+    }
+    @include media-query(desk){
+      margin-top: $act-unit-h;
     }
   }
   .branding__description{
