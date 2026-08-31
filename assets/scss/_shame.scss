@@ -277,33 +277,33 @@ To learn how this works, see http://wp.me/PEmnE-Bt
   color: black !important;
 }
 
-.home .header--master__strap {
-  top: 230px;
-  left: 20px;
-}
+//.home .header--master__strap {
+//  top: 230px;
+//  left: 20px;
+//}
 
-@media only screen and (min-width: 800px){
+//@media only screen and (min-width: 800px){
+//
+//  .home .header--master__strap {
+//    top: 75pt;
+//    right: 56%;
+//    left: auto;
+//    bottom: auto;
+//  }
+//}
 
-  .home .header--master__strap {
-    top: 75pt;
-    right: 56%;
-    left: auto;
-    bottom: auto;
-  }
-}
-
-@media only screen and (max-width: 799px) and (min-width: 481px){
-  .home .textwidget .header--master__strap {
-    font-size: 1.5em;
-    right: 55% !important;
-    top: auto!important;
-    left: auto;
-    bottom: 2em!important;
-  }
-}
+//@media only screen and (max-width: 799px) and (min-width: 481px){
+//  .home .textwidget .header--master__strap {
+//    font-size: 1.5em;
+//    right: 55% !important;
+//    top: auto!important;
+//    left: auto;
+//    bottom: 2em!important;
+//  }
+//}
 
 .page-template-page--header-banner-php .header--master__strap {
-  color: #00a7b8 !important;
+  //color: #00a7b8 !important;
 }
 
 #text-5.textwidget--company-address{
